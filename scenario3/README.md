@@ -40,7 +40,7 @@ Your customer has been a long-time user of **App Connect (IIB/WMB)** and **MQ**.
 
 While eager to understand the modernization journey, they also have reservations on their ability to scale and manage the workload.  Demonstrate how to analyze, componentize, and containerize existing integration artefacts, and illustrate how to scale and monitor the new deployments.
 
-<img src="images/scenario3-image2.png"
+<img src="images/scenario3-image2.png" >
 
 
 **Your Challenge**
@@ -503,31 +503,31 @@ Credential to login is available on:
 ## Importing Asset into IBM ACE Toolkit and creating local integration server
 1. Import a project in ACE using navigation --> File -> Import -> IBM Project Interchange
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP1.png?raw=true)
+<img src="images/HTTP1.png" >
 
 2. Browse on your local machine to add the MessageFlow_PI.zip file from the Scenario 3 assets as shown below
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP2.png?raw=true)
+<img src="images/HTTP2.png" >
 
 3. Open the assets into ACE as shown in screenshot below - 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP3.png?raw=true)
+<img src="images/HTTP3.png" >
 
 4. Click on finish to import the Project. Your assets are successfully imported.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP4.png?raw=true)
+<img src="images/HTTP4.png" >
 
    This will open child window to enter details of the server. Once completed, hit finish.
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP5.png?raw=true)
+<img src="images/HTTP5.png" >
 
 
 5. Proceed further by creating a Local Integration Server in ACE. You may do so by using the navigation - 
    Right click on the Integration Servers --> Select **Create a local Integration Server**
    
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP6.png?raw=true)
+<img src="images/HTTP6.png" >
 
    Click Finish.
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP7.png?raw=true)
+<img src="images/HTTP7.png" >
 
    This completes the creation of local integration server.
 
@@ -536,7 +536,7 @@ Credential to login is available on:
 &nbsp; 
 ## Refactor ACE REST to REST Message flow
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/scenario3-application-architecture-ace-rest-rest.png?raw=true)
+<img src="images/scenario3-application-architecture-ace-rest-rest.png" >
 
 
 1. [Build HTTPResponseApp ace message flow into BAR file](#build-ace-message-flow-into-bar-file)
@@ -546,14 +546,14 @@ Credential to login is available on:
 
 3. Open ACE and navigate to HttpRequestApp —> Expand to open folder Flows —> double-click RequestService.msgflow
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/refactor-http-1.png?raw=true)
+<img src="images/refactor-http-1.png">
 
 4. Proceed to make the following changes to each component as below:
 
    a. Select HttpInput on Flow Exerciser. Properties associated with it will show up at the bottom. 
 	    Change the path suffix url  to /requestService
       
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ChangeProperties1.png?raw=true)
+<img src="images/ChangeProperties1.png" >
   
   
    b. Select HTTPRequest and replace the URL as per the cluster URL.
@@ -568,11 +568,11 @@ Credential to login is available on:
    OCP Console --> Administrator View --> Networking --> Select Routes --> Search for the Response Integration server created. 
    Take a note of the URL in the “Location” column.
    
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/refactor-http-2.png?raw=true)
+<img src="images/refactor-http-2.png" >
 
    Save the flow in ACE after replacing the http://localhost:7800
   
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/refactor-http-3.png?raw=true)
+<img src="images/refactor-http-3.png" >
   
 5. Create a BAR file for this flow and deploy it to a new Integration Server in OCP.
 
@@ -580,7 +580,7 @@ Credential to login is available on:
 
 7. [Deploy bar file of BAR for HttpRequestApp flow into CP4I Integration Server](#deploy-bar-file-to-cp4i-integration-servers)  
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/refactor-http-4.png?raw=true)
+<img src="images/refactor-http-4.png" >
 
 8. Test the deployed BARs
 
@@ -602,42 +602,42 @@ Please replace
 
 9. Receiving 200 OK on the terminal validates successful deployment
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/refactor-http-5.png?raw=true)
+<img src="images/refactor-http-5.png" >
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
 
 &nbsp; 
 ## Refactor ACE MQ Message flow using MQ Client Connection. Introduce new RestToMQApp message flow to expose putting MQ messages
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/scenario3-application-architecture-ace-mq.jpg?raw=true)
+<img src="images/scenario3-application-architecture-ace-mq.jpg" >
 
 1. To obtain MQ Endpoint, login to your cluster and navigate to Networking --> Services --> Search "MQ" --> Copy Hostname and Port as highlighted
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HostName.png?raw=true)
+<img src="images/HostName.png" >
  
  
 2. Navigate to ACE and open MQ Flow
  
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ACE-MQFlow.png?raw=true)
+<img src="images/ACE-MQFlow.png" >
  
 
 3. On diagram at the right --> Select MQInput --> It will display properties section below.
     Navigate to MQ Connection --> It should display the properties of MQ Connection
     
     
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ACEMQ2.png?raw=true)
+<img src="images/ACEMQ2.png" >
  
  
 4. Select the Connection Type as "MQ Client Connection Properties" --> Specify "Destination Queue Manager Name" , "Queue Manager Host Name" 
    (Retrieved in step - 15), "Listener Port" (Retrieved in step - 15) and "Channel Name". Hit save.
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ACEMQ3.png?raw=true)
+<img src="images/ACEMQ3.png" >
  
 
 5. Repeat the same configuration for MQOutput
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ACEMQoutput.png?raw=true)
+<img src="images/ACEMQoutput.png" >
 
 
 

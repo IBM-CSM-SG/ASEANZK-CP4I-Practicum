@@ -36,12 +36,11 @@ Table of contents
 # Topic 1: Introduction and Scenario Details
 Your customer has been a long-time user of **App Connect (IIB/WMB)** and **MQ**. They have recently decided to investigate the value of modernizing their integration. They are eager to explore IBM Agile Integration practices. They would like you to use one of their existing flows and queue definitions to explore how to move to containerized integration.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/scenario3-image1.png?raw=true)
+<img src="images/scenario3-image1.png" >
 
 While eager to understand the modernization journey, they also have reservations on their ability to scale and manage the workload.  Demonstrate how to analyze, componentize, and containerize existing integration artefacts, and illustrate how to scale and monitor the new deployments.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/scenario3-image2.png?raw=true)
-
+<img src="images/scenario3-image2.png"
 
 
 **Your Challenge**
@@ -77,7 +76,7 @@ OpenShift is a platform that allows you to run containerized applications and wo
 
 One of the big advantages of OpenShift is being able to take advantage of public and private resources which includes bare metal or virtualized hardware whether it is on-premise or on a cloud provider. 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/openshift-overview.png?raw=true)
+<img src="images/openshift-overview.png" >
 
 This is the high level OpenShift Container Platform overview.
 
@@ -99,7 +98,7 @@ By using IBM IIB/ACE transformation advisor's TADataCollector, we can analyse th
 
 The refactor code can later be deployed in a microservices architecture on Redhat Openshift with CP4I (ACE + MQ) environment 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/scenario3-architecture.png?raw=true)
+<img src="images/scenario3-architecture.png" >
 
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
@@ -122,24 +121,24 @@ The refactor code can later be deployed in a microservices architecture on Redha
 Click on "Download" button on the following link:  https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started 
 The version used in this practicum is `12.0.3`
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect1.png?raw=true)
+<img src="images/AppConnect1.png" >
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect2.png?raw=true)
+<img src="images/AppConnect2.png" >
 
    Complete the installation through the installer package you just downloaded for your OS.  eg: `12.0.3.0-ACE-MAC64-DEVELOPER-UNSIGNED`. You can use the IBM ACE Installation page as a guide to complete the installation.
 
 
 2. Once installed, open the installed ACE toolkit. A view similar to the screenshot below will launch.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect3.png?raw=true)
+<img src="images/AppConnect3.png" >
 
 3. Open the Integration Console (IBM App connect Enterprise Toolkit -> Open Integration console)
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect4.png?raw=true)
+<img src="images/AppConnect4.png" >
 
 4. IBM ACE console will launch on your screen as below:
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect5.png?raw=true)
+<img src="images/AppConnect5.png" >
 
 5. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 Assets-IIB IIBV10_Broker_backup.zip file through command line, as shown below: 
 
@@ -147,17 +146,17 @@ The version used in this practicum is `12.0.3`
 TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.zip
 ```
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect6.png?raw=true)
+<img src="images/AppConnect6.png" >
 
 6. Once the `TADataCollector` command runs successfully, it will generate recommendation files under `/tmp/TADataCollector/output/IIB1` folder. Open the following directory to access the generated files
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect7.png?raw=true)
+<img src="images/AppConnect7.png" >
 
 7.	Open the recommendations.html file located in `/tmp/TADataCollector/output/IIB1` folder & Read the recommendations made by IBM Transformation Advisor
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect8.png?raw=true)
+<img src="images/AppConnect8.png" >
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppConnect9.png?raw=true)
+<img src="images/AppConnect9.png" >
 
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
@@ -178,31 +177,31 @@ The steps outlined below will assist you to prepare cluster for the installation
 2. Create ROKS Cluster as a pre-requisite to install Cloud Pak of Integration --> Click Reserve to reserve the cluster. 
    Below snapshot can be used for reference – 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI1.png?raw=true)
+<img src="images/CI1.png" >
 
 3. You will be prompted to select one option from below, select “Reserve Now”.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI2.png?raw=true)
+<img src="images/CI2.png" >
 
 4. Select one of the choices below as the Purpose of Reservation.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI3.png?raw=true)
+<img src="images/CI3.png" >
 
 5. Describe the purpose and select the geography in which you want to create the cluster
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI4.png?raw=true)
+<img src="images/CI4.png" >
 
 6. Enter the date and time until which you may require the cluster. It can be reserved only for 2 weeks. Enter the notes if any and click “Submit”
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI5.png?raw=true)
+<img src="images/CI5.png" >
 
 7. Upon successful creation, you would see the below screen.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI6.png?raw=true)
+<img src="images/CI6.png" >
 
 8. Select “My Reservations” tab --> Cluster should be listed here
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI7.png?raw=true)
+<img src="images/CI7.png">
 
 9. Click on the Reservations and Open RedHat Open Shift Platform console. 
    It will have following details – 
@@ -211,14 +210,14 @@ The steps outlined below will assist you to prepare cluster for the installation
    c. Provider
    d. Version
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI8.png?raw=true)
+<img src="images/CI8.png" >
 
 **Adding catalog sources to an online OpenShift cluster
 **
 
 10. Adding the IBM operator catalog to your OpenShift cluster adds the IBM operators to the list of operators you can install. On the top right banner, click the {+} icon to open Import YAML dialogue box. 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CI9.png?raw=true)
+<img src="images/CI9.png" >
 
 11. Paste below resource definition into the dialogue box  and click “Create” – 
 ```
@@ -239,12 +238,12 @@ spec:
 
 ## Creating Projects 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/createproject1.png?raw=true)
+<img src="images/createproject1.png" >
 
 Head to the Red Hat OpenShift Web Console, ensure that you are on Administrator view. Click on "Projects" in the left panel. On the top right hand corner, you will see the button to "Create Project" (encircled in black).
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/createproject2.png?raw=true)
+<img src="images/createproject2.png" >
 
 Fill in the details accordingly and hit "Create". 
 
@@ -256,21 +255,21 @@ The IBM Entitled Registry contains software images for the capabilities in IBM C
 
 1. Obtain your entitlement key using the url - https://myibm.ibm.com/products-services/containerlibrary
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/EntKey1.png?raw=true)
+<img src="images/EntKey1.png">
 
 2.	Your entitlement key must be added to the cluster as a pull secret to deploy Cloud Pak for Integration capabilities. You can either add a pull secret to each namespace you plan to use for Cloud Pak for Integration capabilities, or add a global pull secret, which enables deployment of Cloud Pak for Integration capabilities in all namespaces.	
 Navigation --> Open Shift Container Platform --> Workloads --> Secrets --> On the top left you can see “Create” --> Click and select “Image Pull Secret” (**Ensure it’s your custom namespace under your project**)
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/EntKey2.png?raw=true)
+<img src="images/EntKey2.png" >
 
 3. Add the details as shown in the snapshot below. In “Password” enter the entitlement key copied in Step – 1 and click “Create” the secret key.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/EntKey3.png?raw=true)
+<img src="images/EntKey3.png">
 
 4. Upon creation it will appear under your project.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/EntKey4.png?raw=true)
+<img src="images/EntKey4.png">
 
 This section completes the configuration of Entitlement Key.
 
@@ -280,23 +279,23 @@ This section completes the configuration of Entitlement Key.
 
 1. Login to Red Hat Open Shift Console --> Navigate to Operators --> Operator Hub --> Search “IBM Cloud Pak for Integration”
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntInstall1.png?raw=true)
+<img src="images/IntInstall1.png">
 
 2. Select and click “Install”
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntInstall2.png?raw=true)
+<img src="images/IntInstall2.png" >
 
 3. Ensure to choose your namespace under your project at the time of installation
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntInstall3.png?raw=true)
+<img src="images/IntInstall3.png">
 
 4. Upon successful installation below message can be seen. Click on View Operator to gather more details on the installed operator.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntInstall4.png?raw=true)
+<img src="images/IntInstall4.png">
 
 5. Click View Operator and scroll down to the end of page to validate status, version and namespace
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntInstall5.png?raw=true)
+<img src="images/IntInstall5.png" width=500 height=480>
 
 This completes the installation of IBM Cloud Pak for Integration All Operators
 
@@ -308,15 +307,15 @@ This completes the installation of IBM Cloud Pak for Integration All Operators
 
 1. Login to Red Hat Open Shift Cluster and navigate to Operators --> Installed Operators and search for “Platform Navigator”
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator1.png?raw=true)
+<img src="images/PlatformNavigator1.png">
   
 2. Click and navigate to “Platform Navigator” tab and click “Create PlatformNavigator
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator2.png?raw=true)
+<img src="images/PlatformNavigator2.png" >
   
 3. Click Create PlatformNavigator. The Create Platform Navigator panel opens, and offers two methods for configuring the resource; the Form viewand the YAML view. The Form view is selected by default:
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator3.png?raw=true)
+<img src="images/PlatformNavigator3.png" >
 
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
@@ -328,20 +327,20 @@ Note: Some fields may not be represented in the default form view.
 4. Change Project to your project (namespace) name. Click the drop-down arrow and select your project name from the list. 
    The project name in the example is cp4i-demo. In the Name field, enter a name for the new instance or leave the default.
    
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator4.png?raw=true)
+<img src="images/PlatformNavigator4.png" >
   
 5. Next to License, click the arrow to expand the license acceptance section. 
     a. Set License Accept to true if you accept the Cloud Pak for Integration license agreement.
     b. For License LI, click the arrow to open the drop-down list, and select a license.
 
  
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator5.png?raw=true)
+<img src="images/PlatformNavigator5.png" >
   
 
 6. Specify the Storage class. Click the arrow to expand the Storage pane, then click the arrow for Select Storage Class and select a file storage class a file storage class that supports ReadWriteMany (RWX) volumes and allows read and write access to non-root users. 
    
    
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator6.png?raw=true)
+<img src="images/PlatformNavigator6.png" >
    
    
    
@@ -352,7 +351,7 @@ Supported storage providers include ibmc-file-gold-gid, OpenShift Data Foundatio
 7. Set any other configuration values as appropriate and click Create.
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator7.png?raw=true)
+<img src="images/PlatformNavigator7.png" >
 
 <h2>*** The creation of Platform UI may take 30 minutes *** </h2>
 
@@ -374,29 +373,29 @@ Credential to login is available on:
 
 1. Go to IBM Cloud Pak home and click on the hamburger on top left --> click Integration Instances 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/PlatformNavigator.png?raw=true)
+<img src="images/PlatformNavigator.png" >
  
 2. Click “Create Instance” on top left of the page
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CreateInstance-AppConnect.png?raw=true)
+<img src="images/CreateInstance-AppConnect.png" >
  
 3. Select Integration Dashboard and click next
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntegrationDashboard.png?raw=true)
+<img src="images/IntegrationDashboard.png"
  
 ***If it is greyed out, you will need to install operator named "IBM App Connect" in openshift -> operatorHub ***
 
 4. Select either Production or Quick Start --> click next
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntegrationDashboardType.png?raw=true)
+<img src="images/IntegrationDashboardType.png" >
  
 5. Key-in the details of the environment and proceed to create the dashboard.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntegrationDashboard-Env.png?raw=true)
+<img src="images/IntegrationDashboard-Env.png" >
  
 6. Upon successful creation of Integration Dashboard below message will appear on the browser. 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntegrationDashboard-Final.png?raw=true)
+<img src="images/IntegrationDashboard-Final.png" >
 
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
@@ -406,86 +405,86 @@ Credential to login is available on:
 
 1. Go to IBM Cloud Pak Home, click on “Messaging” as highlighted in the screen below
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/Messging.png?raw=true)
+<img src="images/Messging.png" >
  
 2. This will redirect to a Messaging screen as below. Click on Create an instance to create a queue manager.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MessgnScreen.png?raw=true)
+<img src="images/MessgnScreen.png">
  
 3. Select “Quick start” option from this screen, and click on Next.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CreateQMngr.png?raw=true)
+<img src="images/CreateQMngr.png" >
  
 4. Modify the details for your queue manager as below:
    
    a. License acceptance – Toggle the button from OFF to ON state
 
 
-   ![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/Licence.png?raw=true)
+   <img src="images/Licence.png" >
  
  
  
    b. Select “Type of availability” from dropdown as SingleInstance  
  
    
-  ![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AvailabilityType.png?raw=true)
+  <img src="images/AvailabilityType.png" >
  
  
    c. Select “Type of Volume” from the drop down as persistent-claim
  
-  ![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/VolumeType.png?raw=true)
+  <img src="images/VolumeType.png" >
  
  
  5. Lastly click on “Create” from the top right corner and queue will be created. 
    You will be redirected to a new page, showing the details of your newly created Queue manager.
    
- ![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/QMngrReady.png?raw=true)
+ <img src="images/QMngrReady.png" >
  
 
 6. Click on queue name --> It should open up MQ Console
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQConsole.png?raw=true)
+<img src="images/MQConsole.png" >
  
  
 7. Click on  manage --> quickstart to open queue manager
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ChannlQuickStrt.png?raw=true)
+<img src="images/ChannlQuickStrt.png" >
  
 
 8. Navigate to Communication --> App Channel --> Click Create 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CreateAppChnl.png?raw=true)
+<img src="images/CreateAppChnl.png" >
  
  
 9. Click "Next" on the following page 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/AppChnlStep2.png?raw=true)
+<img src="images/AppChnlStep2.png" >
  
 10. Select "Quick Create" and provide a Channel Name, Channel Type and Description. Once complete, click "Create"
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ChnnelStep3.png?raw=true)
+<img src="images/ChnnelStep3.png" >
  
  
 11. On successful creation, channel will appear under "App Channels"
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/ChannelCreated.png?raw=true)
+<img src="images/ChannelCreated.png" >
  
 
 12. To edit the configuration of the Channel click "Configuration" as highlighted below - 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/EditConfigChnl.png?raw=true)
+<img src="images/EditConfigChnl.png" >
  
  
 13. It will redirect to open the configurations section of the Channel. Under "Properties" select "SSL"
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/EditSSLChnl.png?raw=true)
+<img src="images/EditSSLChnl.png" >
  
  
 14. Select "SSL Authentication" to "Optional" and hit "Save"
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/SSLEditCntd.png?raw=true)
+<img src="images/SSLEditCntd.png" >
  
  
  Your environment is **ready!!!**
@@ -661,19 +660,19 @@ https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc
 1. Login to Openshift CLuster Environment. Click on the top right corner --> You Login ID will appear here --> Click copy login command
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC2.png?raw=true)
+<img src="images/MQAC2.png" >
 
 2. Browser will display "Display Token" --> Click to get your API Token
    
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC3.png?raw=true)
+<img src="images/MQAC3.png" >
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC4.png?raw=true)
+<img src="images/MQAC4.png" >
    
 3. Copy the command captured in the previous step and use it to connect to CLI
 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC6.png?raw=true)
+<img src="images/MQAC6.png" >
 
 
 4. Navigate to your working project example - cp4i in this example
@@ -683,7 +682,7 @@ oc project cp4i(your project name)
 
 ---
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC7.png?raw=true)
+<img src="images/MQAC7.png" >
 
 5. Run command as below to get the pod name of pod running MQ. Copy the pod name to be used later.
 
@@ -692,7 +691,7 @@ oc get pods|grep mq
 
 ---
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC8.png?raw=true)
+<img src="images/MQAC8.png" >
 
 6. Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod
 
@@ -701,9 +700,9 @@ oc exec -it quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name) runmqsc QU
 
 ---
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC9.png?raw=true)
+<img src="images/MQAC9.png" >
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/MQAC10.png?raw=true)
+<img src="images/MQAC10.png" >
 
 
 MQ is ready and running on your environment!!!
@@ -718,11 +717,11 @@ MQ is ready and running on your environment!!!
 1. To generate BAR file for the assets. Select BAR --> New --> BAR File 
    Add a name (**HttpResponseApp** or **HttpRequestApp** or **MQ_CLIENT_APP**) for the BAR file and click    Finish.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP8.png?raw=true)
+<img src="images/HTTP8.png" >
 
 2. Select resources to include in the BAR file (**HttpResponseApp** or **HttpRequestApp** or **MQ_CLIENT_APP**), then click on “Build and Save” to generate BAR file. 
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/HTTP9.png?raw=true)
+<img src="images/HTTP9.png" >
 
 
 3. Once Build, the BAR file will appear under BARs on the left side of Application Development panel. 
@@ -737,29 +736,29 @@ MQ is ready and running on your environment!!!
  
  1. Navigate to IBM Cloud Pak for Integrations home page. Select Run --> Integrations --> It will redirect you to IBM APP Connect
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IBMAppConnect.png?raw=true)
+<img src="images/IBMAppConnect.png" >
  
  2. Create new Integration Server to deploy BAR file for MQ --> Select QuickStart tool kit integration --> Hit Next
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/DeployBAR.png?raw=true)
+<img src="images/DeployBAR.png" >
  
  3. Provide the BAR file to be deployed to the server and hit next.
  
  **Bar file can be directly dragged and dropped onto CP4I browser console**
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CreateIntServer.png?raw=true)
+<img src="images/CreateIntServer.png" >
  
  4. Pass the configuration screen by clicking "Next" proceeding to "Common Settings". Validate the settings as shown in the snapshot below.
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/CreateIntServer2.png?raw=true)
+<img src="images/CreateIntServer2.png" >
  
  5. Hit "Create" and wait until the status of the server has changed to "Ready"
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntServerStatus.png?raw=true)
+<img src="images/IntServerStatus.png" >
  
  6. The status changes to "Ready"
 
-![alt text](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario3/blob/main/images/IntServerReadyStatus.png?raw=true)
+<img src="images/IntServerReadyStatus.png" >
 
     
 

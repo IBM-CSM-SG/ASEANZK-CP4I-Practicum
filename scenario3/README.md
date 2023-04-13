@@ -36,11 +36,11 @@ Table of contents
 # Topic 1: Introduction and Scenario Details
 Your customer has been a long-time user of **App Connect (IIB/WMB)** and **MQ**. They have recently decided to investigate the value of modernizing their integration. They are eager to explore IBM Agile Integration practices. They would like you to use one of their existing flows and queue definitions to explore how to move to containerized integration.
 
-<img src="images/scenario3-image1.png" >
+<img src="images/scenario3-image1.png" />
 
 While eager to understand the modernization journey, they also have reservations on their ability to scale and manage the workload.  Demonstrate how to analyze, componentize, and containerize existing integration artefacts, and illustrate how to scale and monitor the new deployments.
 
-<img src="images/scenario3-image2.png" >
+<img src="images/scenario3-image2.png" />
 
 
 **Your Challenge**
@@ -76,7 +76,7 @@ OpenShift is a platform that allows you to run containerized applications and wo
 
 One of the big advantages of OpenShift is being able to take advantage of public and private resources which includes bare metal or virtualized hardware whether it is on-premise or on a cloud provider. 
 
-<img src="images/openshift-overview.png" >
+<img src="images/openshift-overview.png" />
 
 This is the high level OpenShift Container Platform overview.
 

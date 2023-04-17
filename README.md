@@ -50,6 +50,7 @@ The Bank historically use IIB and MQ and have bought CP4I. They have also setup 
 </td>
 <td>
 <p><strong>Sujatha</strong> Sureshkumar </p>
+<p>Pham Manh <strong>Hung</strong> </p>
 </td>
 </tr>
 
@@ -84,6 +85,7 @@ Each transaction should trigger events that can be audited or based on business 
 </td>
 <td>
 <p><strong>Sandeep</strong> Ved</p>
+<p><strong>Glen</strong> Christian </p>
 </td>
 </tr>
 
@@ -106,6 +108,7 @@ While eager to understand the modernization journey, they also have reservations
 </td>
 <td>
 <p><strong>Santhoshi </strong> Gopalkrishnan </p>
+<p><strong>Mano </strong> Saelao </p>
 </td>
 </tr>
 

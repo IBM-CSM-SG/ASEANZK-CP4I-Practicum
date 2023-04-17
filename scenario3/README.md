@@ -11,11 +11,7 @@ Table of contents
    * [Topic 3: Solution Architecture](#topic-2-solution-architecture)
    * [Topic 4: Running Transformation Advisor](#topic-4-running-transformation-advisor)
       * [Installing IBM App Connect Enterprise (ACE) & Running Transformation Advisor (TADataCollector)](#installing-ibm-app-connect-enterprise-ace--running-transformation-advisor-tadatacollector)
-   * [Topic 5: Environment Setup and Configuration](#topic-4-environment-setup-and-configuration)
-      * [Provisioning Cluster](#provisioning-cluster)
-      * [Creating Projects](#creating-projects)
-      * [Installing Cloud Pak for Integration on Openshift](#installing-cloud-pak-for-integration-on-openshift)
-      * [Creating Platform Navigator](#creating-platform-navigator)
+   * [Topic 5: Environment Configuration](#topic-5-environment-configuration)
       * [Creating Integration Dashboard](#creating-integration-dashboard)
       * [Creating MQ Queue Manager](#creating-mq-queue-manager)
    * [Topic 6: Refactor, Build and Deployment](#topic-6--refactor-build-and-deployment)
@@ -166,207 +162,7 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 &nbsp;
 &nbsp;
 &nbsp;
-# Topic 4: Environment Setup and Configuration
-
-## Provisioning Cluster
-
-The steps outlined below will assist you to prepare cluster for the installation of Cloud Pak for Integration. This section of the document contains step by step process with guiding screenshots for the cluster install.
-
-1. Login to TechZone (https://techzone.ibm.com )
-
-2. Create ROKS Cluster as a pre-requisite to install Cloud Pak of Integration --> Click Reserve to reserve the cluster. 
-   Below snapshot can be used for reference – 
-
-<img src="images/CI1.png" >
-
-3. You will be prompted to select one option from below, select “Reserve Now”.
-
-<img src="images/CI2.png" >
-
-4. Select one of the choices below as the Purpose of Reservation.
-
-<img src="images/CI3.png" >
-
-5. Describe the purpose and select the geography in which you want to create the cluster
-
-<img src="images/CI4.png" >
-
-6. Enter the date and time until which you may require the cluster. It can be reserved only for 2 weeks. Enter the notes if any and click “Submit”
-
-<img src="images/CI5.png" >
-
-7. Upon successful creation, you would see the below screen.
-
-<img src="images/CI6.png" >
-
-8. Select “My Reservations” tab --> Cluster should be listed here
-
-<img src="images/CI7.png">
-
-9. Click on the Reservations and Open RedHat Open Shift Platform console. 
-   It will have following details – 
-   a. Cluster API Address
-   b. Cluster ID
-   c. Provider
-   d. Version
-
-<img src="images/CI8.png" >
-
-**Adding catalog sources to an online OpenShift cluster
-**
-
-10. Adding the IBM operator catalog to your OpenShift cluster adds the IBM operators to the list of operators you can install. On the top right banner, click the {+} icon to open Import YAML dialogue box. 
-
-<img src="images/CI9.png" >
-
-11. Paste below resource definition into the dialogue box  and click “Create” – 
-```
-apiVersion: operators.coreos.com/v1alpha1
-kind: CatalogSource
-metadata:
-  name: ibm-operator-catalog
-  namespace: openshift-marketplace
-spec:
-  displayName: IBM Operator Catalog
-  image: 'icr.io/cpopen/ibm-operator-catalog:latest'
-  publisher: IBM
-  sourceType: grpc
-  updateStrategy:
-    registryPoll:
-      interval: 45m
-```
-
-## Creating Projects 
-
-<img src="images/createproject1.png" >
-
-Head to the Red Hat OpenShift Web Console, ensure that you are on Administrator view. Click on "Projects" in the left panel. On the top right hand corner, you will see the button to "Create Project" (encircled in black).
-
-
-<img src="images/createproject2.png" >
-
-Fill in the details accordingly and hit "Create". 
-
-## Installing Cloud Pak for Integration on Openshift
-
-### Obtaining and applying Entitlement Key
-
-The IBM Entitled Registry contains software images for the capabilities in IBM Cloud Pak® for Integration. To allow the Cloud Pak for Integration operators to automatically pull those software images, you must first obtain your entitlement key, then add your entitlement key in a pull secret.
-
-1. Obtain your entitlement key using the url - https://myibm.ibm.com/products-services/containerlibrary
-
-<img src="images/EntKey1.png">
-
-2.	Your entitlement key must be added to the cluster as a pull secret to deploy Cloud Pak for Integration capabilities. You can either add a pull secret to each namespace you plan to use for Cloud Pak for Integration capabilities, or add a global pull secret, which enables deployment of Cloud Pak for Integration capabilities in all namespaces.	
-Navigation --> Open Shift Container Platform --> Workloads --> Secrets --> On the top left you can see “Create” --> Click and select “Image Pull Secret” (**Ensure it’s your custom namespace under your project**)
-
-
-<img src="images/EntKey2.png" >
-
-3. Add the details as shown in the snapshot below. In “Password” enter the entitlement key copied in Step – 1 and click “Create” the secret key.
-
-<img src="images/EntKey3.png">
-
-4. Upon creation it will appear under your project.
-
-<img src="images/EntKey4.png">
-
-This section completes the configuration of Entitlement Key.
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
-### Installing Cloud Pak for Integration Operators
-
-1. Login to Red Hat Open Shift Console --> Navigate to Operators --> Operator Hub --> Search “IBM Cloud Pak for Integration”
-
-<img src="images/IntInstall1.png">
-
-2. Select and click “Install”
-
-<img src="images/IntInstall2.png" >
-
-3. Ensure to choose your namespace under your project at the time of installation
-
-<img src="images/IntInstall3.png">
-
-4. Upon successful installation below message can be seen. Click on View Operator to gather more details on the installed operator.
-
-<img src="images/IntInstall4.png">
-
-5. Click View Operator and scroll down to the end of page to validate status, version and namespace
-
-<img src="images/IntInstall5.png" width=500 height=480>
-
-This completes the installation of IBM Cloud Pak for Integration All Operators
-
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
-&nbsp;
-## Creating Platform Navigator
-
-1. Login to Red Hat Open Shift Cluster and navigate to Operators --> Installed Operators and search for “Platform Navigator”
-
-<img src="images/PlatformNavigator1.png">
-  
-2. Click and navigate to “Platform Navigator” tab and click “Create PlatformNavigator
-
-<img src="images/PlatformNavigator2.png" >
-  
-3. Click Create PlatformNavigator. The Create Platform Navigator panel opens, and offers two methods for configuring the resource; the Form viewand the YAML view. The Form view is selected by default:
-
-<img src="images/PlatformNavigator3.png" >
-
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
-## Configuring in the Form view
-The Form view opens a form that lets you view or modify the resource configuration.
-Note: Some fields may not be represented in the default form view.
-
-4. Change Project to your project (namespace) name. Click the drop-down arrow and select your project name from the list. 
-   The project name in the example is cp4i-demo. In the Name field, enter a name for the new instance or leave the default.
-   
-<img src="images/PlatformNavigator4.png" >
-  
-5. Next to License, click the arrow to expand the license acceptance section. 
-    a. Set License Accept to true if you accept the Cloud Pak for Integration license agreement.
-    b. For License LI, click the arrow to open the drop-down list, and select a license.
-
- 
-<img src="images/PlatformNavigator5.png" >
-  
-
-6. Specify the Storage class. Click the arrow to expand the Storage pane, then click the arrow for Select Storage Class and select a file storage class a file storage class that supports ReadWriteMany (RWX) volumes and allows read and write access to non-root users. 
-   
-   
-<img src="images/PlatformNavigator6.png" >
-   
-   
-   
-   
-Supported storage providers include ibmc-file-gold-gid, OpenShift Data Foundation (formerly OpenShift Container Storage), Spectrum, and Portworx.
- 
-
-7. Set any other configuration values as appropriate and click Create.
-
-
-<img src="images/PlatformNavigator7.png" >
-
-<h2>*** The creation of Platform UI may take 30 minutes *** </h2>
-
-<p>URL to login is available in the section:  
-<br>Operators -> Installed Operators -> ibm-integration-platform-navigator.v6.0.3 -> PlatformNavigator details -> integration-quickstart
-<br>[Metadata / Platform UI]
-
-Credential to login is available on:
-<br>Workloads -> Secrets -> Secret details -> ibm-iam-bindinfo-platform-auth-idp-credentials
-<br>Scroll to the bottom page, user is admin and password is there to unveil.
-</p>
-
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
+# Topic 5: Environment Configuration
 
 &nbsp;
 ## Creating Integration Dashboard
@@ -497,7 +293,7 @@ Credential to login is available on:
 &nbsp;
 &nbsp;
 &nbsp; 
-# Topic 5 : Refactor, Build and Deployment
+# Topic 6 : Refactor, Build and Deployment
 
 &nbsp; 
 ## Importing Asset into IBM ACE Toolkit and creating local integration server

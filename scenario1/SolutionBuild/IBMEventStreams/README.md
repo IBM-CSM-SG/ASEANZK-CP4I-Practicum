@@ -114,10 +114,4 @@ create a policy project and some configurations that you need to know
 
   ![messages](img/19-messages.jpeg)
 
-
-
-
-
-
-
-
+### [Go Back](/scenario1/README.md)

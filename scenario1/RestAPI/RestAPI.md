@@ -70,3 +70,5 @@ Scroll down to the `Content` portion where we will add a `application/json` file
 ![schema](path-operations-responses-3.png)
 
 Within this `application/json` file, simply link it to the `Currencies` schema which we defined earlier. 
+
+### [Go Back](/scenario1/README.md)

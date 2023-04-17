@@ -1,12 +1,12 @@
 # IBM CP4I Practicum Scenario 2: Table of Contents
 
-### [1: Scenario Details](/scenario2/README.md)
+### [1: Scenario Details](/scenario2/Scenario/README.md)
 
- -  [1.1: Introduction](/scenario2/README.md#introduction)
- -  [1.2: Requirement](/scenario2/README.md#requirement)
- -  [1.3: Challenge and Approach](/scenario2/README.md#challenge-and-approach)
+ -  [1.1: Introduction](/scenario2/Scenario/README.md#introduction)
+ -  [1.2: Requirement](/scenario2/Scenario/README.md#requirement)
+ -  [1.3: Challenge and Approach](/scenario2/Scenario/README.md#challenge-and-approach)
 
-### [2: Introduction](/Introduction/README.md)
+### [2: Introduction](/scenario2/Introduction/README.md)
 
  -  [2.1: Cloud Pak for Integration](/scenario2/Introduction/README.md#ibm-cloud-pak-for-integration)
 
@@ -16,13 +16,13 @@
  -  [3.2: Detailed Solution Flow](/scenario2/Architecture/README.md#detailed-solution-flow)
  -  [3.3: List of Software Products Used In Scenario2](/scenario2/Architecture/README.md#list-of-software-products-used-in-scenario2)
 
-### [4: Environment Setup](/Environment/README.md)
+### [4: Environment Setup](/scenario2/Environment/README.md)
 
  -  [4.1: Introduction to Cluster](/scenario2/Environment/README.md#introduction-to-cluster)
  -  [4.2: Introduction to OpenShift](/scenario2/Environment/README.md#introduction-to-openshift)
  -  [4.3: Environment Setup Reference](/scenario2/Environment/README.md#environment-setup-reference)
 
-### [5: Installation](/Installation/README.md)
+### [5: Installation](/scenario2/Installation/README.md)
 
  -  [5.1: Creating Projects](/scenario2/Installation/README.md#creating-projects)
  -  [5.2: Add Entitlement Keys](/scenario2/Installation/README.md#add-entitlement-keys)

@@ -1,6 +1,8 @@
 # Introduction
 
 ### [Topic 2.1: Cloud Pak for Integration](README.md#ibm-cloud-pak-for-integration)
+### [Topic 2.2: Introduction to Cluster](README.md#introduction-to-cluster)
+### [Topic 2.3: Introduction to OpenShift](README.md#introduction-to-openshift)
 
 ## IBM Cloud Pak for Integration
 
@@ -28,14 +30,10 @@ Several customer may also request that the cluster would not have internet acces
 
 For the purpose of this workshop, we will be using IBM Cloud Pak for Integration on IBM ROKS
 
-### [Topic 2.2: Introduction to Cluster](README.md#introduction-to-cluster)
-
 ## Introduction to Cluster
 
 If you're completely new to the concept of clusters, do follow the quick and easy tutorial [here](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_tutorial) to learn more
 > With Red Hat® OpenShift® on IBM Cloud®, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the advantages of a managed offering for your cluster infrastructure environment, while using the Red Hat OpenShift tooling and catalog that runs on Red Hat Enterprise Linux for your app deployments.
-
-### [Topic 2.3: Introduction to OpenShift](README.md#introduction-to-openshift)
 
 ## Introduction to OpenShift
 

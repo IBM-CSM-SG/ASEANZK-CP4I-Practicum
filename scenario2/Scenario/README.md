@@ -26,9 +26,9 @@
 
 ## Challenge and Approach
 
-Your team has five days to document your approach to a Solution to the customers business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
+Your team has 3 days to document your approach to a Solution to the customers business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
 
-**Day 5**: Demonstrate your solution to whole class
+**Day 3**: Demonstrate your solution to whole class
 
 [Go back to -> Table of Contents](../README.md)
 

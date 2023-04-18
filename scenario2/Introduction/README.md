@@ -26,7 +26,7 @@ In general, you can have one of the following clusters:
 
 Several customer may also request that the cluster would not have internet access (i.e **restricted network or airgapped**). Although most can be fulfilled with IPI airgapped cluster, some specific deployment may need to be UPI.
 
-For the purpose of this workshop, we will be installing IBM Cloud Pak for Integration on IBM ROKS
+For the purpose of this workshop, we will be using IBM Cloud Pak for Integration on IBM ROKS
 
 [Go back to -> Table of Contents](../README.md)
 

@@ -1,9 +1,6 @@
-# Environment Setup
 
-### [Topic 4.1: Introduction to Cluster](README.md#introduction-to-cluster)
-### [Topic 4.2: Introduction to OpenShift](README.md#introduction-to-openshift)
-### [Topic 4.3: Install CP4I Operators](README.md#install-cp4i-operators)
-### [Topic 4.4: Reference](README.md#reference)
+### [Topic 2.2: Introduction to Cluster](README.md#introduction-to-cluster)
+### [Topic 2.23: Introduction to OpenShift](README.md#introduction-to-openshift)
 
 ## Introduction to Cluster
 

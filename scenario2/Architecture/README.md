@@ -66,4 +66,4 @@ Applications can publish messages to many subscribers over multicast.
 
 [Go back to -> Table of Contents](../README.md)
 
-[Go to next topic -> Environment Setup](../Environment/README.md)
+[Go to next topic -> Configuration](../Configuration/README.md)

@@ -9,6 +9,9 @@
 ### [2: Introduction](/scenario2/Introduction/README.md)
 
  -  [2.1: Cloud Pak for Integration](/scenario2/Introduction/README.md#ibm-cloud-pak-for-integration)
+ -  [2.2: Introduction to Cluster](/scenario2/Environment/README.md#introduction-to-cluster)
+ -  [2.3: Introduction to OpenShift](/scenario2/Environment/README.md#introduction-to-openshift)
+
 
 ### [3: Solution Architecture](/scenario2/Architecture/README.md)
 
@@ -16,11 +19,6 @@
  -  [3.2: Detailed Solution Flow](/scenario2/Architecture/README.md#detailed-solution-flow)
  -  [3.3: List of Software Products Used In Scenario2](/scenario2/Architecture/README.md#list-of-software-products-used-in-scenario2)
 
-### [4: Environment Setup](/scenario2/Environment/README.md)
-
- -  [4.1: Introduction to Cluster](/scenario2/Environment/README.md#introduction-to-cluster)
- -  [4.2: Introduction to OpenShift](/scenario2/Environment/README.md#introduction-to-openshift)
- -  [4.3: Environment Setup Reference](/scenario2/Environment/README.md#environment-setup-reference)
 
 ### [5: Installation](/scenario2/Installation/README.md)
 

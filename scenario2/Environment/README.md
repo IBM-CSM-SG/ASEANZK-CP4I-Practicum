@@ -22,13 +22,6 @@ This is the high level OpenShift Container Platform overview.
 
 For developers, OpenShift has two different ways of enabling them to work with their platform. They can take advantage of either the CLI or a web console. 
 
-## Environment Setup Reference
-
-Cloud Pak for Integration ROKS cluster can be provisioned from IBMDemos for demo purposes, self-learning or Proof of Concept projects. The following pages have been added for reference purposes:
-
-- [Create a ROKS cluster in IBM Cloud](Cluster-ROKS/README.md)
-- [Install Cloud Pak for Integration on ROKS Cluster](CP4I-on-ROKS/README.md)
-
 [Go back to -> Table of Contents](../README.md)
 
-[Go to next topic -> Installation](../Installation/README.md)
+[Go to next topic -> Configuration](../Configuration/README.md)

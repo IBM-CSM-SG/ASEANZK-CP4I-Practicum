@@ -64,4 +64,4 @@ If you are new to Operators, follow [this link](https://www.ibm.com/docs/en/open
 
 [Go back to -> Table of Contents](../README.md)
 
-[Go to next topic -> Configuration](../Configuration/README.md)
+

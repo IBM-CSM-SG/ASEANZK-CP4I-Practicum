@@ -9,8 +9,8 @@
 ### [2: Introduction](/scenario2/Introduction/README.md)
 
  -  [2.1: Cloud Pak for Integration](/scenario2/Introduction/README.md#ibm-cloud-pak-for-integration)
- -  [2.2: Introduction to Cluster](/scenario2/Environment/README.md#introduction-to-cluster)
- -  [2.3: Introduction to OpenShift](/scenario2/Environment/README.md#introduction-to-openshift)
+ -  [2.2: Introduction to Cluster](/scenario2/Introduction/README.md#introduction-to-cluster)
+ -  [2.3: Introduction to OpenShift](/scenario2/Introduction/README.md#introduction-to-openshift)
 
 
 ### [3: Solution Architecture](/scenario2/Architecture/README.md)

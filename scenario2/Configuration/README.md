@@ -1,33 +1,33 @@
 # IBM Cloud Pak for Integration - Configuration
 
-[**6.1. High Level Architecture**](#_Toc105518919)
+[**4.1. High Level Architecture**](#_Toc105518919)
 
-[**6.2. Prepare Client Tools**](#_Toc105518920)
+[**4.2. Prepare Client Tools**](#_Toc105518920)
 
-- [**6.2.1 IBM App Connect Enterprise (ACE) Toolkit Setup**](#_Toc105518921)
-- [**6.2.2 Openshift Command Line Interface (CLI) Setup**](#_Toc105518922)
-- [**6.2.3 Mailtrap SMTP Setup**](#_Toc105518923)
+- [**4.2.1 IBM App Connect Enterprise (ACE) Toolkit Setup**](#_Toc105518921)
+- [**4.2.2 Openshift Command Line Interface (CLI) Setup**](#_Toc105518922)
+- [**4.2.3 Mailtrap SMTP Setup**](#_Toc105518923)
 
-[**6.3. Messaging Queue (MQ)**](#_Toc105518924)
+[**4.3. Messaging Queue (MQ)**](#_Toc105518924)
 
-- [**6.3.1 Create Queue Manager**](#_Toc105518925)
-- [**6.3.2 Create Queue**](#_Toc105518926)
-- [**6.3.3 Configure Default Channel Security**](#_Toc105518927)
+- [**4.3.1 Create Queue Manager**](#_Toc105518925)
+- [**4.3.2 Create Queue**](#_Toc105518926)
+- [**4.3.3 Configure Default Channel Security**](#_Toc105518927)
 
-[**6.4. Integration Dashboard**](#_Toc105518928)
+[**4.4. Integration Dashboard**](#_Toc105518928)
 
-[**6.5. Integration - ACE to MQ**](#_Toc105518929)
-- [**6.5.1 Prepare - Asset into IBM ACE Toolkit**](#_Toc105518930)
-- [**6.5.2 Build - BAR File**](#_Toc105518931)
-- [**6.5.3 Deploy - Create a local integration server**](#_Toc105518932)
+[**4.5. Integration - ACE to MQ**](#_Toc105518929)
+- [**4.5.1 Prepare - Asset into IBM ACE Toolkit**](#_Toc105518930)
+- [**4.5.2 Build - BAR File**](#_Toc105518931)
+- [**4.5.3 Deploy - Create a local integration server**](#_Toc105518932)
 
-[**6.6. API Connect (APIC)**](#_Toc105518933)
+[**4.6. API Connect (APIC)**](#_Toc105518933)
 
-- [**6.6.1 Cloud Manager (API Management Administration)**](#_Toc105518934)
+- [**4.6.1 Cloud Manager (API Management Administration)**](#_Toc105518934)
   - [Create Organization](#create-organization)
   - [Configure SMTP for notifications](#configure-smtp-for-notifications)
   - [Configure admin email id](#configure-admin-email-id)
-- [**6.6.2 API Manager (API Management)**](#_Toc105518938)
+- [**4.6.2 API Manager (API Management)**](#_Toc105518938)
   - [Develop API](#develop-api)
   - [Configure API](#configure-api)
   - [Develop Product](#develop-product)
@@ -61,21 +61,36 @@ link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-downloa
 <img src="./media/image2.png" style="width:6.26806in;height:2.87361in"
 alt="Graphical user interface, text, application, Teams Description automatically generated" />
 
-The version used in this practicum is 12.0.4
+The version used in this practicum is 12.0.8
 
-<img src="./media/image3.png"
+<img src="./media/image3.jpeg"
 style="width:6.26806in;height:0.70139in" />
 
-<img src="./media/image4.png" style="width:6.26806in;height:3.37014in"
+<img src="./media/image3.1.jpeg"
+style="width:6.26806in;height:0.70139in" />
+
+<img src="./media/image4.jpeg" style="width:6.26806in;height:3.37014in"
 alt="Table Description automatically generated" />
 
 Complete the installation through the installer package you just
-downloaded for your OS. eg: 12.0.4.0-ACE-MAC64-DEVELOPER-UNSIGNED. You
+downloaded for your OS. eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You
 can use the IBM ACE Installation page as a guide to complete the
 installation.
 
+<img src="./media/image4.1.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.2.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.3.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.4.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.5.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.6.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.7.jpeg" style="width:6in;height:4in" />
+
+
 Once installed, open the installed ACE toolkit. A view similar to the
 screenshot below will launch.
+
+<img src="./media/image-xx-0.jpeg" style="width:8in;height:4in"
+alt="Table Description automatically generated" />
 
 <img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in"
 alt="Table Description automatically generated" />
@@ -94,7 +109,7 @@ alt="Graphical user interface, text, application Description automatically gener
 
 Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. See the below URL for more details.
 
-https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html 
+https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html 
 
 <span id="_Toc105518923" class="anchor"></span>**Mailtrap SMTP Setup**
 

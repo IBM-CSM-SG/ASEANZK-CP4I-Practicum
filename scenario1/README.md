@@ -5,12 +5,90 @@
 
 ## Table of Contents:
 
-### [Topic 1: Introduction and Scenario Details](/scenario1/Introduction.md)
-### [Topic 2: Solution Architecture and List of Products Used](/scenario1/Architecture/README.md)
-### [Topic 3: Introduction to Cluster](/scenario1/config/IntroductionRHCluster.md)
-### Topic 4: Solution Build
+### [Topic 1: Introduction and Scenario Details](#ibm-cp4i-scenaro-1-introduction)
+### [Topic 2: Solution Architecture and List of Products Used](#solution-architecture)
+### [Topic 3: Introduction to Cluster](#introduction-to-cluster)
+### [Topic 4: Solution Build](#solution-build)
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1: Event Streams](/scenario1/SolutionBuild/IBMEventStreams#solution-build----ibm-event-stream)
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.2: App Connect](/scenario1/SolutionBuild/IBMAppConnect#ibm-app-connect)
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.3: Creating Your Rest API](/scenario1/RestAPI/RestAPI.md)
-### [Topic 5: Conclusion](/scenario1/Conclusion/conclusion.md#conclusion)
+### [Topic 5: Conclusion](#conclusion)
 
+###############################################################################################
+
+# IBM CP4I Scenaro 1 Introduction
+
+# Scenario 1 Description 
+
+- ABC are a Medium sized bank that offers Investments to its high value customers. The bank receive FX (Foreign Exchange) data from a 3rd party via a feed.
+- The data from this 3rd party feed is removed once it reaches an age of two weeks.
+- As part of a new program at the bank they want to offer access to FX data up to 12 months old via a mobile app to their brokers. The raw data is not in the format required for the business users.
+- The Bank historically use IIB and MQ and have bought CP4I. They have also setup a test system to investigate the use of OpenShift and CloudPaks.
+
+![Scenario 1](img/01-scenario-diagram.png)
+
+### **Challanges**
+Your team have (3) days to document your approach to a Solution to the customers business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
+Day 3: Demonstrate your solution to whole class
+
+## Predefined Inboud FX Data
+Users can design and construct their own user interface for the FX data inbound. If you may need a helping hand with this please review a sample that was precreated for this exercise [here](/scenario1/Scenario/Interfaces.md).
+
+# Solution Architecture
+## High Level Architecture
+
+<img src="img/high-level-architecture-diagram.png" width=600 height=480/>
+
+- Assume we pull FX data from 3rd party application in XML Format and need to be transformed to the format required for the business users. We need an **Application Integration** capabilities for it
+- **Event Streaming** will add resiliency to the system and to persist data for 12 month.
+- **API Management** will manage and expose internal APIs to the broker apps
+
+## Detailed Solution Flow
+
+<img src="img/detailed-solution.png" width=600 height=480/>
+
+1. Inside **IBM App Connect Enterprise** there will be an application that pull the data periodically, transform it to the format required by the business users and publish it in an **IBM Event Streams** topic with specific currency and event life time (12 months). 
+2. Second application will be created to query FX data from Topic containing FX data..
+3. Query FX flow will be published by **IBM API Connect**, to be consumed by the broker apps
+
+## List of Software Products Used In Scenario
+
+<img src="img/cloud-pak-stack.png" width=800 height=480/>
+
+The Cloud Pak for Integration services that we will be use are:
+- IBM App Connect Enterprise
+- IBM Event Streams
+- IBM API Connect
+
+### [Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
+
+# Introduction to Cluster
+
+If you're completely new to the concept of clusters, do follow the quick and easy tutorial [here](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_tutorial) to learn more
+> With Red Hat® OpenShift® on IBM Cloud®, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the advantages of a managed offering for your cluster infrastructure environment, while using the Red Hat OpenShift tooling and catalog that runs on Red Hat Enterprise Linux for your app deployments.
+
+## Introduction to Openshift
+
+OpenShift is a platform that allows you to run containerized applications and workloads and is powered by Kubernetes. It is an offering that comes with Red Hat support, regardless of where you choose to run your applications and workloads. 
+
+One of the big advantages of OpenShift is being able to take advantage of public and private resources which includes bare metal or virtualized hardware whether it is on-premise or on a cloud provider. 
+
+<img src="img/openshift-overview.png" width=1000 height=480/>
+
+This is the high level OpenShift Container Platform overview.
+
+For developers, OpenShift has two different ways of enabling them to work with their platform. They can take advantage of either the CLI or a web console. 
+
+### [Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
+
+
+# Solution Build
+## [Event Streams](/scenario1/SolutionBuild/IBMEventStreams/README.md)
+## [App Connect](/scenario1/SolutionBuild/IBMAppConnect/README.md)
+## [Creating Your Rest API](/scenario1/RestAPI/RestAPI.md)
+
+
+# Conclusion
+The above completes details for setup, installation and configuration of Cloud Pak for Integration for Scenario 1. As we conclude our work on the Practicum, you will now be well acquainted with the basic fundamentals and usage of Cloud Pak for Integration. This will assist you in your journey to Modernising Applications and keep up to speed with the technology and trends.
+
+### [Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)

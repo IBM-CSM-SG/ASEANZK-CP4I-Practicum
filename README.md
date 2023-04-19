@@ -34,7 +34,7 @@
 <tr class="odd">
 <td><p><u>
 
-### [Scenario1](/scenario1/README.md)
+## [Scenario1](/scenario1/README.md)
 </u></p>
 </td>
 <td>
@@ -58,7 +58,7 @@ The Bank historically use IIB and MQ and have bought CP4I. They have also setup 
 <td>
 <p><u>
 
-### [Scenario2](/scenario2/README.md)
+## [Scenario2](/scenario2/README.md)
 </u></p>
 </td>
 <td>
@@ -92,7 +92,7 @@ Each transaction should trigger events that can be audited or based on business 
 <tr class="odd">
 <td><p><u>
 
-### [Scenario3](/scenario3/README.md)
+## [Scenario3](/scenario3/README.md)
 </u></p>
 </td>
 <td>

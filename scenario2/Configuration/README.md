@@ -43,13 +43,11 @@ Architecture**
 Below is the high level architecture that we plan to implement as part
 of this scenario.
 
-<img src="./media/image1.png" style="width:3.375in;height:3.01389in"
-alt="Diagram Description automatically generated" />
+<img src="./media/image1.png" style="width:3.375in;height:3.01389in" />
 
 <span id="_Toc105518920" class="anchor"></span>**Prepare Client Tools**
 
-<span id="_Toc105518921" class="anchor"></span>**IBM App Connect
-Enterprise (ACE) Toolkit Setup**
+<span id="_Toc105518921" class="anchor"></span>**IBM App Connect Enterprise (ACE) Toolkit Setup**
 
 Install IBM App Connect Enterprise for developers (also called ACE).
 Make sure to select the correct download package for your OS (Windows,
@@ -89,23 +87,19 @@ installation.
 Once installed, open the installed ACE toolkit. A view similar to the
 screenshot below will launch.
 
-<img src="./media/image-xx-0.jpeg" style="width:8in;height:4in"
-alt="Table Description automatically generated" />
+<img src="./media/image-xx-0.jpeg" style="width:8in;height:4in" />
 
-<img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in"
-alt="Table Description automatically generated" />
+<img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in" />
 
 <span id="_Toc105518922" class="anchor"></span>**Openshift Command Line Interface (CLI) Setup**
 
 Download Openshift Command line tools (OC Client)
 
-<img src="./media/image5.png" style="width:6.26806in;height:1.14375in"
-alt="Background pattern Description automatically generated" />
+<img src="./media/image5.png" style="width:6.26806in;height:1.14375in" />
 
 Download OC Client for your platform
 
-<img src="./media/image6.png" style="width:6.26806in;height:2.10486in"
-alt="Graphical user interface, text, application Description automatically generated" />
+<img src="./media/image6.png" style="width:6.26806in;height:2.10486in" />
 
 Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. See the below URL for more details.
 
@@ -127,96 +121,89 @@ User: 2ef08bdc18285b
 Password: 11xxxxxx06b8da
 
 <img src="./media/image7.png" style="width:5.31523in;height:3.09751in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 You can also check all your emails under MyInbox in mailtrap web site.
 
 <img src="./media/image8.png" style="width:6.26806in;height:2.12222in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 <span id="_Toc105518924" class="anchor"></span>**Messaging Queue (MQ)**
 
 <span id="_Toc105518925" class="anchor"></span>**Create Queue Manager**
 
-Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift
-Routes.
+Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift Route cp4d or as per given by the instructor.
 
 <img src="./media/image9.png" style="width:6.26806in;height:4.07639in"
-alt="A screenshot of a computer Description automatically generated" />
+ />
 
 Login to IBM Cloud Pak using the IBM provided credentials (admin only).
 
 <img src="./media/image10.png" style="width:6.26806in;height:4.07639in"
 alt="A screenshot of a computer Description automatically generated with medium confidence" />
 
-Use IBM provided Authentication (admin only) and logged in with admin /
-32 char password that we gave while installing CP4I.
+Use IBM provided Authentication (admin only) and log in with admin and its password.
 
 <img src="./media/image11.png" style="width:6.26806in;height:4.07639in"
-alt="A screenshot of a computer Description automatically generated" />
+ />
 
-Go to IBM Cloud Pak Home, click on **Messaging** as highlighted in the
+Go to IBM Cloud Pak Home. You can verify the currently added/configure instances from Menu -> Integration Instances.
+
+<img src="./media/image12.png" style="width:6.26806in;height:3.42431in"/>
+
+Click on **Messaging** as highlighted in the
 screen below:
 
-<img src="./media/image12.png" style="width:6.26806in;height:3.42431in"
-alt="Graphical user interface, website Description automatically generated" />
+<img src="./media/image12.png" style="width:6.26806in;height:3.42431in" />
 
 This will redirect to a Messaging screen as below. Click on Create an
 instance to create a queue manager.
 
-<img src="./media/image13.png" style="width:6.26806in;height:3.16181in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image13.png" style="width:6.26806in;height:3.16181in" />
 
 Select **Quick start** option from this screen, and click on Next.
 
-<img src="./media/image14.png" style="width:6.26806in;height:3.16181in"
-alt="Graphical user interface, text, application Description automatically generated" />
+<img src="./media/image14.png" style="width:6.26806in;height:3.16181in" />
 
 Modify the details for your queue manager as below:
 
 -   **License acceptance** – Toggle the button from OFF to ON state 
 
-<img src="./media/image15.png" style="width:6.26806in;height:3.15903in"
-alt="Graphical user interface, text, application Description automatically generated" />
+<img src="./media/image15.png" style="width:6.26806in;height:3.15903in" />
 
 -   Select **Type of availability** from dropdown as SingleInstance
 
-<img src="./media/image16.png" style="width:6.26806in;height:3.35347in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+<img src="./media/image16.png" style="width:6.26806in;height:3.35347in" />
 
 -   Select **Type of Volume** from the drop down as persistent-claim 
 
 <img src="./media/image17.png" style="width:6.26806in;height:3.35347in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Lastly click on **Create** from the top right corner and queue manager
 will be created. You will be redirected to a new page, showing the
 details of your newly created Queue manager.
 
-<img src="./media/image18.png" style="width:6.26806in;height:3.34444in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image18.png" style="width:6.26806in;height:3.34444in" />
 
 Click on queue name --\> It should open up MQ Console
 
-<img src="./media/image19.png" style="width:6.26806in;height:3.34444in"
-alt="Graphical user interface, website Description automatically generated" />
+<img src="./media/image19.png" style="width:6.26806in;height:3.34444in" />
 
 Click on manage --\> quickstart to open queue manager
 
-<img src="./media/image20.png" style="width:6.26806in;height:3.34444in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image20.png" style="width:6.26806in;height:3.34444in" />
 
 <span id="_Toc105518926" class="anchor"></span>**Create Queue**
 
 Click on Create icon to create the queue.
 
 <img src="./media/image21.png" style="width:6.26806in;height:3.52569in"
-alt="A screenshot of a computer Description automatically generated" />
+ />
 
 Select a Local Queue.
 
-<img src="./media/image22.png" style="width:6.26806in;height:3.52569in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image22.png" style="width:6.26806in;height:3.52569in" />
 
 Provide the details of the queue and click **create**.
 
@@ -226,7 +213,7 @@ alt="Graphical user interface, application, Word Description automatically gener
 Queue will be created shortly.
 
 <img src="./media/image24.png" style="width:6.26806in;height:3.52569in"
-alt="A screenshot of a computer Description automatically generated" />
+ />
 
 <span id="_Toc105518927" class="anchor"></span>**Configure Default
 Channel Security**
@@ -234,7 +221,7 @@ Channel Security**
 Copy Login Commands to login to oc client.
 
 <img src="./media/image25.png" style="width:6.26806in;height:1.12847in"
-alt="Background pattern Description automatically generated" />
+ />
 
 Login to Openshift cluster using oc client.
 
@@ -282,34 +269,29 @@ All valid MQSC commands were processed.
 
 Navigate to Administration -\> Integration Instances.
 
-<img src="./media/image27.png" style="width:6.26806in;height:4.07639in"
-alt="A screenshot of a computer Description automatically generated" />
+<img src="./media/image27.png" style="width:6.26806in;height:4.07639in" />
 
 Click on the hamburger on top left --\> click Integration Instances
 
-<img src="./media/image28.png" style="width:6.26806in;height:1.48333in"
-alt="Text Description automatically generated" />
+<img src="./media/image28.png" style="width:6.26806in;height:1.48333in" />
 
 Click “Create Instance” on top right of the page
 
-<img src="./media/image29.png" style="width:6.26806in;height:1.80625in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image29.png" style="width:6.26806in;height:1.80625in" />
 
 Select Integration Dashboard and click next
 
-<img src="./media/image30.png" style="width:6.26806in;height:1.54167in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image30.png" style="width:6.26806in;height:1.54167in" />
 
 Select either Production or Quick Start --\> click next
 
-<img src="./media/image31.png" style="width:6.26806in;height:2.42361in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image31.png" style="width:6.26806in;height:2.42361in" />
 
 Key-in the details of the environment and proceed to create the
 dashboard.
 
 <img src="./media/image32.png" style="width:6.26806in;height:4.71111in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 Upon successful creation of Integration Dashboard below message will
 appear on the browser.
@@ -317,8 +299,7 @@ appear on the browser.
 <img src="./media/image33.png" style="width:6.26806in;height:1.31319in"
 alt="Graphical user interface Description automatically generated with medium confidence" />
 
-<span id="_Toc105518929" class="anchor"></span>**Integration - ACE to
-MQ**
+<span id="_Toc105518929" class="anchor"></span>**Integration - ACE to MQ**
 
 Integration has the following components:
 
@@ -339,23 +320,20 @@ alt="Graphical user interface, text, application, chat or text message Descripti
 Give it a name and select the specification as Swagger 2.0 Click Finish.
 
 <img src="./media/image35.png" style="width:6.26806in;height:3.23611in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Open the REST API Description. In the right Pane, Under Resources, Click on + icon to
 create a resource.
 
-<img src="./media/image36.png" style="width:6.26806in;height:3.23611in"
-alt="Graphical user interface, text Description automatically generated" />
+<img src="./media/image36.png" style="width:6.26806in;height:3.23611in" />
 
 Enter the resource path and select the operation as post. Click Apply.
 
-<img src="./media/image37.png" style="width:6.26806in;height:3.28125in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image37.png" style="width:6.26806in;height:3.28125in" />
 
 A New resource will be created.
 
-<img src="./media/image38.png" style="width:6.26806in;height:2.93264in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image38.png" style="width:6.26806in;height:2.93264in" />
 
 Click on the subflow icon or this new resource.
 
@@ -366,7 +344,7 @@ New subflow editor will open. Drag the IBM MQ -> MQ Output Connector from the
 transformation section in the left toolbox.
 
 <img src="./media/image40.png" style="width:6.26806in;height:2.94306in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Connect the Boxes together.
 
@@ -376,30 +354,24 @@ alt="Graphical user interface Description automatically generated" />
 Find the MQ Queue Manager Service IP address from the “openshift
 console” or oc client (oc get svc \| grep -i mq).
 
-<img src="./media/image42.png" style="width:6.19444in;height:0.80556in"
-alt="Text Description automatically generated with medium confidence" />
+<img src="./media/image42.png" style="width:6.19444in;height:0.80556in" />
 
-<img src="./media/image43.png" style="width:6.26806in;height:3.50833in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image43.png" style="width:6.26806in;height:3.50833in" />
 
-Note the default System Server Connection Channel name
-(SYSTEM.DEF.SVRCONN).
+Note the default System Server Connection Channel name (SYSTEM.DEF.SVRCONN).
 
-<img src="./media/image44.png" style="width:6.26806in;height:3.47847in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image44.png" style="width:6.26806in;height:3.47847in" />
 
-Click on the MQ Output and configure the MQ Details. Enter the Queue
-Name.
+Click on the MQ Output and configure the MQ Details. Enter the Queue Name.
 
-<img src="./media/image45.png" style="width:6.26806in;height:2.93333in"
-alt="Graphical user interface, text, application Description automatically generated" />
+<img src="./media/image45.png" style="width:6.26806in;height:2.93333in" />
 
 Enter the MQ Connection Details like Queue Manager Name, Queue Manager
 Host Name (Service IP), Listener Port no (1414 Default), Connection
 Channel Name (default – SYSTEM.DEF.SVRCONN).
 
 <img src="./media/image46.png" style="width:6.26806in;height:4.87153in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 <span id="_Toc105518931" class="anchor"></span>**Build – BAR File**
 
@@ -407,25 +379,25 @@ Add a new BAR file in the project to package and export the
 configuration.
 
 <img src="./media/image47.png" style="width:4.14412in;height:4.90741in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Enter the bar file details and click Finish.
 
 <img src="./media/image48.png" style="width:4.40476in;height:3.77426in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 Include the newly created project. Add the Build options and Click Save.
 
 <img src="./media/image49.png" style="width:6.26806in;height:2.37639in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Rebuild BAR and save file one more time.
 
 <img src="./media/image50.png" style="width:6.26806in;height:2.02083in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 <img src="./media/image51.png" style="width:4.02778in;height:1.30556in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 <img src="./media/image52.png" style="width:3.875in;height:1.41667in"
 alt="Graphical user interface, text, application, chat or text message Description automatically generated" />
@@ -433,12 +405,12 @@ alt="Graphical user interface, text, application, chat or text message Descripti
 Check the properties of the generated bar file.
 
 <img src="./media/image53.png" style="width:2.61111in;height:4.86111in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Copy the bar file path or open it in finder window.
 
 <img src="./media/image54.png" style="width:5.90278in;height:3.95833in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 <span id="_Toc105518932" class="anchor"></span>**Deploy - Create an integration server**
 
@@ -446,7 +418,7 @@ Proceed further to create a Integration Server in CP4I Console. You may do
 so by using the navigation Manu - Integrations. Click on Deploy Integrations.
 
 <img src="./media/image55.png" style="width:6.26806in;height:3.67361in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click Deploy a Server and Chose a Quick Start Plan. Click Next.
 
@@ -466,23 +438,23 @@ alt="Graphical user interface, text, application, Teams Description automaticall
 Enter the Integration Server Name, Select License. Click Create.
 
 <img src="./media/image59.png" style="width:6.26806in;height:3.40556in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 The Integration Server will be created and ready shortly. You may
 refresh the page to check on the readiness status update.
 
 <img src="./media/image60.png" style="width:5.42857in;height:2.43762in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Click on the Server once its ready.
 
 <img src="./media/image61.png" style="width:2.62963in;height:2.90407in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click on the API.
 
 <img src="./media/image62.png" style="width:3.05952in;height:2.55006in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click on the <u>post/AccountEnquiry.</u>
 
@@ -516,7 +488,7 @@ alt="Rectangle Description automatically generated with low confidence" />
 Create an instance of the API Connect (API Management) .
 
 <img src="./media/image68.png" style="width:6.26806in;height:4.07639in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Chose the basic one node plan. Click Next.
 
@@ -526,7 +498,7 @@ alt="Graphical user interface, application, Word Description automatically gener
 Enter the API instance Name and accept the license. Enter the license ID.
 
 <img src="./media/image70.png" style="width:6.26806in;height:4.07639in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 The matching Storage Class will be automatically selected. Click Finish.
 
@@ -540,7 +512,7 @@ The following API Connect Instances will be created in about 45 minutes.
 
 -   **API Management Administration** is where we can create organization, configure authentication settings, SMTP settings etc .
 
-<img src="./media/image72.png" style="width:6.26806in;height:2.44097in" alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image72.png" style="width:6.26806in;height:2.44097in"  />
 
 <span id="_Toc105518934" class="anchor"></span>**Cloud Manager (API Management Administration)**
 
@@ -563,13 +535,13 @@ alt="Graphical user interface, text, application, Teams Description automaticall
 Enter the Organization Name.
 
 <img src="./media/image75.png" style="width:6.26806in;height:3.81736in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Change the User Registry to Common Services User Registry. Enter the
 existing user name as admin. Click Create.
 
 <img src="./media/image76.png" style="width:6.26806in;height:3.47361in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 <img src="./media/image77.png" style="width:6.26806in;height:0.99074in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
@@ -579,7 +551,7 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Click on Resource’s link in the left pane. Click on Notification Link in the left pane.
 
 <img src="./media/image78.png" style="width:6.26806in;height:3.80417in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click on Create button to create a new SMTP Server.
 
@@ -612,7 +584,7 @@ Also update the same email smtp settings for the Dummy mail server as
 well.
 
 <img src="./media/image84.png" style="width:6.26806in;height:1.34653in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 #### Configure admin email id
 
@@ -626,7 +598,7 @@ Update the email id for the current account. Very Important. Otherwise
 later you will not be able to create a portal service under a catalog.
 
 <img src="./media/image86.png" style="width:6.26806in;height:2.83889in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 <span id="_Toc105518938" class="anchor"></span>**API Manager (API
 Management)**
@@ -649,7 +621,7 @@ Click on Develop APIs and products. Create a new API. This will
 encapsulate the API created on the ACE.
 
 <img src="./media/image89.png" style="width:6.26806in;height:1.47917in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Chose the default option "From Target Service". Click Next.
 
@@ -659,7 +631,7 @@ alt="Graphical user interface Description automatically generated with medium co
 Provide the details for Target service.
 
 <img src="./media/image91.png" style="width:6.26806in;height:4.67431in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Note the Target Service URL from Integration Dashboard that we created
 earlier.
@@ -674,7 +646,7 @@ path using which the API can be called and it will just redirect the
 request to Target Service URL.
 
 <img src="./media/image93.png" style="width:6.26806in;height:4.67431in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click Next.
 
@@ -691,7 +663,7 @@ alt="A picture containing background pattern Description automatically generated
 After Clicking Edit API, API Design Screen will open.
 
 <img src="./media/image96.png" style="width:6.26806in;height:4.67431in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 As we are exposing only post service in the backend we can delete the
 other operations from here.
@@ -717,7 +689,7 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Enter the details as below.
 
 <img src="./media/image101.png" style="width:6.26806in;height:4.79028in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Client Secret is added as security schema. Click Save.
 
@@ -732,12 +704,12 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Select both parameter and Click Submit.
 
 <img src="./media/image104.png" style="width:6.26806in;height:2.27083in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Click Save.
 
 <img src="./media/image105.png" style="width:6.26806in;height:2.58958in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Now make this API online so that it will be published in a development
 sandbox.
@@ -746,7 +718,7 @@ sandbox.
 alt="Graphical user interface Description automatically generated" />
 
 <img src="./media/image107.png" style="width:2.73611in;height:0.625in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 #### Develop Product
 
@@ -759,7 +731,7 @@ Now we need to package this API into a product. One product can have
 multiple APIs.
 
 <img src="./media/image109.png" style="width:6.26806in;height:1.54722in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click Add -\> Product.
 
@@ -774,12 +746,12 @@ alt="A picture containing background pattern Description automatically generated
 Give a product Name. Click Next.
 
 <img src="./media/image112.png" style="width:6.26806in;height:2.67778in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Select an API to be added into this product. Click Next.
 
 <img src="./media/image113.png" style="width:6.26806in;height:2.17222in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Review the plan details. You can more plans by clicking on Add Button.
 Can define the new plan name and rate limit (eg. API Calls Frequency). You can add arbitary plans and API Calls Frequency.
@@ -790,7 +762,7 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Click Next After adding the required plans.
 
 <img src="./media/image115.png" style="width:6.26806in;height:4.46736in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click Next with default options.
 
@@ -800,18 +772,18 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Click Done. We will publish it separately later after creating catalog.
 
 <img src="./media/image117.png" style="width:6.26806in;height:2.05764in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 New product is added with the new API.
 
 <img src="./media/image118.png" style="width:6.26806in;height:1.68611in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Go to API Manager "Manage Settings" to update the email Notification
 settings.
 
 <img src="./media/image119.png" style="width:6.26806in;height:3.42431in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Go to "Notifications". Click Edit.
 
@@ -821,10 +793,10 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Configure the sender name and email address.
 
 <img src="./media/image121.png" style="width:6.26806in;height:1.81042in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 <img src="./media/image122.png" style="width:6.26806in;height:1.81042in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 #### Create Catalog
 
@@ -846,15 +818,15 @@ alt="Graphical user interface, application, website Description automatically ge
 Enter a name and Click Create
 
 <img src="./media/image125.png" style="width:6.26806in;height:2.72431in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Open the new Catalog and navigate to Catalog settings.
 
 <img src="./media/image126.png" style="width:6.26806in;height:1.94306in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 <img src="./media/image127.png" style="width:6.26806in;height:2.99097in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 Create a developer portal here. Click Create. If the email if is not updated for the logged in user
 account, then there will be an error mentioning so. Update the admin
@@ -868,14 +840,14 @@ alt="Graphical user interface, application, website Description automatically ge
 Select the portal service as "portal-service" and Click Create. 
 
 <img src="./media/image129.png" style="width:6.26806in;height:2.39097in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 It will take a few minutes for the portal service to be ready. You will
 receive an email once its ready to set the password for the portal admin
 account.
 
 <img src="./media/image130.png" style="width:6.26806in;height:2.53403in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Note down the Portal API URL from **Catalog Settings -\> Portal** . eg.
 
@@ -891,7 +863,7 @@ In the original API Manager Window, Now lets publish the product to the new cata
 Go to API Manager Home and click Develop APIs and Products. Go to Products Tab. Select the product settings and click Publish.
 
 <img src="./media/image131.png" style="width:6.26806in;height:2.43472in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Select the new catalog.Click Next. 
 
@@ -910,17 +882,17 @@ with chrome browser with default self-signed certificate settings and
 chrome will prevent the connection.
 
 <img src="./media/image133.png" style="width:6.26806in;height:3.85972in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click on **Create Account** to create a new account.
 
 <img src="./media/image134.png" style="width:6.26806in;height:2.82292in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 You will receive email with activation instructions.
 
 <img src="./media/image135.png" style="width:5.45833in;height:4.51389in"
-alt="Graphical user interface, text, application, email Description automatically generated" />
+ />
 
 The account will be activated and you will be able to login with the
 newid. Sign in with the new id and password.
@@ -931,12 +903,12 @@ alt="Graphical user interface, application, Word Description automatically gener
 Click on Create a new App.
 
 <img src="./media/image137.png" style="width:5.56071in;height:4.78014in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Enter an application Name and click Save.
 
 <img src="./media/image138.png" style="width:5.76829in;height:3.47337in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Once application created successfully, note down the Key and Secret for
 this application. You can not see the Key and Secret for this
@@ -944,7 +916,7 @@ application after this page. Each application will interact with API
 Manager/ACE using this client secret. Click OK.
 
 <img src="./media/image139.png" style="width:6.26806in;height:2.83333in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 -   Key: 81b789b18XXXXXXXXXX069ec1757beb9
 
@@ -973,22 +945,22 @@ alt="Graphical user interface, application, Teams Description automatically gene
 Select the **application** to be subscribed.
 
 <img src="./media/image143.png" style="width:6.26806in;height:2.04861in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 To confirm subscription, click Next.
 
 <img src="./media/image144.png" style="width:6.26806in;height:1.08056in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click Done.
 
 <img src="./media/image145.png" style="width:6.26806in;height:1.08056in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click on **POST /** option under overview, in the left pane.
 
 <img src="./media/image146.png" style="width:6.26806in;height:2.08264in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Click on **Try It** tab to test this API product.
 
@@ -1004,7 +976,7 @@ If you receive an error like below, then it could be because you are
 using any other browser than Firefox. Or the Certificate is not trusted.
 
 <img src="./media/image149.png" style="width:6.26806in;height:2.60694in"
-alt="Graphical user interface, text, application Description automatically generated" />
+ />
 
 Open this URL in the error below in the browser. eg.
 
@@ -1019,7 +991,7 @@ Now You can try to send the API call one more time, you should be able
 to see the response successfully.
 
 <img src="./media/image151.png" style="width:6.26806in;height:2.07639in"
-alt="Graphical user interface, application Description automatically generated" />
+ />
 
 Check in the IBM MQ if this message has been stored in Queue
 Successfully. Go to Integration Instances -\> Messaging instance Name

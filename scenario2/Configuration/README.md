@@ -65,10 +65,8 @@ The version used in this practicum is 12.0.8
 
 <img src="./media/image4.jpeg" style="width:6.26806in;height:3.37014in" />
 
-Complete the installation through the installer package you just
-downloaded for your OS. eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You
-can use the IBM ACE Installation page as a guide to complete the
-installation.
+Complete the installation through the installer package you just downloaded for your OS. 
+eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation page as a guide to complete the installation.
 
 <img src="./media/image4.1.jpeg" style="width:6in;height:4in" />
 <img src="./media/image4.2.jpeg" style="width:6in;height:4in" />

@@ -5,8 +5,6 @@
 
 ## Table of Contents:
 
-### Welcome to CP4I
-
 ### [Topic 1: Introduction and Scenario Details](#ibm-cp4i-scenaro-1-introduction)
 ### [Topic 2: Solution Architecture and List of Products Used](#solution-architecture)
 ### [Topic 3: Introduction to Cluster](#introduction-to-cluster)

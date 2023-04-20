@@ -111,6 +111,8 @@ Place downloaded oc binary file (oc or oc.exe )to the path in variable for your 
 
 https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html 
 
+Alternate URL Reference: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.10/
+
 <span id="_Toc105518923" class="anchor"></span>**Mailtrap SMTP Setup**
 
 Signup for a SMTP account on mailtrap.io. Once logged in, note down your
@@ -248,11 +250,13 @@ oc projects
 
 Run below command to switch to your project.
 
-oc project \<projectname\>
+oc project cp4i
 
 Run below command to see the pod name of the mq queue manager.
 
 oc get pods \| grep -i mq
+
+Note the MQ Queue Manager POD Name. eg. quickstart-cp4i-ibm-mq-0
 
 Run the sample given script to configure the mq security. Make sure that
 you have execution permission on the samples scripts loadmq.sh and
@@ -267,6 +271,12 @@ This script performs:
 -   Disable clientauth security
 
 -   Disable user security on MQ objects level
+
+The above command should succeed with below lines in the end.
+
+94 MQSC commands read.
+No commands have a syntax error.
+All valid MQSC commands were processed.
 
 <span id="_Toc105518928" class="anchor"></span>**Integration Dashboard**
 
@@ -331,7 +341,7 @@ Give it a name and select the specification as Swagger 2.0 Click Finish.
 <img src="./media/image35.png" style="width:6.26806in;height:3.23611in"
 alt="Graphical user interface, text, application Description automatically generated" />
 
-Open the REST API Description. Under Resources, Click on + icon to
+Open the REST API Description. In the right Pane, Under Resources, Click on + icon to
 create a resource.
 
 <img src="./media/image36.png" style="width:6.26806in;height:3.23611in"
@@ -352,7 +362,7 @@ Click on the subflow icon or this new resource.
 <img src="./media/image39.png" style="width:6.26806in;height:2.97986in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
 
-New subflow editor will open. Drag the IBM MQ Connector from the
+New subflow editor will open. Drag the IBM MQ -> MQ Output Connector from the
 transformation section in the left toolbox.
 
 <img src="./media/image40.png" style="width:6.26806in;height:2.94306in"
@@ -430,19 +440,15 @@ Copy the bar file path or open it in finder window.
 <img src="./media/image54.png" style="width:5.90278in;height:3.95833in"
 alt="Graphical user interface, text, application, email Description automatically generated" />
 
-<span id="_Toc105518932" class="anchor"></span>**Deploy - Create a local
-integration server**
+<span id="_Toc105518932" class="anchor"></span>**Deploy - Create an integration server**
 
-Proceed further to create a Local Integration Server in ACE. You may do
-so by using the navigation -
-
-Right click on the Integration Servers --\> Select **Create a local
-Integration Server**
+Proceed further to create a Integration Server in CP4I Console. You may do
+so by using the navigation Manu - Integrations. Click on Deploy Integrations.
 
 <img src="./media/image55.png" style="width:6.26806in;height:3.67361in"
 alt="Graphical user interface, application Description automatically generated" />
 
-Click Create a Server and Chose a Quick Start Plan. Click Next.
+Click Deploy a Server and Chose a Quick Start Plan. Click Next.
 
 <img src="./media/image56.png" style="width:6.26806in;height:2.80347in"
 alt="Graphical user interface, text, application, Teams Description automatically generated" />
@@ -452,7 +458,7 @@ Drag and Drop the newly generated bar file here. Click Next.
 <img src="./media/image57.png" style="width:6.26806in;height:2.47778in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
 
-Click Next.
+Skip any Configuration to be applied this integration. Just Click Next.
 
 <img src="./media/image58.png" style="width:6.26806in;height:2.39167in"
 alt="Graphical user interface, text, application, Teams Description automatically generated" />
@@ -517,32 +523,26 @@ Chose the basic one node plan. Click Next.
 <img src="./media/image69.png" style="width:6.26806in;height:4.07639in"
 alt="Graphical user interface, application, Word Description automatically generated" />
 
-Enter the API instance Name and accept the license. Enter the license
-ID.
+Enter the API instance Name and accept the license. Enter the license ID.
 
 <img src="./media/image70.png" style="width:6.26806in;height:4.07639in"
 alt="Graphical user interface, application Description automatically generated" />
 
-Optionally select the matching Storage Class. Click Finish.
+The matching Storage Class will be automatically selected. Click Finish.
 
-<img src="./media/image71.png"
-style="width:6.26806in;height:4.07639in" />
+<img src="./media/image71.png" style="width:6.26806in;height:4.07639in" />
 
-API Connect Instances will be created.
+The following API Connect Instances will be created in about 45 minutes.
 
 -   **API Managed Enterprise Gateway** is the data power gateway.
 
--   **API Management** is the instance where we can configure/Develop
-    new APIs Products and catalog. (API Manager).
+-   **API Management** is the instance where we can configure/Develop new APIs Products and catalog. (API Manager).
 
--   **API Management Administration** is where we can create
-    organization, configure authentication settings, SMTP settings etc .
+-   **API Management Administration** is where we can create organization, configure authentication settings, SMTP settings etc .
 
-<img src="./media/image72.png" style="width:6.26806in;height:2.44097in"
-alt="Graphical user interface, application Description automatically generated" />
+<img src="./media/image72.png" style="width:6.26806in;height:2.44097in" alt="Graphical user interface, application Description automatically generated" />
 
-<span id="_Toc105518934" class="anchor"></span>**Cloud Manager (API
-Management Administration)**
+<span id="_Toc105518934" class="anchor"></span>**Cloud Manager (API Management Administration)**
 
 #### Create Organization
 
@@ -575,13 +575,13 @@ alt="Graphical user interface, application Description automatically generated" 
 alt="Graphical user interface, application, Teams Description automatically generated" />
 
 #### Configure SMTP for notifications
-
-Click on Resource’s link in the left pane.
+ 
+Click on Resource’s link in the left pane. Click on Notification Link in the left pane.
 
 <img src="./media/image78.png" style="width:6.26806in;height:3.80417in"
 alt="Graphical user interface, application Description automatically generated" />
 
-Click on Notification Link.
+Click on Create button to create a new SMTP Server.
 
 <img src="./media/image79.png" style="width:6.26806in;height:1.80208in"
 alt="Graphical user interface Description automatically generated with medium confidence" />
@@ -598,7 +598,7 @@ and click Send Test Email.
 <img src="./media/image81.png" style="width:4.38889in;height:1.48611in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
 
-The email should be sent successfully.
+The email should be sent successfully. You can verify this only through the mailtrap inbox. It will not land in the actual reciever inbox.
 
 <img src="./media/image82.png" style="width:4.36111in;height:1.45833in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
@@ -651,7 +651,7 @@ encapsulate the API created on the ACE.
 <img src="./media/image89.png" style="width:6.26806in;height:1.47917in"
 alt="Graphical user interface, application Description automatically generated" />
 
-Lets chose the basic one (default) with no validation. Click Next.
+Chose the default option "From Target Service". Click Next.
 
 <img src="./media/image90.png" style="width:6.26806in;height:3.97292in"
 alt="Graphical user interface Description automatically generated with medium confidence" />
@@ -667,7 +667,7 @@ earlier.
 <img src="./media/image92.png" style="width:6.26806in;height:2.28194in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
 
-<http://is-01-toolkit-http-cp4i-practicum-scenario2.cp4intpg-wdc04-mdh7qi-8946bbc006b7c6eb0829d088919818bb-0000.us-east.containers.appdomain.cloud/myequiry/v1/AccountEnquiry>
+example, <http://hostname/MyEquiry/v1/AccountEnquiry>
 
 Enter the title of the API. This will also create an endpoint / base
 path using which the API can be called and it will just redirect the
@@ -750,7 +750,7 @@ alt="Graphical user interface, text, application Description automatically gener
 
 #### Develop Product
 
-Go to Home again and develop API and Products.
+Go to API Manager Home again and click on "Develop API and Products".
 
 <img src="./media/image108.png" style="width:6.26806in;height:3.35208in"
 alt="Graphical user interface, application, website Description automatically generated" />
@@ -782,7 +782,7 @@ Select an API to be added into this product. Click Next.
 alt="Graphical user interface, application Description automatically generated" />
 
 Review the plan details. You can more plans by clicking on Add Button.
-Can define the new plan name and rate limit (eg. API Calls Frequency).
+Can define the new plan name and rate limit (eg. API Calls Frequency). You can add arbitary plans and API Calls Frequency.
 
 <img src="./media/image114.png" style="width:6.26806in;height:3.65in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
@@ -807,13 +807,13 @@ New product is added with the new API.
 <img src="./media/image118.png" style="width:6.26806in;height:1.68611in"
 alt="Graphical user interface, application Description automatically generated" />
 
-Go to API Manager Manage Settings to update the email Notification
+Go to API Manager "Manage Settings" to update the email Notification
 settings.
 
 <img src="./media/image119.png" style="width:6.26806in;height:3.42431in"
 alt="Graphical user interface, application Description automatically generated" />
 
-Go to Notifications.
+Go to "Notifications". Click Edit.
 
 <img src="./media/image120.png" style="width:6.26806in;height:1.81042in"
 alt="Graphical user interface, application, Teams Description automatically generated" />
@@ -856,16 +856,16 @@ alt="Graphical user interface, text, application Description automatically gener
 <img src="./media/image127.png" style="width:6.26806in;height:2.99097in"
 alt="Graphical user interface, text, application, email Description automatically generated" />
 
-Create a developer portal here.
-
-<img src="./media/image128.png" style="width:6.26806in;height:2.99097in"
-alt="Graphical user interface, application, website Description automatically generated" />
-
-Click Create. If the email if is not updated for the logged in user
+Create a developer portal here. Click Create. If the email if is not updated for the logged in user
 account, then there will be an error mentioning so. Update the admin
 user email id from Cloud Manager -\> My Account as explained earlier.
 Also make sure smtp settings are correct under Cloud Manager
 notification settings.
+
+<img src="./media/image128.png" style="width:6.26806in;height:2.99097in"
+alt="Graphical user interface, application, website Description automatically generated" />
+
+Select the portal service as "portal-service" and Click Create. 
 
 <img src="./media/image129.png" style="width:6.26806in;height:2.39097in"
 alt="Graphical user interface, text, application, email Description automatically generated" />
@@ -877,29 +877,33 @@ account.
 <img src="./media/image130.png" style="width:6.26806in;height:2.53403in"
 alt="Graphical user interface, text, application Description automatically generated" />
 
-#### Publish Product
+Note down the Portal API URL from **Catalog Settings -\> Portal** . eg.
 
-Now lets publish the product to the new catalog from API Manager first.
-So it can be visible in this catalog.
-
-<img src="./media/image131.png" style="width:6.26806in;height:2.43472in"
-alt="Graphical user interface, application Description automatically generated" />
-
-Select the new catalog. You can set the catalog visibility to
-Authenticated users. Click Publish. It will be published shortly.
-
-<img src="./media/image132.png" style="width:6.26806in;height:3.93889in"
-alt="Graphical user interface, application, Teams Description automatically generated" />
-
-#### API Connect Developer Portal
+<https://hostname/api-organization/practicum-catalog>
 
 (optional) Once you receive the email to set the password click on that
 link and set the password for the admin account for API Manager.
 
-Note down the Portal API URL from **Catalog Settings -\> Portal** and
-open it in Mozilla Browser. Eg.
+#### Publish Product
 
-<https://apis-minim-27578f6b-portal-web-cp4i-practicum-scenario2.cp4intpg-wdc04-mdh7qi-8946bbc006b7c6eb0829d088919818bb-0000.us-east.containers.appdomain.cloud/api-org-3/practicum-catalog>
+In the original API Manager Window, Now lets publish the product to the new catalog from API Manager first. So it can be visible in this catalog.
+
+Go to API Manager Home and click Develop APIs and Products. Go to Products Tab. Select the product settings and click Publish.
+
+<img src="./media/image131.png" style="width:6.26806in;height:2.43472in"
+alt="Graphical user interface, application Description automatically generated" />
+
+Select the new catalog.Click Next. 
+
+<img src="./media/image132.png" style="width:6.26806in;height:3.93889in"
+alt="Graphical user interface, application, Teams Description automatically generated" />
+
+ You can set the catalog visibility to
+Authenticated users. Click Publish. It will be published shortly.
+
+#### API Connect Developer Portal
+
+Open the Portal API URL as noted above in the browser.
 
 **Note:** Use **Mozilla Browser** only for this as there will be issues
 with chrome browser with default self-signed certificate settings and
@@ -1002,8 +1006,11 @@ using any other browser than Firefox. Or the Certificate is not trusted.
 <img src="./media/image149.png" style="width:6.26806in;height:2.60694in"
 alt="Graphical user interface, text, application Description automatically generated" />
 
-Open this URL in the error below in the browser and accept the
-certificate. Ignore the error.
+Open this URL in the error below in the browser. eg.
+
+https://hostname/api-organization/practicum-catalog/my-account-api/
+
+Accept the certificate. Ignore the error. 
 
 <img src="./media/image150.png"
 style="width:6.26806in;height:0.29722in" />

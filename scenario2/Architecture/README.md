@@ -29,14 +29,6 @@ IBM Cloud Pak for Integration includes a market-leading application integration 
 
 Powerful underlying capabilities facilitate the implementation of even the most complex integration patterns. As a result, data can be moved quickly, accurately and robustly.
 
-### IBM Event Streams
-
-IBM Cloud Pak for Integration includes Event Streams, that helps to deliver more engaging customer experiences.
-
-Built on open source Apache Kafka, IBM® Event Streams is an event-streaming platform that helps you build smart apps that can react to events as they happen. 
-
-Event Streams is based on years of IBM operational expertise gained from running Apache Kafka event streams for enterprises. This makes Event Streams ideal for mission-critical workloads.
-
 ### IBM API Connect
 
 IBM Cloud Pak for Integration includes API Connect as an integrated API management offering, where all of the steps in the API lifecycle, and the actions that surround it, are performed within the offering.

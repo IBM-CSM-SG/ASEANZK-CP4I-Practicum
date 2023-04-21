@@ -76,7 +76,7 @@ the bootstrap server(External) and then click “Generate SCRAM credentials “ 
 
 Check out [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=messages-using-kafka-app-connect-enterprise) to understand how to use Kafka with IBM App Connect Enterprise before you begin
 
-You already have created a topic in Event Strem , and now you need to build message flow to pull FX data from FX Provider and transform the data format to produce message and send it to the Event Stream topic based on currency symbol  EURUSD etc. You will have to build the message flow and generate a BAR file to deploy in the Integration Dashboard. 
+You already have created a topic in Event Stream , and now you need to build message flow to pull FX data from FX Provider and transform the data format to produce message and send it to the Event Stream topic based on currency symbol  EURUSD etc. You will have to build the message flow and generate a BAR file to deploy in the Integration Dashboard. 
 
 1) Start App Connect Enterprise and create App Connect Enterprise workspace directory, for example , workspace directory as ace-fxcurrency folder (~/IBM/ACET11/workspace/ace-fxcurrency). Click OK.
 
@@ -91,7 +91,7 @@ You already have created a topic in Event Strem , and now you need to build mess
 create a policy project and some configurations that you need to know 
 
 
-### 4. After deploying App Connect and testing successfully in previous step, check the message in topic in EventStrem 
+### 4. After deploying App Connect and testing successfully in previous step, check the message in topic in EventStream 
 
 1. Back on the main menu IBM Automation Dashboard, under Design section you select kafka clusters 
 

@@ -32,21 +32,21 @@ Table of contents
 # Topic 1: Introduction and Scenario Details
 Your customer has been a long-time user of **App Connect (IIB/WMB)** and **MQ**. They have recently decided to investigate the value of modernizing their integration. They are eager to explore IBM Agile Integration practices. They would like you to use one of their existing flows and queue definitions to explore how to move to containerized integration.
 
-<img src="images/scenario3-image1.png" />
+<img src="images/scenario3-image1.png" style="width:10in;height:4in"/>
 
 While eager to understand the modernization journey, they also have reservations on their ability to scale and manage the workload.  Demonstrate how to analyze, componentize, and containerize existing integration artefacts, and illustrate how to scale and monitor the new deployments.
 
-<img src="images/scenario3-image2.png" />
+<img src="images/scenario3-image2.png" style="width:4in;height:5in"/>
 
 
 **Your Challenge**
 
-Your team have (5) days to document your approach to a Solution to the customer’s business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
+Your team have (3) days to document your approach to a Solution to the customer’s business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
 Demonstrate your practical solution to whole class.
 
-Day 5: Demonstrate your practical solution to whole class.
+Day 3: Demonstrate your practical solution to whole class.
 
-[Back to Top](Table of contents)
+[Back to Top](#topic-1-introduction-and-scenario-details)
 
 &nbsp;
 &nbsp;

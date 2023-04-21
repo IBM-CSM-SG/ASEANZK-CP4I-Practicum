@@ -6,7 +6,7 @@ So you will need to make some assumptions about how this interaction may work. I
 1. A push model where the FX Stream is pushed to the customer and 
 2. A pull model where the customer system calls to the FX stream provider for data.
 
-![INTERACTION MODEL](/scenario1/Scenario/img/02-interaction-models.png)
+![INTERACTION MODEL](../../scenario1/Scenario/img/02-interaction-models.png)
 
 As you asses the and plan the interaction models you will need to consier and make decsions for the the following
 1. Communication interration mode synchronous/asynchronous
@@ -24,11 +24,11 @@ The service will be initated from the customer to the FX provider using a REST c
 The FX Provider will respond with the list of currencies. The data structure of the response will consist of the a list of Currency each list item including the currency symbol, the request date, the opening rate, closing rate, daily high and daily low.
 
 The service definition is defined here
-[FXData YAML](/scenario1/Scenario/fx-assets/FXData-1.0.0.yaml)
+[FXData YAML](../../scenario1/Scenario/fx-assets/FXData-1.0.0.yaml)
 
 ### Example Input
 The service is defined to accept a single http query parameter called reques-dt
-![REQUEST](/scenario1/Scenario/img/03-request.png)
+![REQUEST](../../scenario1/Scenario/img/03-request.png)
 
 
 ### Example Output
@@ -84,9 +84,10 @@ The service is defined to accept a single http query parameter called reques-dt
     }
 ]
 ```
+
 ## Setting Up Predefined FX Data
 Also provided here is a project intercahnge file that can be customized. 
-[FXData.zip](/scenario1/Scenario/fx-assets/FXData.zip)
+[FXData.zip](../../scenario1/Scenario/fx-assets/FXData.zip)
 To utilize the FXData flow as a quick start to simulate the data provider
 1. Import the FXData.zip to ACE Toolkit
 2. Create a Bar File
@@ -99,16 +100,15 @@ To utilize the FXData flow as a quick start to simulate the data provider
 
 The file creates a standard response that substitutes the request date. The practicum squad can use this as a started and expand on the capabaility to be more elaborate if they choose to.
 
-![Message SubFlow](/scenario1/Scenario/img/04-simple-flow.png)
+![Message SubFlow](../../scenario1/Scenario/img/04-simple-flow.png)
 
 The jave Compute Node contains the logic for creating the default list and substituting the date
 
-
-![Java Compute](/scenario1/Scenario/img/05-java-compute-node.png)
+![Java Compute](../../scenario1/Scenario/img/05-java-compute-node.png)
 
 The currency list is predefined in the Currencies.java class
 
-![Java Compute](/scenario1/Scenario/img/06-static-currency-list.png)
+![Java Compute](../../scenario1/Scenario/img/06-static-currency-list.png)
 
 
 

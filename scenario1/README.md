@@ -13,9 +13,9 @@
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1.1 IBM App Connect Enterprise (ACE) Toolkit Setup**](#_Toc105518921)
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1.2 Openshift Command Line Interface (CLI) Setup**](#_Toc105518922)
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1.3 Mailtrap SMTP Setup**](#_Toc105518923)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.2: Event Streams](/scenario1/SolutionBuild/IBMEventStreams#solution-build----ibm-event-stream)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.3: App Connect](/scenario1/SolutionBuild/IBMAppConnect#ibm-app-connect)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.4: Creating Your Rest API](/scenario1/RestAPI/RestAPI.md)
+#### &nbsp;&nbsp;&nbsp;[Topic 4.2: Event Streams](../scenario1/SolutionBuild/IBMEventStreams#solution-build----ibm-event-stream)
+#### &nbsp;&nbsp;&nbsp;[Topic 4.3: App Connect](../scenario1/SolutionBuild/IBMAppConnect#ibm-app-connect)
+#### &nbsp;&nbsp;&nbsp;[Topic 4.4: Creating Your Rest API](../scenario1/RestAPI/RestAPI.md)
 ### [Topic 5: Conclusion](#conclusion)
 
 ###############################################################################################
@@ -168,9 +168,9 @@ You can also check all your emails under MyInbox in mailtrap web site.
 
 <img src="./media/image8.png" style="width:6.26806in;height:2.12222in" />
 
-## [Event Streams](/scenario1/SolutionBuild/IBMEventStreams/README.md)
-## [App Connect](/scenario1/SolutionBuild/IBMAppConnect/README.md)
-## [Creating Your Rest API](/scenario1/RestAPI/RestAPI.md)
+## [Event Streams](../scenario1/SolutionBuild/IBMEventStreams/README.md)
+## [App Connect](../scenario1/SolutionBuild/IBMAppConnect/README.md)
+## [Creating Your Rest API](../scenario1/RestAPI/RestAPI.md)
 
 
 # Conclusion

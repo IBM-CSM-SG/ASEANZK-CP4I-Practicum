@@ -14,12 +14,12 @@
 - [**4.3.2 Create Queue**](#_Toc105518926)
 - [**4.3.3 Configure Default Channel Security**](#_Toc105518927)
 
-[**4.4. Integration Dashboard**](#_Toc105518928)
+[**4.4. Integration - ACE to MQ**](#_Toc105518929)
+- [**4.4.1 Prepare - Asset into IBM ACE Toolkit**](#_Toc105518930)
+- [**4.4.2 Build - BAR File**](#_Toc105518931)
 
-[**4.5. Integration - ACE to MQ**](#_Toc105518929)
-- [**4.5.1 Prepare - Asset into IBM ACE Toolkit**](#_Toc105518930)
-- [**4.5.2 Build - BAR File**](#_Toc105518931)
-- [**4.5.3 Deploy - Create a local integration server**](#_Toc105518932)
+[**4.5. Integration Dashboard**](#_Toc105518928)
+- [**4.5.3 Deploy a local integration server**](#_Toc105518928)
 
 [**4.6. API Connect (APIC)**](#_Toc105518933)
 
@@ -92,23 +92,25 @@ Download OC Client for your platform
 
 <img src="./media/image6.png" style="width:6.26806in;height:2.10486in" />
 
-Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. See the below URL for more details.
-
-https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html 
+Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. 
 
 Alternate URL Reference: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.10/
+
+See the below URL for more details.
+
+https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html 
 
 <span id="_Toc105518923" class="anchor"></span>**Mailtrap SMTP Setup**
 
 Signup for a SMTP account on mailtrap.io. Once logged in, note down your SMTP connection settings. For Example,
 
-Host: smtp.mailtrap.io
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Host: smtp.mailtrap.io </i> </u>
 
-Port: 2525
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Port: 2525 </i> </u>
 
-User: 2ef08bdc18285b
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> User: 2ef08bdc18285b </i> </u>
 
-Password: 11xxxxxx06b8da
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Password: 11xxxxxx06b8da </i> </u>
 
 <img src="./media/image7.png" style="width:5.31523in;height:3.09751in"  />
 
@@ -122,8 +124,7 @@ You can also check all your emails under MyInbox in mailtrap web site.
 
 Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift Route cp4d or as per given by the instructor.
 
-<img src="./media/image9.png" style="width:6.26806in;height:4.07639in"
- />
+<img src="./media/image9.png" style="width:6.26806in;height:4.07639in"  />
 
 Login to IBM Cloud Pak using the IBM provided credentials (admin only).
 
@@ -137,13 +138,15 @@ Go to IBM Cloud Pak Home. You can verify the currently added/configure instances
 
 <img src="./media/image12.png" style="width:6.26806in;height:3.42431in"/>
 
-Click on **Messaging** as highlighted in the
-screen below:
+The below instances should already be pre-created for you.
+
+<img src="./media/image12.1.png" style="width:6.26806in;height:3.42431in" />
+
+Click on **Messaging** as highlighted in the screen below:
 
 <img src="./media/image12.png" style="width:6.26806in;height:3.42431in" />
 
-This will redirect to a Messaging screen as below. Click on Create an
-instance to create a queue manager.
+This will redirect to a Messaging screen as below. Click on Create an instance to create a queue manager.
 
 <img src="./media/image13.png" style="width:6.26806in;height:3.16181in" />
 
@@ -208,27 +211,27 @@ Login to Openshift cluster using oc client.
 
 <img src="./media/image26.png" style="width:6.26806in;height:2.48264in" />
 
-oc login --token=sha256\~xxxxxx-xxxxxx-g --server=https://servername:30273
+<u> <i> oc login --token=sha256\~xxxxxx-xxxxxx-g --server=https://servername:30273 </i> </u>
 
 run below command to see all your projects.
 
-oc projects
+<u> <i> oc projects </i> </u>
 
 Run below command to switch to your project.
 
-oc project cp4i
+<u> <i> oc project cp4i </i> </u>
 
 Run below command to see the pod name of the mq queue manager.
 
-oc get pods \| grep -i mq
+<u> <i> oc get pods \| grep -i mq </i> </u>
 
-Note the MQ Queue Manager POD Name. eg. quickstart-cp4i-ibm-mq-0
+Note the MQ Queue Manager POD Name. eg. ** quickstart-cp4i-ibm-mq-0 **
 
 Run the sample given script to configure the mq security. Make sure that
 you have execution permission on the samples scripts loadmq.sh and
 mq_ace_lab.mqsc.
 
-./loadmq.sh mq-quickstart-cp4i-ibm-mq-0
+<u> <i> ./loadmq.sh mq-quickstart-cp4i-ibm-mq-0 </i> </u>
 
 This script performs:
 
@@ -240,39 +243,25 @@ This script performs:
 
 The above command should succeed with below lines in the end.
 
+<u> <i>
 94 MQSC commands read.
+
 No commands have a syntax error.
+
 All valid MQSC commands were processed.
+</i> </u>
 
-<span id="_Toc105518928" class="anchor"></span>**Integration Dashboard**
+Note the default channels details. Go to the Applications Tab for the Queue Manager that you created.
 
-Navigate to Administration -\> Integration Instances.
+<img src="./media/image24.1.jpeg" style="width:6.26806in;height:3.52569in"  />
 
-<img src="./media/image27.png" style="width:6.26806in;height:4.07639in" />
+Click on App Channels link in the left pane. Click on the Filter and Select Show System Channels.
 
-Click on the hamburger on top left --\> click Integration Instances
+<img src="./media/image25.1.jpeg" style="width:6.26806in;height:3.52569in"  />
 
-<img src="./media/image28.png" style="width:6.26806in;height:1.48333in" />
+You should be able to see the System Channels. We will use the default Channel SYSTEM.DEF.SVRCONN for the MQ Communication from Rest APIS.
 
-Click “Create Instance” on top right of the page
-
-<img src="./media/image29.png" style="width:6.26806in;height:1.80625in" />
-
-Select Integration Dashboard and click next
-
-<img src="./media/image30.png" style="width:6.26806in;height:1.54167in" />
-
-Select either Production or Quick Start --\> click next
-
-<img src="./media/image31.png" style="width:6.26806in;height:2.42361in" />
-
-Key-in the details of the environment and proceed to create the dashboard.
-
-<img src="./media/image32.png" style="width:6.26806in;height:4.71111in"  />
-
-Upon successful creation of Integration Dashboard below message will appear on the browser.
-
-<img src="./media/image33.png" style="width:6.26806in;height:1.31319in" />
+<img src="./media/image26.1.jpeg" style="width:6.26806in;height:3.52569in"  />
 
 <span id="_Toc105518929" class="anchor"></span>**Integration - ACE to MQ**
 
@@ -282,7 +271,7 @@ Integration has the following components:
 
 -   [<u>Build</u>](#_Toc105518931)
 
--   [<u>Deploy</u>](#_Toc105518932)
+-   [<u>Deploy</u>](#_Toc105518928)
 
 <span id="_Toc105518930" class="anchor"></span>**Prepare - Asset into IBM ACE Toolkit**
 
@@ -326,10 +315,6 @@ console” or oc client (oc get svc \| grep -i mq).
 
 <img src="./media/image43.png" style="width:6.26806in;height:3.50833in" />
 
-Note the default System Server Connection Channel name (SYSTEM.DEF.SVRCONN).
-
-<img src="./media/image44.png" style="width:6.26806in;height:3.47847in" />
-
 Click on the MQ Output and configure the MQ Details. Enter the Queue Name.
 
 <img src="./media/image45.png" style="width:6.26806in;height:2.93333in" />
@@ -371,38 +356,38 @@ Copy the bar file path or open it in finder window.
 
 <img src="./media/image54.png" style="width:5.90278in;height:3.95833in"  />
 
-<span id="_Toc105518932" class="anchor"></span>**Deploy - Create an integration server**
+<span id="_Toc105518928" class="anchor"></span>**Integration Dashboard - Deploy an integration server****
 
-Proceed further to create a Integration Server in CP4I Console. You may do
-so by using the navigation Manu - Integrations. Click on Deploy Integrations.
+Navigate to Menu -\> Integration.
 
-<img src="./media/image55.png" style="width:6.26806in;height:3.67361in"
- />
+Proceed to create a Integration Server in CP4I Console. Click on Deploy Integrations.
+
+<img src="./media/image55.jpeg" />
 
 Click Deploy a Server and Chose a Quick Start Plan. Click Next.
 
-<img src="./media/image56.png" style="width:6.26806in;height:2.80347in" />
+<img src="./media/image56.jpeg"  />
 
 Drag and Drop the newly generated bar file here. Click Next.
 
-<img src="./media/image57.png" style="width:6.26806in;height:2.47778in" />
+<img src="./media/image57.jpeg"  />
 
 Skip any Configuration to be applied this integration. Just Click Next.
 
-<img src="./media/image58.png" style="width:6.26806in;height:2.39167in" />
+<img src="./media/image58.jpeg"  />
 
 Enter the Integration Server Name, Select License. Click Create.
 
-<img src="./media/image59.png" style="width:6.26806in;height:3.40556in" />
+<img src="./media/image59.jpeg" />
 
 The Integration Server will be created and ready shortly. You may
 refresh the page to check on the readiness status update.
 
-<img src="./media/image60.png" style="width:5.42857in;height:2.43762in" />
+<img src="./media/image60.jpeg" />
 
 Click on the Server once its ready.
 
-<img src="./media/image61.png" style="width:2.62963in;height:2.90407in" />
+<img src="./media/image61.jpeg" />
 
 Click on the API.
 
@@ -438,15 +423,15 @@ Create an instance of the API Connect (API Management) .
 
 Chose the basic one node plan. Click Next.
 
-<img src="./media/image69.png" style="width:6.26806in;height:4.07639in" />
+<img src="./media/image69.jpg" />
 
 Enter the API instance Name and accept the license. Enter the license ID.
 
-<img src="./media/image70.png" style="width:6.26806in;height:4.07639in" />
+<img src="./media/image70.jpg" />
 
 The matching Storage Class will be automatically selected. Click Finish.
 
-<img src="./media/image71.png" style="width:6.26806in;height:4.07639in" />
+<img src="./media/image71.jpg" />
 
 The following API Connect Instances will be created in about 45 minutes.
 
@@ -457,6 +442,8 @@ The following API Connect Instances will be created in about 45 minutes.
 -   **API Management Administration** is where we can create organization, configure authentication settings, SMTP settings etc .
 
 <img src="./media/image72.png" style="width:6.26806in;height:2.44097in"  />
+
+<img src="./media/image72.1.jpg" style="width:6.26806in;height:3.42431in" />
 
 <span id="_Toc105518934" class="anchor"></span>**Cloud Manager (API Management Administration)**
 
@@ -538,7 +525,7 @@ see below picture then your Organization is not set correctly.
 
 After setting the organization correctly, the API Manager should look like this.
 
-<img src="./media/image88.png" style="width:6.26806in;height:3.95278in" />
+<img src="./media/image88.jpeg" style="width:6.26806in;height:3.95278in" />
 
 #### Develop API
 
@@ -739,7 +726,7 @@ Note down the Portal API URL from **Catalog Settings -\> Portal** . eg.
 (optional) Once you receive the email to set the password click on that
 link and set the password for the admin account for API Manager.
 
-#### Publish Product
+### Publish Product
 
 In the original API Manager Window, Now lets publish the product to the new catalog from API Manager first. So it can be visible in this catalog.
 
@@ -749,12 +736,17 @@ Go to API Manager Home and click Develop APIs and Products. Go to Products Tab. 
 
 Select the new catalog.Click Next. 
 
-<img src="./media/image132.png" style="width:6.26806in;height:3.93889in" />
+<img src="./media/image131.jpeg" style="width:6.26806in;height:2.43472in" />
 
- You can set the catalog visibility to
-Authenticated users. Click Publish. It will be published shortly.
+You can set the catalog visibility to Authenticated users. Click Publish. 
 
-#### API Connect Developer Portal
+<img src="./media/image132.jpeg" style="width:6.26806in;height:3.93889in" />
+
+<img src="./media/image133.jpeg" style="width:6.26806in;height:3.93889in" />
+
+It will be published shortly.
+
+### API Connect Developer Portal
 
 Open the Portal API URL as noted above in the browser.
 

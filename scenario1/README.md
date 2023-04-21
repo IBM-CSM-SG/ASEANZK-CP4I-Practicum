@@ -1,7 +1,7 @@
-# IBM CP4I Practicum Lab Book for Scenario 1: 
+## IBM CP4I Practicum Lab Book for Scenario 1: 
 
-## Description:
-### This Practicum Lab Book explains and focuses on the solution preparation and implementation for Practicum Scenario 1 using Cloud Pak for Integration (CP4I). The book will cover the solution architecture and the details of how to best implement the solution for the given scenario. This will help accelerate adoption of Cloud Pak for Integration.
+### Description:
+This Practicum Lab Book explains and focuses on the solution preparation and implementation for Practicum Scenario 1 using Cloud Pak for Integration (CP4I). The book will cover the solution architecture and the details of how to best implement the solution for the given scenario. This will help accelerate adoption of Cloud Pak for Integration.
 
 ## Table of Contents:
 

@@ -2,8 +2,8 @@
 # See https://jekyllrb.com/docs/configuration/ to further customize this file
 # Defaults settings https://jekyllrb.com/docs/configuration/#default-configuration
 
-title: CP4I Practicum Singapore
-description: "Contains Use Cases for some of the scenarios for CP4I Practicum"
+title: CP4I Modernization Practicum Workstop Singapore
+# description: "Contains Use Cases for some of the scenarios for CP4I Practicum"
 
 url: https://ibm-csm-sg.github.io
 baseurl: /ASEANZK-CP4I-Practicum
@@ -17,13 +17,15 @@ permalink: date # how your URLs are built, see https://jekyllrb.com/docs/permali
 #theme: hacker
 #theme: leap day
 #theme: merlot
-#theme: midnight
-theme: minima
+# theme: midnight
+#theme: minima
 #theme: minimal
 #theme: modernist
 #theme: slate
 #theme: tactile
 #theme: time machine
+theme: hyde
+#theme: chirpy
 
 # look for themes on https://github.com/topics/jekyll-theme and https://rubygems.org/search?utf8=%E2%9C%93&query=jekyll-theme
 

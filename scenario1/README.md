@@ -29,19 +29,19 @@
 - As part of a new program at the bank they want to offer access to FX data up to 12 months old via a mobile app to their brokers. The raw data is not in the format required for the business users.
 - The Bank historically use IIB and MQ and have bought CP4I. They have also setup a test system to investigate the use of OpenShift and CloudPaks.
 
-![Scenario 1](img/01-scenario-diagram.png)
+![Scenario 1](../scenario1/img/01-scenario-diagram.png)
 
 ### **Challanges**
 Your team have (3) days to document your approach to a Solution to the customers business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
 Day 3: Demonstrate your solution to whole class
 
 ## Predefined Inboud FX Data
-Users can design and construct their own user interface for the FX data inbound. If you may need a helping hand with this please review a sample that was precreated for this exercise [here](/scenario1/Scenario/Interfaces.md).
+Users can design and construct their own user interface for the FX data inbound. If you may need a helping hand with this please review a sample that was precreated for this exercise [here](../scenario1/Scenario/Interfaces.md).
 
 # Solution Architecture
 ## High Level Architecture
 
-<img src="img/high-level-architecture-diagram.png" width=600 height=480/>
+<img src="../scenario1/img/high-level-architecture-diagram.png" width=600 height=480/>
 
 - Assume we pull FX data from 3rd party application in XML Format and need to be transformed to the format required for the business users. We need an **Application Integration** capabilities for it
 - **Event Streaming** will add resiliency to the system and to persist data for 12 month.

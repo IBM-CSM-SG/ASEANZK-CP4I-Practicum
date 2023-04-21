@@ -165,9 +165,9 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 # Topic 5: Environment Configuration
 
 &nbsp;
-## Creating Integration Dashboard
+<!-- ## Creating Integration Dashboard
 
-1. Go to IBM Cloud Pak home and click on the hamburger on top left --> click Integration Instances 
+1. Go to IBM Cloud Pak home and click on the hamburger on top left -- > click Integration Instances 
 
 <img src="images/PlatformNavigator.png" >
  
@@ -177,11 +177,11 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
  
 3. Select Integration Dashboard and click next
 
-<img src="images/IntegrationDashboard.png"
+<img src="images/IntegrationDashboard.png" >
  
 ***If it is greyed out, you will need to install operator named "IBM App Connect" in openshift -> operatorHub ***
 
-4. Select either Production or Quick Start --> click next
+4. Select either Production or Quick Start -- > click next
 
 <img src="images/IntegrationDashboardType.png" >
  
@@ -196,7 +196,8 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
 
-&nbsp;
+&nbsp; -->
+
 ## Creating MQ Queue Manager
 
 1. Go to IBM Cloud Pak Home, click on “Messaging” as highlighted in the screen below
@@ -332,7 +333,7 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 &nbsp; 
 ## Refactor ACE REST to REST Message flow
 
-<img src="images/scenario3-application-architecture-ace-rest-rest.png" >
+<img src="images/scenario3-application-architecture-ace-rest-rest.png" style="width:6in;height:4in">
 
 
 1. [Build HTTPResponseApp ace message flow into BAR file](#build-ace-message-flow-into-bar-file)
@@ -403,7 +404,9 @@ Please replace
 [Back to Top](#topic-1-introduction-and-scenario-details)
 
 &nbsp; 
-## Refactor ACE MQ Message flow using MQ Client Connection. Introduce new RestToMQApp message flow to expose putting MQ messages
+## Refactor ACE MQ Message flow using MQ Client Connection
+
+Introduce new RestToMQApp message flow to expose putting MQ messages
 
 <img src="images/scenario3-application-architecture-ace-mq.jpg" >
 

@@ -331,7 +331,7 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 
 <img src="images/HTTP4.png" >
 
-   This will open child window to enter details of the server. Once completed, hit finish.
+This will open child window to enter details of the server. Once completed, hit finish.
 <img src="images/HTTP5.png" >
 
 
@@ -453,6 +453,9 @@ Search "ibm-mq" and Copy Hostname and Port as highlighted for the MQ Queue Manag
 
 <img src="images/ACEMQoutput.png" >
 
+6. Build ace MQ message flow into BAR file for [MQ_Client_App](#build-ace-message-flow-into-bar-file) . Do for **MQ_Client_App** only for now.
+
+7. Deploy MQ bar file for [MQ_Client_App flow](#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **MQ_Client_App** only for now.
 
 
 [Back to Top](#topic-1-introduction-and-scenario-details)

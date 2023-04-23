@@ -18,7 +18,7 @@ Table of contents
    * [Topic 6: Refactor, Build and Deployment](#topic-6--refactor-build-and-deployment)
       * [Importing Asset into IBM ACE Toolkit and creating local integration server](#importing-asset-into-ibm-ace-toolkit-and-creating-local-integration-server)
       * [Refactor ACE REST to REST Message flow](#refactor-ace-rest-to-rest-message-flow)
-      * [Refactor ACE MQ Message flow using MQ Client Connection. Introduce new RestToMQApp message flow to expose putting MQ messages](#refactor-ace-mq-message-flow-using-mq-client-connection-introduce-new-resttomqapp-message-flow-to-expose-putting-mq-messages)
+      * [Refactor ACE MQ Message flow using MQ Client Connection](#refactor-ace-mq-message-flow-using-mq-client-connection)
       * [Build ACE message flow into BAR file](#build-ace-message-flow-into-bar-file)
       * [Deploy BAR file to CP4I Integration Servers](#deploy-bar-file-to-cp4i-integration-servers)
    * [Topic 7: Conclusion](#conclusion)
@@ -353,10 +353,9 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 <img src="images/scenario3-application-architecture-ace-rest-rest.png" style="width:6in;height:4in">
 
 
-1. [Build HTTPResponseApp ace message flow into BAR file](#build-ace-message-flow-into-bar-file)
+1. Build ace message flow into BAR file for [HTTPResponseApp](#build-ace-message-flow-into-bar-file) . Do for **HTTPResponseApp** only for now.
 
-2. [Deploy bar file of BAR for HttpResponseApp flow into CP4I Integration Server](#deploy-bar-file-to-cp4i-integration-servers)  
-
+2. Deploy bar file for [HttpResponseApp flow](#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPResponseApp** only for now.
 
 3. Open ACE and navigate to HttpRequestApp —> Expand to open folder Flows —> double-click RequestService.msgflow
 
@@ -372,9 +371,9 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
   
    b. Select HTTPRequest and replace the URL as per the cluster URL.
    
-   Default WebService URL : http://localhost:7800/responseService
+   Default WebService URL : http://localhost:7080/responseService
 
-   Changed URL : http://**is-01-toolkit-request-app-3-http-cp4i.cp4intpg-wdc04-ttwakv-8946bbc006b7c6eb0829d088919818bb-0000.us-east.containers.appdomain.cloud**/responseService
+   Changed URL : **http://http-response-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com**/responseService
 
    
    Before proceeding with the above change, keep the URL handy **(highlighted in bold)** by copying it from - 
@@ -388,13 +387,11 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
   
 <img src="images/refactor-http-3.png" >
   
-5. Create a BAR file for this flow and deploy it to a new Integration Server in OCP.
+5. Create a BAR file for this flow and deploy it to a new Integration Server as below.
 
-6. [Build HTTPRequestApp ace message flow into BAR file](#build-ace-message-flow-into-bar-file)
+6. Build ace message flow into BAR file for [HTTPRequestApp](#build-ace-message-flow-into-bar-file) . Do for **HTTPRequestApp** only for now.
 
-7. [Deploy bar file of BAR for HttpRequestApp flow into CP4I Integration Server](#deploy-bar-file-to-cp4i-integration-servers)  
-
-<img src="images/refactor-http-4.png" >
+7. Deploy bar file for [HTTPRequestApp flow](#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPRequestApp** only for now.
 
 8. Test the deployed BARs
 
@@ -404,14 +401,14 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 
 
 ```   
-curl -v http://is-01-toolkit-request-app-3-http-cp4i.cp4intpg-wdc04-ttwakv-8946bbc006b7c6eb0829d088919818bb-0000.us-east.containers.appdomain.cloud/responseService
+curl -v http://http-response-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com/responseService
 ```
 ```
-curl -v http://is-01-toolkit-request-app-3-http-cp4i.cp4intpg-wdc04-ttwakv-8946bbc006b7c6eb0829d088919818bb-0000.us-east.containers.appdomain.cloud/requestService
+curl -v http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com/requestService
 ```
 
 Please replace 
-**http://is-01-toolkit-request-app-3-http-cp4i.cp4intpg-wdc04-ttwakv-8946bbc006b7c6eb0829d088919818bb-0000.us-east.containers.appdomain.cloud** part with the URL of your environment
+**http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com** part with the URL of your environment
 
 
 9. Receiving 200 OK on the terminal validates successful deployment
@@ -427,12 +424,13 @@ Introduce new RestToMQApp message flow to expose putting MQ messages
 
 <img src="images/scenario3-application-architecture-ace-mq.jpg" >
 
-1. To obtain MQ Endpoint, login to your cluster and navigate to Networking --> Services --> Search "MQ" --> Copy Hostname and Port as highlighted
+1. To obtain MQ Endpoint, login to your cluster and navigate to Networking --> Services.
+Search "ibm-mq" and Copy Hostname and Port as highlighted for the MQ Queue Manager that you created.
 
 <img src="images/HostName.png" >
  
  
-2. Navigate to ACE and open MQ Flow
+2. Navigate to ACE and open MQ Flow "RemoteMQInOt.msgflow" under MQ_Client_App.
  
 <img src="images/ACE-MQFlow.png" >
  
@@ -462,19 +460,13 @@ Introduce new RestToMQApp message flow to expose putting MQ messages
 
 ## Running mq_ace_lab.mqsc
 
-There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization. Below steps will assist to disable - 
+There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../scenario3/mq_ace_lab.mqsc) . Below steps will assist to disable. 
 
 **Pre-requisite**
 
-Enable CLI for your system by following the steps outlined in the below documentation - 
+Enable oc client for your system by following the below steps. 
 
----
-https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli#cli_oc 
- 
----
-
-1. Login to Openshift CLuster Environment. Click on the top right corner --> You Login ID will appear here --> Click copy login command
-
+1. Login to Openshift Cluster Environment. Click on the top right corner --> You Login ID will appear here --> Click copy login command
 
 <img src="images/MQAC2.png" >
 
@@ -512,7 +504,7 @@ oc get pods|grep mq
 6. Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod
 
 ---
-oc exec -it quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name) runmqsc QUICKSTART < mq_ace_lab.mqsc
+oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc QUICKSTART < mq_ace_lab.mqsc
 
 ---
 

@@ -10,7 +10,8 @@ Table of contents
    * [Topic 2: Introduction to Clusters and Openshift](#topic-3-introduction-to-clusters-and-openshift)
    * [Topic 3: Solution Architecture](#topic-2-solution-architecture)
    * [Topic 4: Running Transformation Advisor](#topic-4-running-transformation-advisor)
-      * [Installing IBM App Connect Enterprise (ACE) & Running Transformation Advisor (TADataCollector)](#installing-ibm-app-connect-enterprise-ace--running-transformation-advisor-tadatacollector)
+      * [Installing IBM App Connect Enterprise (ACE)](#installing-ibm-app-connect-enterprise-ace)
+       * [Running Transformation Advisor (TADataCollector)](#running-transformation-advisor-tadatacollector)
    * [Topic 5: Environment Configuration](#topic-5-environment-configuration)
       * [Creating Integration Dashboard](#creating-integration-dashboard)
       * [Creating MQ Queue Manager](#creating-mq-queue-manager)
@@ -111,22 +112,45 @@ The refactor code can later be deployed in a microservices architecture on Redha
 
 # Topic 3: Running Transformation Advisor
 
-## Installing IBM App Connect Enterprise (ACE) & Running Transformation Advisor (TADataCollector)
+## Installing IBM App Connect Enterprise (ACE)
 
-1.	Install IBM App Connect Enterprise for developers (also called ACE). Make sure to select the correct download package for your OS (Windows, Linux, Mac).
-Click on "Download" button on the following link:  https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started 
-The version used in this practicum is `12.0.3`
+Install IBM App Connect Enterprise for developers (also called ACE).
+Make sure to select the correct download package for your OS (Windows,
+Linux, Mac).
 
-<img src="images/AppConnect1.png" >
+Click on **Download** button on the following
+link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started</u>](https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started)
 
-<img src="images/AppConnect2.png" >
+<img src="images/image2.png" />
 
-   Complete the installation through the installer package you just downloaded for your OS.  eg: `12.0.3.0-ACE-MAC64-DEVELOPER-UNSIGNED`. You can use the IBM ACE Installation page as a guide to complete the installation.
+The version used in this practicum is 12.0.8
+
+<img src="images/image3.1.jpeg" />
+
+<img src="./images/image4.jpeg"  />
+
+Complete the installation through the installer package you just
+downloaded for your OS. eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You
+can use the IBM ACE Installation page as a guide to complete the
+installation.
+
+<img src="./images/image4.1.jpeg" style="width:6in;height:4in" />
+<img src="./images/image4.2.jpeg" style="width:6in;height:4in" />
+<img src="./images/image4.3.jpeg" style="width:6in;height:4in" />
+<img src="./images/image4.4.jpeg" style="width:6in;height:4in" />
+<img src="./images/image4.5.jpeg" style="width:6in;height:4in" />
+<img src="./images/image4.6.jpeg" style="width:6in;height:4in" />
+<img src="./images/image4.7.jpeg" style="width:6in;height:4in" />
 
 
-2. Once installed, open the installed ACE toolkit. A view similar to the screenshot below will launch.
+Once installed, open the installed ACE toolkit. A view similar to the
+screenshot below will launch.
 
-<img src="images/AppConnect3.png" >
+<img src="./images/image-xx-0.jpeg" />
+
+<img src="./images/image-xx-1.png" />
+
+## Running Transformation Advisor (TADataCollector)
 
 3. Open the Integration Console (IBM App connect Enterprise Toolkit -> Open Integration console)
 
@@ -136,17 +160,15 @@ The version used in this practicum is `12.0.3`
 
 <img src="images/AppConnect5.png" >
 
-5. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 Assets-IIB IIBV10_Broker_backup.zip file through command line, as shown below: 
+5. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 IIB Asset [IIBV10_Broker_backup.zip](../scenario3/IIBV10_Broker_backup.zip) file through command line, as shown below: 
 
 ```
 TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.zip
 ```
 
-<img src="images/AppConnect6.png" >
-
 6. Once the `TADataCollector` command runs successfully, it will generate recommendation files under `/tmp/TADataCollector/output/IIB1` folder. Open the following directory to access the generated files
 
-<img src="images/AppConnect7.png" >
+<img src="images/AppConnect6.jpg" >
 
 7.	Open the recommendations.html file located in `/tmp/TADataCollector/output/IIB1` folder & Read the recommendations made by IBM Transformation Advisor
 

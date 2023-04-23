@@ -254,13 +254,11 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
   <img src="images/VolumeType.png" >
  
  
- 5. Lastly click on “Create” from the top right corner and queue will be created. 
-   You will be redirected to a new page, showing the details of your newly created Queue manager.
+ 5. Lastly click on “Create” from the top right corner and queue manager will be created. You will be redirected to a new page, showing the details of your newly created Queue manager.
    
  <img src="images/QMngrReady.png" >
- 
 
-6. Click on queue name --> It should open up MQ Console
+6. Click on queue manager name --> It should open up MQ Console
 
 <img src="images/MQConsole.png" >
  
@@ -270,31 +268,28 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 <img src="images/ChannlQuickStrt.png" >
  
 
-8. Navigate to Communication --> App Channel --> Click Create 
+8. Navigate to Applications --> App Channel --> Click Create 
 
-<img src="images/CreateAppChnl.png" >
+<img src="images/CreateAppChnl.jpg" >
  
  
 9. Click "Next" on the following page 
 
 <img src="images/AppChnlStep2.png" >
  
-10. Select "Quick Create" and provide a Channel Name, Channel Type and Description. Once complete, click "Create"
+10. Select "Quick Create" and provide a Channel Name (eg. DEV_SEVRCONN), Channel Type (Server-connection) and Description. Once complete, click "Create"
 
 <img src="images/ChnnelStep3.png" >
  
- 
-11. On successful creation, channel will appear under "App Channels"
-
-<img src="images/ChannelCreated.png" >
- 
+11. On successful creation, channel will appear under "App Channels". 
 
 12. To edit the configuration of the Channel click "Configuration" as highlighted below - 
 
-<img src="images/EditConfigChnl.png" >
+<img src="images/ChannelCreated.jpg" >
+<!-- img src="images/EditConfigChnl.png" -->
  
  
-13. It will redirect to open the configurations section of the Channel. Under "Properties" select "SSL"
+13. It will redirect to open the configurations section of the Channel. Under "Properties" select "SSL". Click Edit Button.
 
 
 <img src="images/EditSSLChnl.png" >
@@ -324,7 +319,7 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 
 <img src="images/HTTP1.png" >
 
-2. Browse on your local machine to add the MessageFlow_PI.zip file from the Scenario 3 assets as shown below
+2. Browse on your local machine to add the [MessageFlow_PI.zip](../scenario3/MessageFlow_PI.zip) file from the Scenario 3 assets as shown below
 
 <img src="images/HTTP2.png" >
 
@@ -557,29 +552,34 @@ MQ is ready and running on your environment!!!
  
  1. Navigate to IBM Cloud Pak for Integrations home page. Select Run --> Integrations --> It will redirect you to IBM APP Connect
 
-<img src="images/IBMAppConnect.png" >
+<img src="images/IBMAppConnect.jpg" >
  
- 2. Create new Integration Server to deploy BAR file for MQ --> Select QuickStart tool kit integration --> Hit Next
+ 2. Click on "Deploy Integrations" to create new Integration Server to deploy BAR file.
+ For MQ --> Select QuickStart tool kit integration --> Hit Next
 
-<img src="images/DeployBAR.png" >
+<img src="images/DeployBAR.jpg" >
  
- 3. Provide the BAR file to be deployed to the server and hit next.
- 
- **Bar file can be directly dragged and dropped onto CP4I browser console**
+ 3. Provide the BAR file to be deployed to the server and hit next. Bar file can be directly dragged and dropped onto CP4I browser console.
+ **Create one integration server for each of the bar file: HttpResponseApp or HttpRequestApp or MQ_CLIENT_APP**
 
-<img src="images/CreateIntServer.png" >
+<img src="images/CreateIntServer.jpg" >
  
- 4. Pass the configuration screen by clicking "Next" proceeding to "Common Settings". Validate the settings as shown in the snapshot below.
+ 4a. Pass the configuration screen by clicking "Next".
+ 
+<img src="images/CreateIntServer2.jpg" >
+ 
+ 4b. On the "Common Settings". Validate the settings as shown in the snapshot below. Click Create.
+  **Create Give name as per the bar file name, eg HttpResponseApp or HttpRequestApp  or MQ_CLIENT_APP**
 
-<img src="images/CreateIntServer2.png" >
+<img src="images/CreateIntServer3.jpg" >
  
- 5. Hit "Create" and wait until the status of the server has changed to "Ready"
+ 5. Wait until the status of the server has changed to "Ready"
 
 <img src="images/IntServerStatus.png" >
  
- 6. The status changes to "Ready"
+ 6. The status will change to "Ready".
 
-<img src="images/IntServerReadyStatus.png" >
+<img src="images/IntServerReadyStatus.jpg" >
 
     
 

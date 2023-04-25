@@ -9,7 +9,6 @@
 # Table of Contents
 - [1. Introduction](#introduction)
 
-
 - [2. Deploying the REST Service](#deploy)
 
 - [3. Import an API into the Developer Workspace](#import_api)
@@ -27,8 +26,9 @@
 - [7. Summary](#summary)
 
 ---
+<span id="introduction" />
 
-# 1. Introduction <a name="introduction"></a>
+# 1. Introduction
 
 In this lab, we will get a chance to use the IBM API Connect (APIC) Designer and its intuitive interface to import and edit an API using the OpenAPI definition (YAML) of an existing Customer Database RESTful web service.
 
@@ -42,7 +42,9 @@ In this tutorial, we will explore the following key capabilities:
 
 -   Publish an API for developers
 
-# 2. Deploying the REST Services <a name="deploy"></a>
+<span id="deploy" />
+
+# 2. Deploying the REST Services
 
 First, we will deploy a Customer Database REST service and then we will download the OpenAPI file for the Customer Database REST service that we deployed.
 
@@ -125,7 +127,9 @@ If you're not logged before, follow these instructions to access to the Platform
 [pic102]: images/102.png
 [pic103]: images/103.png
 
-# 3. Import an API into the Developer Workspace <a name="import_api"></a>
+<span id="import_api" />
+
+# 3. Import an API into the Developer Workspace
 
 1\. Click on **IBM Cloud Pak | Automation** in the upper left.
 
@@ -179,7 +183,9 @@ If you're not logged before, follow these instructions to access to the Platform
 [pic15]: images/15.png
 [pic104]: images/104.png
 
-# 4. Configure the API <a name="configure_api"></a>
+<span id="configure_api" />
+
+# 4. Configure the API
 
 After importing the existing API, the first step is to configure basic security before exposing it to other developers. By creating a client key and secret security, we are able to identify the application using the API. 
 
@@ -187,7 +193,9 @@ Next, we will define the backend endpoints where the API is actually running. IB
 
 Finally, we will configure the proxy call to invoke the endpoint.
 
-## 4a. Configure API Key Security <a name="configure_security"></a>
+<span id="configure_security" />
+
+## 4a. Configure API Key Security
 
 1\. Upon import, you will notice that an error has been detected.  Click on the **error**.
 
@@ -275,7 +283,9 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic22]
 
-## 4b. Define a Target-URL for Sandbox Environment <a name="target_url"></a>
+<span id="target_url" />
+
+## 4b. Define a Target-URL for Sandbox Environment
 
 1\. Make sure that the **Design** tab is selected and click on **Host**.
 
@@ -325,7 +335,9 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic22]
 
-## 4c. Configure Proxy Call in Designer <a name="proxy"></a>
+<span id="proxy" />
+
+## 4c. Configure Proxy Call in Designer
 
 1\. Navigate to the **Gateway** tab.
 
@@ -391,7 +403,9 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 [pic53]: images/53.png
 [pic105]: images/105.png
 
-# 4. Test the API <a name="test_api"></a>
+<span id="test_api" />
+
+## 4d. Test the API
 
 In the API Designer, you have the ability to test the API immediately after creation in the Assemble view!
 
@@ -555,13 +569,17 @@ and click **Send**.
 [pic78]: images/78.png
 [pic79]: images/79.png
 
-# 5. Publish API <a name="publish_api"></a>
+<span id="publish_api" />
+
+# 5. Publish API
 
 In this lab, we will make the API available to developers. In order to do so, the API must be first put into a product and then published to the Sandbox catalog. A product dictates rate limits and API throttling.
 
 When the product is published, the Invoke policy defined in the previous lab is written to the gateway. 
 
-## 5a. Create Customer Product and Add API <a name="customer_product"></a>
+<span id="customer_product" />
+
+## 5a. Create Customer Product and Add API
 
 1\. From the vertical navigation menu on the left, click **Develop**.
 
@@ -613,7 +631,9 @@ When the product is published, the Invoke policy defined in the previous lab is 
 [pic89]: images/89.png
 [pic90]: images/90.png
 
-# 6.Summary <a name="summary"></a>
+<span id="summary" />
+
+# 6.Summary
 
 Congratulations, you have completed the **Create and Secure an API** lab. Throughout the lab, you learned how to:
 

@@ -29,9 +29,13 @@
 
 - [9. Test the OAuth Configuration](#test_oauth)
 
+- [10. Summary](#summary)
+
 ---
 
-# 1. Introduction <a name="introduction"></a>
+<span id="introduction">  </span> 
+
+# 1. Introduction  
 
 In this lab, we will secure the Customer Database API that was created in the "Create and Secure an API to Proxy an Existing REST Web Service" lab to protect the resources exposed by IBM API Connect. Consumers of our API will be required to obtain and provide a valid OAuth token before they can invoke the Customer Database API. In order for the changes to take effect, we must publish the APIs to the Developer Portal and make them available for the API Consumers.  The Customer 1.0.0 version is already running and has active subscribers.
 
@@ -61,13 +65,17 @@ In this tutorial, you will explore the following key capabilities:
 
 -   Test the OAuth API in the Developer Portal
 
-# 2. Configure a New OAuth 2.0 Provider API <a name="configure_oauth"></a>
+<span id="configure_oauth">  </span> 
+
+# 2. Configure a New OAuth 2.0 Provider API
 
 IBM API Connect is a full-featured OAuth 2.0 provider. The OAuth exchange works like any other API call, and thus we treat it as its own API.
 
 In this section, you will create a new OAuth provider API, configure which grant type to use, and configure how it will authenticate user credentials.
 
-# 2a. Configure Authentication URL User Registry <a name="configure_registry"></a>
+<span id="configure_registry">  </span> 
+
+# 2a. Configure Authentication URL User Registry
 
 In order to configure user authentication, you must first define the registry to use, which may be LDAP, local user registry, or an authentication URL. For this lab, we will implement an Authentication
 URL.
@@ -111,7 +119,9 @@ Use this as example: http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud
 [pic11]: images/11.png
 [pic12]: images/12.png
 
-# 3. Create an OAuth Service <a name="create_oauth_service"></a>
+<span id="create_oauth_service">  </span> 
+
+# 3. Create an OAuth Service
 
 1\. You should still be in **Resources**.  If not, in the left menu, click **Resources**.
 
@@ -167,7 +177,9 @@ Use this as example: http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud
 [pic22]: images/22.png
 [pic68]: images/68.png
 
-# 4. Add the OAuth Service to the Sandbox Catalog <a name="add_service"></a>
+<span id="add_service">  </span> 
+
+# 4. Add the OAuth Service to the Sandbox Catalog
 
 1\. In the left menu, click on **Manage**.
 
@@ -215,7 +227,9 @@ Use this as example: http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud
 [pic30]: images/30.png
 [pic31]: images/31.png
 
-# 5. Create a New Version of the Customer API <a name="new_version"></a>
+<span id="new_version">  </span>
+
+# 5. Create a New Version of the Customer API
 
 IBM API Connect supports multiple versions of APIs.  We will create a new version of the Customer API before making any changes that would break functionality for existing consumers. 
 
@@ -233,7 +247,9 @@ First, we will save the API as a new version.
 
 ![alt text][pic34]
 
-## 5a. Add OAuth Security to the Customer API <a name="oauth_customer"></a>
+<span id="oauth_customer">  </span>
+
+## 5a. Add OAuth Security to the Customer API
 
 We will modify the security policy for our new API version to tell it to use the OAuth 2.0 provider.
 
@@ -295,7 +311,9 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 [pic90]: images/90a.png
 [pic91]: images/91.png
 
-# 6. Create a New Product <a name="create_product"></a>
+<span id="create_product">  </span>
+
+# 6. Create a New Product
 
 In IBM API Connect, Plans and APIs are grouped together in Products, with which you can manage the availability and visibility of APIs and Plans.
 
@@ -384,7 +402,9 @@ Products allow related APIs to be bundled together for subscribers.
 [pic57]: images/57.png
 [pic58]: images/58.png
 
-# 7. Stage the Product to your API Manager Environment <a name="stage_product"></a>
+<span id="stage_product">  </span>
+
+# 7. Stage the Product to your API Manager Environment
 
 Before an API Product can be published, we must first stage that Product to a Catalog. When a Product is in the staged state, it is not yet visible to, or subscribable by developers. However, it can be reviewed by the API Product Manager and published once it has been determined that the API Product is ready to be consumed.
 
@@ -403,7 +423,9 @@ Note:  IBM API Connect allows you to publish products to specific gateways assoc
 [pic59]: images/59.png
 [pic60]: images/60.png
 
-# 8. Supersede Version 1.0.0 of the Product <a name="supersede"></a>
+<span id="supersede">  </span>
+
+# 8. Supersede Version 1.0.0 of the Product
 
 IBM API Connect provides capabilities for managing the lifecycle of your API Products. There are various states which an API Product can reside in, as well as controls around when you can move an API Product from one state to another. In this section, you will explore how to replace a running version of an API Product with a new one.
 
@@ -445,7 +467,9 @@ The **customer 1.0.0** Product has a Plan called **Default Plan**.  The **custom
 [pic66]: images/66.png
 [pic67]: images/67.png
 
-# 9. Test the OAuth Configuration <a name="test_oauth"></a>
+<span id="test_oauth">  </span>
+
+# 9. Test the OAuth Configuration
 
 In this section, you will test the new version of the API to ensure that OAuth is working properly.
 
@@ -565,6 +589,8 @@ Click **Get Token**.
 [pic93]: images/93.png
 [pic94]: images/94.png
 [pic95]: images/95.png
+
+<span id="summary">  </span>
 
 ## Summary
 

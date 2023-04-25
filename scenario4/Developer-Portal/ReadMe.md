@@ -24,8 +24,9 @@
 - [6. Summary](#summary)
 
 ---
+<span id="introduction" />
 
-# 1. Introduction <a name="introduction"></a>
+# 1. Introduction
 
 In this lab, we will take the API created in the "Create and Secure an API to Proxy an Existing REST Web Service" lab and publish it to a Developer Portal where it will be ready for consumption by application developers.
 
@@ -41,11 +42,15 @@ In this lab, you will explore the following key capabilities:
 
 -   Test the API in the Developer Portal
 
-# 2. Generate the Developer Portal <a name="generate_portal"></a>
+<span id="generate_portal" />
+
+# 2. Generate the Developer Portal
 
 A Developer Portal for the Sandbox catalog has already been configured in this environment.
 
-## 2a. Login to the API Connect Developer Portal <a name="portal_login"></a>
+<span id="portal_login" />
+
+## 2a. Login to the API Connect Developer Portal
 
 1\. Click on **IBM Cloud Pak | Automation** in the upper left.
 
@@ -116,7 +121,9 @@ The portal is setup for self service so we will create a new account as a develo
 [pic17]: images/17.png
 [pic18]: images/18.png
 
-# 3. Register a Test Application <a name="register_app"></a>
+<span id="register_app" />
+
+# 3. Register a Test Application
 
 1\. Once you are logged in, you can explore various sections in the Developer Portal. Click on **Explore API Products**.
 
@@ -130,7 +137,9 @@ The portal is setup for self service so we will create a new account as a develo
 
 ![alt text][pic20]
 
-## 3a. Create a new Consumer Application <a name="consumer_app"></a>
+<span id="consumer_app" />
+
+## 3a. Create a new Consumer Application
 
 IBM API Connect enforces entitlement rules to ensure that consumers are allowed to access the APIs that are being requested.  In the following steps you will register your consumer application and subscribe to an API Product.
 
@@ -162,7 +171,9 @@ Click **OK**.
 [pic24]: images/24.png
 [pic37]: images/37.png
 
-# 4. Subscribe to the API Product<a name="subscribe_product"></a>
+<span id="subscribe_product" />
+
+# 4. Subscribe to the API Product
 
 At this point, your registered consumer application has no entitlements.
 
@@ -199,7 +210,9 @@ In order to grant it access to an API resource, you must subscribe to a Product
 [pic29]: images/29.png
 [pic30]: images/30.png
 
-# 5. Test the API<a name="test_api"></a>
+<span id="test_api" />
+
+# 5. Test the API
 
 The API Connect Developer Portal allows consumers to test the APIs directly from the website. This feature may be enabled or disabled per-API.
 
@@ -244,7 +257,9 @@ If the browser displays a certificate issue, you may choose to accept it and ret
 [pic35]: images/35.png
 [pic36]: images/36.png
 
-# 6. Summary <a name="summary"></a>
+<span id="summary" />
+
+# 6. Summary
 
 Congratulations, you have completed the **Developer Portal Experience** lab. Throughout the lab, you learned how to:
 

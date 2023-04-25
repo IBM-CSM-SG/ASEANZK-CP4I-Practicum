@@ -27,7 +27,5 @@ IBM API Connect has several out of the box personas. Some of these personas will
 |-|-|
 | [OAuth Security and Version your API](OAuth-Versioning/ReadMe.md)       | **Add OAuth Security to your API and use Lifecycle Controls to Version Your API:**  In this lab, we will secure the Customer Database API that was created in the "Create and Secure an API to Proxy an Existing REST Web Service" lab to protect the resources exposed by IBM API Connect. Consumers of our API will be required to obtain and provide a valid OAuth token before they can invoke the Customer Database API.  In order for the changes to take effect, we must publish the APIs to the developer portal and make them available for the API Consumers.<br><br>**Prequisite:** "Developer Portal Experience" lab.<br><br>**Primary personas**:  Shavon (API Developer) and Jason (API Lifecycle Manager)
 |-|-|
-<!-- | [GraphQL Proxy API](GraphQL/ReadMe.md)       | **Creating a GraphQL Proxy API:**  In this lab, we will explore how to define GraphQL APIs that proxy to a backend GraphQL server.<br><br>**Prequisite:** None.<br><br>**Primary personas**:  Shavon (API Developer) and Andre (Application Developer)
-|-|-|-->
 
 [Return to Main Page](../README.md)

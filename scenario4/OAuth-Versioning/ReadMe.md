@@ -101,7 +101,7 @@ API Connect issues an HTTP GET call to the Authentication URL endpoint, sending 
 
 If the Authentication URL endpoint returns an HTTP status code of 200, the user authenticates successfully. An HTTP status code other than 200 indicates a failed login attempt. API Connect forwards any HTTP Header starting with X- (with the exception of X-Client-Certificate), and Cookie to the Authentication URL identity provider, to aid the authentication decision; 
 
-Use this as example: http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com/requestService
+Use this as example: http://user-auth-basic-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com/user/auth or you can deploy your own basic one from Project [User-Auth-Basic.zip](User-Auth-Basic.zip)
 
 ![alt text][pic12]
 

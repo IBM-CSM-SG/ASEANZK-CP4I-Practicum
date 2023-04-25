@@ -16,7 +16,7 @@
 
 - Security is paramount, they need to ensure that the APIs exposed needs to be secured using client id/secret and OAuth/OIDC.
 
-![Scenario 2](img/01-scenario2-diagram.png)
+<img src="../Scenario/img/01-scenario2-diagram.png" style="width:8in;height:6in" />
 
 ## Requirement
 

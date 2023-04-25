@@ -7,13 +7,12 @@ Table of contents
 
 <!--ts-->
    * [Topic 1: Introduction and Scenario Details](#topic-1-introduction-and-scenario-details)
-   * [Topic 2: Introduction to Clusters and Openshift](#topic-3-introduction-to-clusters-and-openshift)
-   * [Topic 3: Solution Architecture](#topic-2-solution-architecture)
+   * [Topic 2: Introduction to Clusters and Openshift](#topic-2-introduction-to-clusters-and-openshift)
+   * [Topic 3: Solution Architecture](#topic-3-solution-architecture)
    * [Topic 4: Running Transformation Advisor](#topic-4-running-transformation-advisor)
       * [Installing IBM App Connect Enterprise (ACE)](#installing-ibm-app-connect-enterprise-ace)
        * [Running Transformation Advisor (TADataCollector)](#running-transformation-advisor-tadatacollector)
    * [Topic 5: Environment Configuration](#topic-5-environment-configuration)
-      * [Creating Integration Dashboard](#creating-integration-dashboard)
       * [Creating MQ Queue Manager](#creating-mq-queue-manager)
    * [Topic 6: Refactor, Build and Deployment](#topic-6--refactor-build-and-deployment)
       * [Importing Asset into IBM ACE Toolkit and creating local integration server](#importing-asset-into-ibm-ace-toolkit-and-creating-local-integration-server)
@@ -21,7 +20,7 @@ Table of contents
       * [Refactor ACE MQ Message flow using MQ Client Connection](#refactor-ace-mq-message-flow-using-mq-client-connection)
       * [Build ACE message flow into BAR file](#build-ace-message-flow-into-bar-file)
       * [Deploy BAR file to CP4I Integration Servers](#deploy-bar-file-to-cp4i-integration-servers)
-   * [Topic 7: Conclusion](#conclusion)
+   * [Topic 7: Conclusion](#topic-7-conclusion)
 <!--te-->
 
 &nbsp;
@@ -89,7 +88,7 @@ For developers, OpenShift has two different ways of enabling them to work with t
 &nbsp;
 
 
-# Topic 2: Solution Architecture
+# Topic 3: Solution Architecture
 Below describe the high-level solution architecture for a simple scenario 3 solution.
 By using IBM IIB/ACE transformation advisor's TADataCollector, we can analyse the current monolith IIB/ACE application. A report will be generated to recommend what are needed to refactor, in order to achieve a microservice architecture build.
 
@@ -110,7 +109,7 @@ The refactor code can later be deployed in a microservices architecture on Redha
 
 
 
-# Topic 3: Running Transformation Advisor
+# Topic 4: Running Transformation Advisor
 
 ## Installing IBM App Connect Enterprise (ACE)
 
@@ -577,7 +576,6 @@ MQ is ready and running on your environment!!!
 <img src="images/IntServerReadyStatus.jpg" >
 
     
-
 [Back to Top](#topic-1-introduction-and-scenario-details)     
     
     
@@ -588,3 +586,4 @@ MQ is ready and running on your environment!!!
  This will assist you in your journey to Modernizing Applications and keep upspeed with the technology and trends.
  
 
+[Back to Top](#topic-1-introduction-and-scenario-details)

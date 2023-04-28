@@ -78,7 +78,7 @@ eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation
 
 Once installed, open the installed ACE toolkit. A view similar to the screenshot below will launch.
 
-<img src="./media/image-xx-0.jpeg" style="width:6in;height:3in" />
+<img src="./media/image-xx-0.jpeg" style="width:6in;height:2.5in" />
 
 <img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in" />
 

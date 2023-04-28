@@ -59,18 +59,18 @@ link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-downloa
 
 The version used in this practicum is 12.0.8
 
-<img src="./media/image3.jpeg" style="width:6.26806in;height:1in" />
+<img src="./media/image3.jpeg" style="width:6.26806in" />
 
-<img src="./media/image3.1.jpeg" style="width:6.26806in;height:3.5in" />
+<img src="./media/image3.1.jpeg" style="width:6.26806in" />
 
-<img src="./media/image4.jpeg" style="width:6.26806in;height:3.5in" />
+<img src="./media/image4.jpeg" style="width:6.26806in" />
 
 Complete the installation through the installer package you just downloaded for your OS. 
 eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation page as a guide to complete the installation.
 
 <img src="./media/image4.1.jpeg" style="width:6.26806in;height:4in" />
 <img src="./media/image4.2.jpeg" style="width:6.26806in;height:4in" />
-<img src="./media/image4.3.jpeg" style="width:6.26806in;height:2.5in" />
+<img src="./media/image4.3.jpeg" style="width:6.26806in" />
 <img src="./media/image4.4.jpeg" style="width:6.26806in;height:4in" />
 <img src="./media/image4.5.jpeg" style="width:6.26806in;height:4in" />
 <img src="./media/image4.6.jpeg" style="width:6.26806in;height:4in" />
@@ -78,19 +78,19 @@ eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation
 
 Once installed, open the installed ACE toolkit. A view similar to the screenshot below will launch.
 
-<img src="./media/image-xx-0.jpeg" style="width:6.26806in;height:2.5in" />
+<img src="./media/image-xx-0.jpeg" style="width:6.26806in" />
 
-<img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in" />
+<img src="./media/image-xx-1.png" style="width:6.26806in" />
 
 <span id="_Toc105518922" class="anchor"></span>**Openshift Command Line Interface (CLI) Setup**
 
 Download Openshift Command line tools (OC Client)
 
-<img src="./media/image5.png" style="width:6.26806in;height:1.14375in" />
+<img src="./media/image5.png" style="width:6.26806in" />
 
 Download OC Client for your platform
 
-<img src="./media/image6.png" style="width:6.26806in;height:2.10486in" />
+<img src="./media/image6.png" style="width:6.26806in" />
 
 Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. 
 
@@ -112,11 +112,11 @@ Signup for a SMTP account on mailtrap.io. Once logged in, note down your SMTP co
 
 &nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Password: 11xxxxxx06b8da </i> </u>
 
-<img src="./media/image7.png" style="width:5.31523in;height:3.09751in"  />
+<img src="./media/image7.png" style="width:6.26806in"  />
 
 You can also check all your emails under MyInbox in mailtrap web site.
 
-<img src="./media/image8.png" style="width:6.26806in;height:2.12222in"  />
+<img src="./media/image8.png" style="width:6.26806in"  />
 
 <span id="_Toc105518924" class="anchor"></span>**Messaging Queue (MQ)**
 
@@ -124,23 +124,23 @@ You can also check all your emails under MyInbox in mailtrap web site.
 
 Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift Route cp4d or as per given by the instructor.
 
-<img src="./media/image9.png" style="width:6.26806in;height:4.07639in"  />
+<img src="./media/image9.png" style="width:6.26806in"  />
 
 Login to IBM Cloud Pak using the IBM provided credentials (admin only).
 
-<img src="./media/image10.png" style="width:6.26806in;height:4.07639in" />
+<img src="./media/image10.png" style="width:6.26806in" />
 
 Use IBM provided Authentication (admin only) and log in with admin and its password.
 
-<img src="./media/image11.png" style="width:6.26806in;height:4.07639in"  />
+<img src="./media/image11.png" style="width:6.26806in"  />
 
 Go to IBM Cloud Pak Home. You can verify the currently added/configure instances from Menu -> Integration Instances.
 
-<img src="./media/image12.png" style="width:6.26806in;height:3.42431in"/>
+<img src="./media/image12.png" style="width:6.26806in"/>
 
 The below instances should already be pre-created for you.
 
-<img src="./media/image12.1.png" style="width:6.26806in;height:3.42431in" />
+<img src="./media/image12.1.png" style="width:6.26806in" />
 
 Click on **Messaging** as highlighted in the screen below:
 
@@ -253,15 +253,15 @@ All valid MQSC commands were processed.
 
 Note the default channels details. Go to the Applications Tab for the Queue Manager that you created.
 
-<img src="./media/image24.1.jpeg" style="width:6.26806in;height:3.52569in"  />
+<img src="./media/image24.1.jpeg" style="width:6.26806in"  />
 
 Click on App Channels link in the left pane. Click on the Filter and Select Show System Channels.
 
-<img src="./media/image25.1.jpeg" style="width:6.26806in;height:3.52569in"  />
+<img src="./media/image25.1.jpeg" style="width:6.26806in"  />
 
 You should be able to see the System Channels. We will use the default Channel SYSTEM.DEF.SVRCONN for the MQ Communication from Rest APIS.
 
-<img src="./media/image26.1.jpeg" style="width:6.26806in;height:3.52569in"  />
+<img src="./media/image26.1.jpeg" style="width:6.26806in"  />
 
 <span id="_Toc105518929" class="anchor"></span>**Integration - ACE to MQ**
 
@@ -277,15 +277,15 @@ Integration has the following components:
 
 Open IBM ACE Toolkit under a workspace and create a REST API project.
 
-<img src="./media/image34.png" style="width:4.93056in;height:3.79167in" />
+<img src="./media/image34.png" style="width:6.26806in" />
 
 Give it a name and select the specification as Swagger 2.0 Click Finish.
 
-<img src="./media/image35.png" style="width:6.26806in;height:3.23611in" />
+<img src="./media/image35.png" style="width:6.26806in" />
 
 Open the REST API Description. In the right Pane, Under Resources, Click on + icon to create a resource.
 
-<img src="./media/image36.png" style="width:6.26806in;height:3.23611in" />
+<img src="./media/image36.png" style="width:6.26806in" />
 
 Enter the resource path and select the operation as post. Click Apply.
 
@@ -362,7 +362,7 @@ Navigate to Menu -\> Integration.
 
 Proceed to create a Integration Server in CP4I Console. Click on Deploy Integrations.
 
-<img src="./media/image55.jpeg" />
+<img src="./media/image55.jpeg" style="width:10.26806in"/>
 
 Click Deploy a Server and Chose a Quick Start Plan. Click Next.
 

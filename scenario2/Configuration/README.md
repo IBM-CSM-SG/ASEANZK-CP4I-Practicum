@@ -59,9 +59,9 @@ link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-downloa
 
 The version used in this practicum is 12.0.8
 
-<img src="./media/image3.jpeg" style="width:6.26806in;height:0.70139in" />
+<img src="./media/image3.jpeg" style="width:6.26806in;height:3.37014in" />
 
-<img src="./media/image3.1.jpeg" style="width:6.26806in;height:0.70139in" />
+<img src="./media/image3.1.jpeg" style="width:6.26806in;height:3.37014in" />
 
 <img src="./media/image4.jpeg" style="width:6.26806in;height:3.37014in" />
 
@@ -70,7 +70,7 @@ eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation
 
 <img src="./media/image4.1.jpeg" style="width:6in;height:4in" />
 <img src="./media/image4.2.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.3.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.3.jpeg" style="width:6in;height:2in" />
 <img src="./media/image4.4.jpeg" style="width:6in;height:4in" />
 <img src="./media/image4.5.jpeg" style="width:6in;height:4in" />
 <img src="./media/image4.6.jpeg" style="width:6in;height:4in" />

@@ -21,7 +21,7 @@
 
 ![Cloud Pak Architecture](img/03-cloud-pak-stack.png)
 
-The Cloud Pak for Integration services that we will be use are:
+The Cloud Pak for Integration services that we will be used are:
 
 ### IBM App Connect Enterprise
 
@@ -35,9 +35,10 @@ IBM Cloud Pak for Integration includes API Connect as an integrated API manageme
 
 The steps of the API lifecycle include: 
 - Create
-- Run 
+- Run
 - Manage 
-- Secure APIs
+- Secure 
+- Socialize APIs
 
 With API Connect, you can perform all of the lifecycle steps in a single integrated offering, removing the requirement to use multiple API management offerings to obtain the same capability.
 

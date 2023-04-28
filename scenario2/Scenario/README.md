@@ -12,11 +12,11 @@
 
 - The Bank has initiated a digital transformation program to modernize their channel applications such as Internet  Banking, using reactive technology to make it more user friendly and compelling to their customers.
 
-- They want to user APIs in order to  quickly unlock their assets in the legacy systems - so that their channel applications can consume.
+- They want to use APIs in order to  quickly unlock their assets in the legacy systems - so that their channel applications can consume.
 
 - Security is paramount, they need to ensure that the APIs exposed needs to be secured using client id/secret and OAuth/OIDC.
 
-<img src="../Scenario/img/01-scenario2-diagram.png" style="width:8in;height:6in" />
+<img src="../Scenario/img/01-scenario2-diagram.png" style="width:10in;height:6in" />
 
 ## Requirement
 

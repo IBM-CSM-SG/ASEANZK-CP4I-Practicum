@@ -59,7 +59,7 @@ link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-downloa
 
 The version used in this practicum is 12.0.8
 
-<img src="./media/image3.jpeg" style="width:6.26806in;height:3.37014in" />
+<img src="./media/image3.jpeg" style="width:6.26806in;height:2in" />
 
 <img src="./media/image3.1.jpeg" style="width:5.5in;height:3in" />
 

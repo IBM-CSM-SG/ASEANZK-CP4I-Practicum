@@ -59,26 +59,26 @@ link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-downloa
 
 The version used in this practicum is 12.0.8
 
-<img src="./media/image3.jpeg" style="width:8.26806in;height:3.37014in" />
+<img src="./media/image3.jpeg" style="width:6.26806in;height:1in" />
 
-<img src="./media/image3.1.jpeg" style="width:5.5in;height:3.5in" />
+<img src="./media/image3.1.jpeg" style="width:6.26806in;height:3.5in" />
 
-<img src="./media/image4.jpeg" style="width:5.5in;height:3.5in" />
+<img src="./media/image4.jpeg" style="width:6.26806in;height:3.5in" />
 
 Complete the installation through the installer package you just downloaded for your OS. 
 eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation page as a guide to complete the installation.
 
-<img src="./media/image4.1.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.2.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.3.jpeg" style="width:6in;height:2in" />
-<img src="./media/image4.4.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.5.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.6.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.7.jpeg" style="width:6in;height:4in" />
+<img src="./media/image4.1.jpeg" style="width:6.26806in;height:4in" />
+<img src="./media/image4.2.jpeg" style="width:6.26806in;height:4in" />
+<img src="./media/image4.3.jpeg" style="width:6.26806in;height:2.5in" />
+<img src="./media/image4.4.jpeg" style="width:6.26806in;height:4in" />
+<img src="./media/image4.5.jpeg" style="width:6.26806in;height:4in" />
+<img src="./media/image4.6.jpeg" style="width:6.26806in;height:4in" />
+<img src="./media/image4.7.jpeg" style="width:6.26806in;height:4in" />
 
 Once installed, open the installed ACE toolkit. A view similar to the screenshot below will launch.
 
-<img src="./media/image-xx-0.jpeg" style="width:8in;height:4in" />
+<img src="./media/image-xx-0.jpeg" style="width:6.26806in;height:2.5in" />
 
 <img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in" />
 

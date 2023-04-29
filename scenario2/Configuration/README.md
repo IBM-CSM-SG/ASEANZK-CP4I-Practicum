@@ -90,7 +90,7 @@ Download Openshift Command line tools (OC Client)
 
 Download OC Client for your platform
 
-<img src="./media/image6.png" style="width:8in" />
+<img src="./media/image6.png" style="width:10in" />
 
 Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. 
 
@@ -112,11 +112,11 @@ Signup for a SMTP account on mailtrap.io. Once logged in, note down your SMTP co
 
 &nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Password: 11xxxxxx06b8da </i> </u>
 
-<img src="./media/image7.png" style="width:6.26806in"  />
+<img src="./media/image7.png" style="width:10in"  />
 
 You can also check all your emails under MyInbox in mailtrap web site.
 
-<img src="./media/image8.png" style="width:6.26806in"  />
+<img src="./media/image8.png" style="width:10in"  />
 
 <span id="_Toc105518924" class="anchor"></span>**Messaging Queue (MQ)**
 
@@ -124,49 +124,49 @@ You can also check all your emails under MyInbox in mailtrap web site.
 
 Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift Route cp4d or as per given by the instructor.
 
-<img src="./media/image9.png" style="width:6.26806in"  />
+<img src="./media/image9.png" style="width:10inin"  />
 
 Login to IBM Cloud Pak using the IBM provided credentials (admin only).
 
-<img src="./media/image10.png" style="width:6.26806in" />
+<img src="./media/image10.png" style="width:10inin" />
 
 Use IBM provided Authentication (admin only) and log in with admin and its password.
 
-<img src="./media/image11.png" style="width:6.26806in"  />
+<img src="./media/image11.png" style="width:10inin"  />
 
 Go to IBM Cloud Pak Home. You can verify the currently added/configure instances from Menu -> Integration Instances.
 
-<img src="./media/image12.png" style="width:6.26806in"/>
+<img src="./media/image12.png" style="width:10inin"/>
 
 The below instances should already be pre-created for you.
 
-<img src="./media/image12.1.png" style="width:6.26806in" />
+<img src="./media/image12.1.png" style="width:10inin" />
 
 Click on **Messaging** as highlighted in the screen below:
 
-<img src="./media/image12.png" style="width:6.26806in;height:3.42431in" />
+<img src="./media/image12.png" style="width:10in" />
 
 This will redirect to a Messaging screen as below. Click on Create an instance to create a queue manager.
 
-<img src="./media/image13.png" style="width:6.26806in;height:3.16181in" />
+<img src="./media/image13.png" style="width:10in" />
 
 Select **Quick start** option from this screen, and click on Next.
 
-<img src="./media/image14.png" style="width:6.26806in;height:3.16181in" />
+<img src="./media/image14.png" style="10in" />
 
 Modify the details for your queue manager as below:
 
 -   **License acceptance** – Toggle the button from OFF to ON state 
 
-<img src="./media/image15.png" style="width:6.26806in;height:3.15903in" />
+<img src="./media/image15.png" style="10in" />
 
 -   Select **Type of availability** from dropdown as SingleInstance
 
-<img src="./media/image16.png" style="width:6.26806in;height:3.35347in" />
+<img src="./media/image16.png" style="10in" />
 
 -   Select **Type of Volume** from the drop down as persistent-claim 
 
-<img src="./media/image17.png" style="width:6.26806in;height:3.35347in"  />
+<img src="./media/image17.png" style="10in"  />
 
 Lastly click on **Create** from the top right corner and queue manager
 will be created. You will be redirected to a new page, showing the

@@ -12,11 +12,15 @@
 - [2. Deploying the REST Service](#deploy)
 
 - [3. Import an API into the Developer Workspace](#import_api)
+	* [3a. Create Organization Client Secret API Key Security](#create_org)
+	* [3b. Configure SMTP for Notifications](#config_smtp)
+	* [3c. Configure Admin Email ID](#config_admin_email)
+	* [3c. Create APIs](#create_apis)
 
 - [4. Configure the API ](#configure_api)
-	* [3a. Configure Client Secret API Key Security](#configure_security)
-	* [3b. Review and update the Target-URL for Sandbox Environment](#target_url)
-	* [3c. Review the Proxy Call in Designer](#proxy)
+	* [4a. Configure Client Secret API Key Security](#configure_security)
+	* [4b. Review and update the Target-URL for Sandbox Environment](#target_url)
+	* [4c. Review the Proxy Call in Designer](#proxy)
 
 - [5. Test the API](#test_api)
 
@@ -130,6 +134,105 @@ If you're not logged before, follow these instructions to access to the Platform
 <span id="import_api" />
 
 # 3. Import an API into the Developer Workspace
+
+<span id="create_org" />
+
+## Create Organization
+
+Click on the API Management Administration Link to open Cloud Manager
+Console.
+
+Click Manage Organization.
+
+<img src="images/image73.png" style="width:6.26806in;height:3.9in"  />
+
+Click on Add to create an API organization which is like a logical
+separation of multiple API users.
+
+<img src="images/image74.png" style="width:6.26806in;height:2.09931in" />
+
+Enter the Organization Name.
+
+<img src="images/image75.png" style="width:6.26806in;height:3.81736in"  />
+
+Change the User Registry to Common Services User Registry. Enter the
+existing user name as admin. Click Create.
+
+<img src="images/image76.png" style="width:6.26806in;height:3.47361in"  />
+ 
+<img src="images/image77.png" style="width:6.26806in;height:0.99074in"  />
+
+<span id="config_smtp" />
+
+## Configure SMTP for notifications
+ 
+Click on Resource’s link in the left pane. Click on Notification Link in the left pane.
+
+<img src="images/image78.png" style="width:6.26806in;height:3.80417in" />
+
+Click on Create button to create a new SMTP Server.
+
+<img src="images/image79.png" style="width:6.26806in;height:1.80208in" />
+
+Add a new smtp server for email notifications. You can add any smtp
+provider eg. Sendgrid or mailtrap or any other.
+
+**Note:** Signup SMTP account on mailtrap.io. Once logged in, note down your SMTP connection settings. For Example,
+
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Host: smtp.mailtrap.io </i> </u>
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Port: 2525 </i> </u>
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> User: 2ef08bdc18285b </i> </u>
+&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Password: 11xxxxxx06b8da </i> </u>
+
+You will also need to check all your emails under MyInbox in mailtrap web site.
+
+<img src="images/image80.png" style="width:6.26806in;height:3.82569in" />
+
+Click test email to test the connection. Enter the recipient email id
+and click Send Test Email.
+
+<img src="images/image81.png" style="width:4.38889in;height:1.48611in" />
+
+The email should be sent successfully. You can verify this only through the mailtrap inbox. It will not land in the actual reciever inbox.
+
+<img src="images/image82.png" style="width:4.36111in;height:1.45833in" />
+
+Click Save to save the config.
+
+<img src="images/image83.png" style="width:6.26806in;height:1.42778in" />
+
+Also update the same email smtp settings for the Dummy mail server as well.
+
+<img src="images/image84.png" style="width:6.26806in;height:1.34653in" />
+
+<span id="config_admin_email" />
+
+## Configure admin email id
+
+In the Cloud Manager, Under Manage Organization, Go to Logged in User (admin) Settings and click My Account.
+
+<img src="images/image85.png" style="width:6.26806in;height:1.66736in" />
+
+Update the email id for the current account. Very Important. Otherwise
+later you will not be able to create a portal service under a catalog.
+
+<img src="images/image86.png" style="width:6.26806in;height:2.83889in" />
+
+<span id="_Toc105518938" class="anchor"></span>**API Manager (API
+Management)**
+
+Click on the API Management Link to open API Management Console. If you
+see below picture then your Organization is not set correctly.
+
+<img src="images/image87.png" style="width:6.26806in;height:3.89306in" />
+
+After setting the organization correctly, the API Manager should look like this.
+
+<img src="images/image88.png" style="width:6.26806in;height:3.95278in" />
+
+<span id="create_apis" />
+
+## Create APIs
 
 1\. Click on **IBM Cloud Pak | Automation** in the upper left.
 

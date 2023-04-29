@@ -114,7 +114,7 @@ Signup for a SMTP account on mailtrap.io. Once logged in, note down your SMTP co
 
 <img src="./media/image7.png" style="width:10in"  />
 
-You can also check all your emails under MyInbox in mailtrap web site.
+You will also need to check all your emails under MyInbox in mailtrap web site.
 
 <img src="./media/image8.png" style="width:10in"  />
 
@@ -356,9 +356,7 @@ Copy the bar file path or open it in finder window.
 
 <img src="./media/image54.png" style="width:5.90278in;height:3.95833in"  />
 
-<span id="_Toc105518928" class="anchor"></span>**Integration Dashboard - Deploy an integration server****
-
-Navigate to Menu -\> Integration.
+<span id="_Toc105518928" class="anchor"></span>**Integration Dashboard - Deploy an integration server**
 
 Proceed to create a Integration Server in CP4I Console. Click on Deploy Integrations.
 
@@ -417,7 +415,9 @@ Navigate to Administration -\> Integration Instances.
 
 <img src="./media/image67.png" style="width:6.26806in;height:1.44514in" />
 
-Create an instance of the API Connect (API Management) .
+If there is no existing instance of **API Management**, Create an instance of the API Connect (API Management) as per following procedure. 
+
+If there is already an instance, then you should be able to see instances for API Management, API Management Administration, API-managed enterprise gateway. In this case, just click on the instance name for API Management Administration and continue to create organiation as per next section of [Cloud Manager (API Management Administration)](#_Toc105518934).
 
 <img src="./media/image68.png" style="width:6.26806in;height:4.07639in"  />
 
@@ -447,7 +447,7 @@ The following API Connect Instances will be created in about 45 minutes.
 
 <span id="_Toc105518934" class="anchor"></span>**Cloud Manager (API Management Administration)**
 
-#### Create Organization
+### Create Organization
 
 Click on the API Management Administration Link to open Cloud Manager
 Console.
@@ -472,7 +472,7 @@ existing user name as admin. Click Create.
  
 <img src="./media/image77.png" style="width:6.26806in;height:0.99074in"  />
 
-#### Configure SMTP for notifications
+### Configure SMTP for notifications
  
 Click on Resource’s link in the left pane. Click on Notification Link in the left pane.
 
@@ -504,7 +504,7 @@ Also update the same email smtp settings for the Dummy mail server as well.
 
 <img src="./media/image84.png" style="width:6.26806in;height:1.34653in" />
 
-#### Configure admin email id
+### Configure admin email id
 
 In the Cloud Manager, Under Manage Organization, Go to Logged in User (admin) Settings and click My Account.
 
@@ -527,7 +527,7 @@ After setting the organization correctly, the API Manager should look like this.
 
 <img src="./media/image88.jpeg" style="width:6.26806in;height:3.95278in" />
 
-#### Develop API
+### Develop API
 
 Click on Develop APIs and products. Create a new API. This will
 encapsulate the API created on the ACE.
@@ -563,7 +563,7 @@ Click Edit API.
 
 <img src="./media/image95.png" style="width:6.26806in;height:1.76319in" />
 
-#### Configure API
+### Configure API
 
 After Clicking Edit API, API Design Screen will open.
 
@@ -613,7 +613,7 @@ sandbox.
 
 <img src="./media/image107.png" style="width:2.73611in;height:0.625in"  />
 
-#### Develop Product
+### Develop Product
 
 Go to API Manager Home again and click on "Develop API and Products".
 
@@ -676,7 +676,7 @@ Configure the sender name and email address.
 
 <img src="./media/image122.png" style="width:6.26806in;height:1.81042in" />
 
-#### Create Catalog
+### Create Catalog
 
 Now we can create a catalog. One catalog can contain one developer
 portal where this product can be published. We can have a internal and

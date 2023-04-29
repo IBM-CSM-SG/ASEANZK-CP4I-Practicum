@@ -86,11 +86,11 @@ Once installed, open the installed ACE toolkit. A view similar to the screenshot
 
 Download Openshift Command line tools (OC Client)
 
-<img src="./media/image5.png" style="width:6.26806in" />
+<img src="./media/image5.png" style="width:10in" />
 
 Download OC Client for your platform
 
-<img src="./media/image6.png" style="width:6.26806in" />
+<img src="./media/image6.png" style="width:8in" />
 
 Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. 
 

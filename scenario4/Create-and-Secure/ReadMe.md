@@ -223,8 +223,11 @@ later you will not be able to create a portal service under a catalog.
 <span id="_Toc105518938" class="anchor"></span>**API Manager (API
 Management)**
 
-Click on the API Management Link to open API Management Console. If you
-see below picture then your Organization is not set correctly.
+Click on the API Management Link to open API Management Console. 
+
+<img src="images/api_manager.png" style="width:6.26806in;height:2.92064in" />
+
+If you see below picture then your Organization is not set correctly.
 
 <img src="images/image87.png" style="width:6.26806in;height:3.89306in" />
 
@@ -612,7 +615,7 @@ Click **Send**.
 {
   "firstname": "Emily",
   "lastname": "Drew",
-  "address": "123 Colorado Address"
+  "address": "Updated 123 Colorado Address"
 }
 </code>
 and click **Send**.

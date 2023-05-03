@@ -142,6 +142,8 @@ If you're not logged before, follow these instructions to access to the Platform
 Click on the API Management Administration Link to open Cloud Manager
 Console.
 
+<img src="images/cloud_manager.png" style="width:6.26806in;height:2.8in"  />
+
 Click Manage Organization.
 
 <img src="images/image73.png" style="width:6.26806in;height:3.9in"  />

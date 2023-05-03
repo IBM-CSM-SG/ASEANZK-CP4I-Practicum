@@ -75,9 +75,15 @@ A Developer Portal for the Sandbox catalog has already been configured in this e
 
 ![alt text][pic11]
 
-5\. From the left menu, click on **Portal**.
+5a\. From the left menu, click on **Portal**. Click on **Create**.
 
-![alt text][pic12]
+![alt text][pic12a]
+
+![alt text][pic12b]
+
+5b\. Select a **portal-service** from the drop-list. And click **Create** button
+
+![alt text][pic12c]
 
 6\. Copy the **Portal URL** and paste it in a new browser tab.  Note: If you get a warning message that your connection is not private, follow the instructions in the previous section.
 
@@ -114,6 +120,9 @@ The portal is setup for self service so we will create a new account as a develo
 [pic10]: images/10.png
 [pic11]: images/11.png
 [pic12]: images/12.png
+[pic12a]: images/portal.png
+[pic12b]: images/create_portal.png
+[pic12c]: images/create_portal_2.png
 [pic13]: images/13.png
 [pic14]: images/14.png
 [pic15]: images/15.png

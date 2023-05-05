@@ -42,17 +42,12 @@ You already have created a topic in Event Stream , and now you need to build mes
 
 1) Start App Connect Enterprise and create App Connect Enterprise workspace directory, for example , workspace directory as ace-fxcurrency folder (~/IBM/ACET11/workspace/ace-fxcurrency). Click OK.
 
-
-![appconnect](img/13-start%20appconnect.jpeg)
+<img src="img/13-start%20appconnect.jpeg" width=800 height=250/>
 
 2) Assume that you already have good foundation on App Connect and know how to create REST API or you can learn from [this link ](https://www.youtube.com/watch?v=1WimJ1HPTIk) you can create a project for building the message flow 
 
-![project](img/14-create%20project.jpeg)
+<img src="img/14-create%20project.jpeg" width=1000 height=350/>
 
-3) Before working on the message flow, you need to create a policy project. Refer to the Next Section.
-
-
-### Producing message on Kafka topics
 1. To produce message to kafka topic, we can use Kafka Producer node.
 
 ![Kafka Producer](img/03-kafka%20producer%20node.jpg)
@@ -92,13 +87,13 @@ locate fxcurrencyPolicy folder and compress it as Zip file
 10. Optionally , in case you need to use keyStore in JKS , we can covert es-cert.p12 into es-cert.jks using keytool command
 make sure you install Java JRE , then you will be able to use keytool
 
-Example command below, 
+Example command below, use exact password instead of xxxxxxxx
 
-and EwFFE8Fq3KKN = certificate password
+<code>
+keytool -importkeystore -srckeystore es-cert.p12 -srcstoretype PKCS12 -destkeystore es-cert.jks -deststoretype JKS -srcstorepass xxxxxxxx -deststorepass xxxxxxxx -noprompt
+</code>
 
-keytool -importkeystore -srckeystore es-cert.p12 -srcstoretype PKCS12 -destkeystore es-cert.jks -deststoretype JKS -srcstorepass EwFFE8Fq3KKN -deststorepass EwFFE8Fq3KKN -noprompt
-
-### Deploying App Connect Enterprise
+## Deploying App Connect Enterprise
 
 App Connect Enterprise toolkit generated a BAR file, which has all information to run app connect instance.
 and for this modernization, the operator-based approach has been introduced for packing , deploying and 
@@ -170,11 +165,9 @@ managing App Connect in container environment.
 
 ![resultapi](img/36-resultapi.jpeg)
 
-16 After testing, you can go back to see the result that the message is
-sent to the specific topic in EventStrem that you define in app connect.
-Carry on the EventStream part from [this page](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario1/tree/main/Solution%20build/IBM%20Event%20Streams)  under the topic Check the message in the Topic in EventStrem Cluster
+16 After testing, you can go back to see the result that the message is sent to the specific topic in EventStrem that you define in app connect.
 
-## After deploying App Connect and testing successfully in previous step, check the message in topic in EventStream 
+## Verify Message in EventStream Topic
 
 1. Back on the main menu IBM Automation Dashboard, under Design section you select kafka clusters 
 
@@ -197,10 +190,10 @@ Carry on the EventStream part from [this page](https://github.ibm.com/ASEANZK-CP
 
   ![messages](img/19-messages.jpeg)
       
-### Consuming message from Kafka topics
+## Consuming message from Kafka topics
 
 To understand on consuming message from kafka , you can check out 
 [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=enterprise-consuming-messages-from-kafka-topics) 
 
 
-### [Go Back](/scenario1/README.md)
+[Go Back](/scenario1/README.md)

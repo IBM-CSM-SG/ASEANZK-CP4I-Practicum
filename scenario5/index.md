@@ -57,7 +57,7 @@ The Cloud Pak for Integration services that we will be use are:
 
 ## Solution Build
 
-This scenario can be implemented/developed using one of the below two ways. You can use online CP4I App Connect Designer to design the flow and export is as bar file to be deployed it on the integration server. Alternatively you can use traditional App Connect Enterprise (ACE) to design the flow and export the bar file to be deployed on the integratin server.
+This scenario can be implemented/developed using **one of the below two ways**. You can use online **CP4I App Connect Designer** to design the flow and optionally export is as bar file to be deployed it on the integration server. Alternatively you can use traditional **App Connect Enterprise (ACE) Client** to design the flow and export the bar file to be deployed on the integration server.
 
 You can refer to below instructions to **[Create Connection to shared Kafka cluster.](Kafka-Pre-lab/Kafka-Pre-Lab.md)** Steps to create Kafka connection and save credentials and certs for all Kafka labs. 
 

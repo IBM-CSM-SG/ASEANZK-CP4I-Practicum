@@ -704,12 +704,12 @@ We will now test are flows but using the Kafka API to generate a Kafka message t
 ![alt text][tst4]
 
 10\. You will see a list of Queues that you have for your QMgr.
-You should see the Queue you created for this lab **TOOLKIT.KAFKA.CONSUMER**  Every time you run the API Kafka Producers you will see the message depth increase.   
+You should see the Queue you created for this lab eg. **TOOLKIT.KAFKA.CONSUMER**  Every time you run the API Kafka Producers you will see the message depth increase.   
 
 ![alt text][tst5]
 
-11\. Now let's go to the Red Hat Openshift Console and make sure you sign in with your same userid and password.  Select Workloads and select Pods to see all your running pods in your Project (Namespace).   In this example it is chopper1.
-Find the kafka consumer pod and select that.
+11\. Now let's go to the Red Hat Openshift Console.  Select Workloads and select Pods to see all your running pods in your Project (cp4i). 
+Find the kafka consumer pod (as per name of your integration server) and select that.
 
 ![alt text][tst6]
 

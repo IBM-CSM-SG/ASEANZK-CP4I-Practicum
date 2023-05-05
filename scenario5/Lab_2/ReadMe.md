@@ -1,12 +1,6 @@
-# IBM App Connect Enterprise
+# IBM App Connect Enterprise - Kafka Toolkit flow
 
-## App Connect Kafka Toolkit flow
-
-[Return to main lab page](../index.md)
-
----
-
-# Table of Contents 
+**Table of Contents**
 -  [1. Introduction](#introduction)
 -  [2. Event Streams Setup](#event-streams-setup)
     * [2.1 Create Topic](#create-topic)
@@ -21,6 +15,9 @@
     * [4.2 Deploy BAR file using ACE Dashboard](#deploy-bar)
     * [4.3 Create Server in ACE Dashboard](#create-server)
 - [5. Test our Deploy assets](#test)
+
+[Return to main lab page](../index.md)
+
 ---
 
 <span id="introduction" />
@@ -58,9 +55,7 @@ You will then have a tab open for each of them to help save time.
 
 ## 2.1 Create the Kafka topic
 
-Now fill in the fields.  We will use the SCRAM credentials we saved earlier in the **Kafka Pre-Req**.
-<br>
-**Note:** If you didn't complete the pre-lab steps [Return to Kafka Pre-lab page](../../../Kafka-Pre-lab/Kafka-Pre-Lab.md)
+Now fill in the fields.  We will use the SCRAM credentials and certificates as per **[Create Connection to shared Kafka cluster](../Kafka-Pre-lab/Kafka-Pre-Lab.md)**.
 
 Once you complete this or if you have already completed you will have the following details saved in a notepad and the certs should be in your download directory.
 
@@ -80,9 +75,9 @@ Once you complete this or if you have already completed you will have the follow
 
 ![alt text][es2]
 
-3\. Now enter the name of your topic.  Since this is a shared Kafka broker, use your userid as part of the topic name.  In this example, we are logged in as chopper1 so the topic name is **chopper1.toolkit-topic**.  Click **Next**.
+3\. Now enter the name of your topic.  Since this is a shared Kafka broker, use your userid/name/unique-idetifier as part of the topic name.  In this example, we created the topic name is **chopper1.toolkit-topic**.  Click **Next**.
 
-**Note:** Make sure you use your userid without adding additional characters since this is tied to the connection details in the Pre-lab section. 
+**Note:** Make sure you use your userid/name/unique-idetifier without adding additional characters since this is tied to the connection details in the Pre-lab section. 
 
 ![alt text][es3]
 
@@ -90,7 +85,7 @@ Once you complete this or if you have already completed you will have the follow
 
 ![alt text][es4]
 
-5\. Since this is for a lab, change the Message retention to **A day** and click **Next**.
+5\. Since this is for a lab, change the Message retention to **A Week** and click **Next**.
 **Note:** If we wanted to retain message longer we could change this to meet those needs.
 
 ![alt text][es5]
@@ -156,7 +151,7 @@ Or you can click on the link from the home page and this will take you to the IB
 
 ![alt text][mq4]
 
-5\. Now enter the Queue name.  In the example we used **TOOLKIT.KAFKA.CONSUMER** then click **Create**.  
+5\. Now enter the Queue name.  You can use your userid/name/unique-idetifier as part of the Queue Name to make it unique as its a shared cluster. In the example we used **TOOLKIT.KAFKA.CONSUMER** then click **Create**.  
 
 ![alt text][mq5]
 
@@ -198,12 +193,14 @@ In this section, we will use App Connect Toolkit to create a simple API that wil
 We have a Project Interchange File provided that you will configure to use your user info for accessing the shared Kafka Broker in our lab cluster. 
 
 * Now download the **KafkaProducerAPI-Template-PI.zip** 
-  Click here and save the zip file to your VDI. 
+  Click here and save the zip file to your device. 
   - [KafkaProducerAPI-Template-PI.zip](../Assets/KafkaProducerAPI-Template-PI.zip).
 
-1\. First we will start the ACE toolkit in our VDI.  Double click on the Terminal icon on the desktop to open a terminal window.  This will land you in the home directory.  
+1\. First we will start the ACE toolkit in our device.  Double click on the Terminal icon on the desktop to open a terminal window.  This will land you in the home directory.  
 Enter the following command to launch the ACE toolkit kit **ace toolkit**.
 You will be presented with a window to select your workspace.   Enter the workspace name  **/home/student/IBM/ACET12/workspace** and click launch.
+
+**Note:** If you don't have the ACE client, refer to **[install client tools](../Kafka-Pre-lab/Install-Client-Tools.md)**.
 
 ![alt text][1tk]
 
@@ -231,7 +228,7 @@ D)	The **Integration Explorer** Window <span style="color:red"><b>(D)</b></span>
 
 ![alt text][5tk]
 
-6\. When you downloaded the Project Interchange file it put in the Download directory.   Click on the Download in the left menu and you will see your PI file. 
+6\. When you downloaded the Project Interchange file [KafkaProducerAPI-Template-PI.zip](../Assets/KafkaProducerAPI-Template-PI.zip), it should be in the Download directory.   Click on the Download in the left menu and you will see your PI file. 
 Select the API Template and click **Open**
 
 ![alt text][6tk]
@@ -242,19 +239,33 @@ Select the API Template and click **Open**
 
 8\. You will now see the project in the Application Development on the left sdie.   Open it can go to the Subflows folder and double click on the **postContacts.subflow** and you will see the flow open.
 
-Click on the KafkaProducer in the flow make sure you click on the Properties tab.   This is where you will make your updates to this flow.   For the Topic name you will replace the XXXX with your user id.  In this example it would be chopper1. 
+Review the complete flow. Click on the **KafkaProducer** in the flow.In the Properties tab, you will make your updates to this flow. In the Basic Tab, Replace the **Topic name** as per your unique userid/name/unique identifier.  You can enter your unique userid/name/unique identifier for the **Client ID** to identify the client. You can enter anything for the **Bootstrap servers** here as the address will be picked up from Policy. Review all other properties tab. Make sure you have the correct Policy Name configured under the policy tab.
 
-Do the same for the Client ID.
-
-**Note** Enter CTL-S to save your updates.
+**Note** Enter CTRL-S to save your updates.
 
 ![alt text][8tk]
 
-9\. Now we will open the Event Stream Policy where we will configure the connection info to the Kafka broker.  The only thing you need to change is the Bootstrap.   In this case we will change the XXXX to chopper.   We will not use are userid like in the flow before since this is a common broker for the cluster everyone is sharing the Kafka Broker. 
+<span id="truststore" />
+
+9\. Now we will open the Event Stream Policy where we will configure the connection info to the Kafka broker.  The only thing you may need to change is the Bootstrap Server address for your Kafka Broker. There are few important things to note here as documented in table below.
+
+  | Property       | Description / Value          |
+|:------------- |:---------------|
+| Type  | Kafka  |
+| Bootstrap Server  | Link when you generating SCRAM credential  |
+| Security protocol  | SASL_SSL  |
+| SASL Mechanism  | SCRAM-SHA-512  |
+| SSL protocol  | TLSv1.2  |
+| Security identity (DSN)  | **ACE param contains SCRAM user and password. This exact name will be used later in integration server configuration properties in setdbparms.txt. You can keep it same**   |
+| SASL config  | org.apache.kafka.common.security.scram.ScramLoginModule required;  |
+| SSL trustore location  | **name and location of truststore in ACE container. It will be always inside /home/aceuser/truststores/ folder. The trust store file name depends on the name of the configuration property 'Truststore' for integration server. You can configure /home/aceuser/truststores/username-es-cert.jks here**  |
+| SSL trustore type  | JKS or PKCS12 (for now, we plan to use JKS)  |
+| SSL trustore security identity  | **ACE param contain trustore password. This exact name will be used later in integration server configuration properties in setdbparms.txt. You can keep it same**  |
+| Enable SSL certificate hostname checking  | true  |
 
 ![alt text][9tk]
 
-10\. Make sure to save your updates.   If you click on the postContacts.subflow you will see there is an **'\*'** that means it isn't saved.  You can do a CTL-S to save.  Do the same for the es policy.  
+10\. Make sure to save your updates.   If you click on the postContacts.subflow you will see there is an **'\*'** that means it isn't saved.  You can do a CTRL-S to save.  Do the same for the es policy.  
 
 ![alt text][9atk]
 
@@ -287,8 +298,7 @@ First we will open the Files tools
 
 ![alt text][15tk]
 
-7\. In the **Compress Window** make sure to select **.zip** for the format and the **Location** will be Desktop.
-Click **Create**
+7\. In the **Compress Window** make sure to select **.zip** for the format and the **Location** will be Desktop. Click **Create**
 
 ![alt text][16tk]
 
@@ -311,8 +321,7 @@ We have a Project Interchange File provided that you will configure to use your 
 
 ![alt text][5tk]
 
-3\. When you downloaded the Project Interchange file it put in the Download directory.   Click on the Download in the left menu and you will see your PI file. 
-Select the Consumer Template and click **Open**
+3\. When you downloaded the Project Interchange file - [KafkaConsumerTemplatePI.zip](../Assets/KafkaConsumerTemplatePI.zip), it should be in the Download directory.   Click on the Download in the left menu and you will see your PI file.  Select the Consumer Template and click **Open**
 
 ![alt text][6ctk]
 
@@ -329,22 +338,25 @@ Select the Consumer Template and click **Open**
    - <span style="color:red"><b>(3)</b></span> In the msgflow click on the KafkaConsumer and make sure the Properites tab is selected below.  
 
 
-   - <span style="color:red"><b>(4)</b></span> This is where you will make your updates to this flow.   For the Topic name you will replace the XXXX with your user id.  In this example it would be chopper1.
-          
-        ####  Do the same for the Consumer Group ID and the Client ID. 
+   - <span style="color:red"><b>(4)</b></span> This is where you will make your updates to this flow.  
+        (4a) - For the Topic name you will the exact topic name created by you. 
+        (4b) For the Consumer Group ID and the Client ID, enter the unique username/identifier that you used for topic naming. 
+
+   - <span style="color:red"><b>(5)</b></span> Click on the node **KAFKA.CONSUME.ACCOUNTS** and under the basic tab, verify the queue name that you have created. Under the Policy Tab, review the MQ policy name to be used. You can leave all other options as default.
 
 **Note** Enter CTL-S to save your updates.
 
 ![alt text][8ctk]
 
-9\. Now we will update the MQ policy for the Consumer flow.
-Click on the dev.policyxml and you will see the Policy and the attributes.   We have the populated and you only need to change the **X** in the Queue manager Name and the Host name. 
-This will be the number is your user.  
-So for this I would use 1 for chopper1 user.
-If you are say chopper10 you would change the X to 10. 
+9\. Now we will update the MQ policy for the Consumer flow. Click on the dev.policyxml and you will see the Policy and the attributes.   We have the populated and you only need to change the **Queue manager Name and its Host name**. 
 
+9a\. For the host name, login to RedHat Openshift console, and under Networking -> Services, find the service name based on your MQ instance name. Click on it and you can see the MQ Service Host Name.
 
-**Note** Enter CTL-S to save your updates.
+<img src="images/RH_SVC_NAME.jpeg" width=800 height=480/>
+
+<img src="images/RH_SVC_HOST_NAME.jpeg" width=800 height=480/>
+
+9b\. Enter CTL-S to save your updates.
 
 ![alt text][9ctk]
 
@@ -465,8 +477,9 @@ Or if you already have a tab open from earlier in the lab you can select that.
 
 ![alt text][bar4]
 
-7\. Now we have uploaded our API Kafka BAR file and need to also upload the Consumer Kafka BAR file.  Repeat steps 1-6 to upload the consumer BAR we created.
-When complete you should have both being displayed in the list of BAR files available with the status of Not deployed
+7\. Now we have uploaded our API Kafka BAR file and need to also upload the Consumer Kafka BAR file.  
+
+8\. Repeat steps 1-6 to upload the consumer BAR we created. When complete you should have both being displayed in the list of BAR files available with the status of Not deployed
 
 ![alt text][bar5]
 
@@ -496,7 +509,7 @@ Once the screen is updated click on the **Create configuration**.
 
 ![alt text][cf3]
 
-4\. This will fill in the name and you can then add a brief description if you want to. In my case I used es-demo JKS certificate.  Finally click **Create** to add the TrustStore Configuration. 
+4\. This will fill in the name. You may update the name as per configured in the kafka policy project, eg. username-es-cert.jks **[see the trust store location here](#truststore)** . You can then add a brief description if you want to. Finally click **Create** to add the TrustStore Configuration. 
 
 ![alt text][cf3a]
 
@@ -504,12 +517,12 @@ Once the screen is updated click on the **Create configuration**.
 
 ![alt text][cf4]
 
-6\. In the next window enter the name of the configuration. In my case I used chopper1-esdemo-scram-credential. Followed by a brief description i.e. Credential to connect to es-demo using SCRAM. Finally use the following information as a reference to enter the data in the text box.
+6\. In the next window enter the name of the configuration. You can use <yourname>-esdemo-scram-credential. Followed by a brief description i.e. Credential to connect to es-demo using SCRAM. Finally use the following information as a reference to enter the data in the text box.
  
 Resource Name | User | Password
 --------------|------|---------
-***truststore::truststorePass*** | dummy | &lt;Password obtained when downloading the PKCS12 certificate">
-***kafka::aceflowsSecId*** | &lt;This will be your user id i.e. chopper1 used to create SCRAM credentials.> | &lt;Password obtained for your user id when you created your SCRAM credentials to connect to Event Streams">  
+***truststore::truststorePass*** | dummy | &lt;Password obtained when downloading the PKCS12 certificate>
+***kafka::aceflowsSecId*** | &lt;This will be your id used to create SCRAM credentials.> | &lt;Password obtained for your id when you created your SCRAM credentials to connect to Event Streams>  
 
 Here is an example from when the lab was created:
 
@@ -524,8 +537,8 @@ Finally click **Create** to add the setdbparm.txt Configuration.
 
 ![alt text][cf5]
 
-7\. Now we will create the Configuration for the Policy selecting the Policy project type from the drop down box. 
-Enter the name of the policy i.e. **chopper1-es-demo-scram-policy** , add a brief description if you want to, i.e. **Policy to connect to Event Streams instance es-demo using SCRAM** and finally click on hyper link **Drag and drop a single file here or click to import** to import the zip file we created in the previous section. 
+7\. Now we will create the Configuration for the Policy selecting the **Policy project** type from the drop down box. 
+Enter the name of the policy i.e. **&lt;username>-es-demo-scram-policy** , add a brief description if you want to, i.e. **Policy to connect to Event Streams instance es-demo using SCRAM** and finally click on hyper link **Drag and drop a single file here or click to import** to import the zip file we created in the previous section. 
 
 ![alt text][cf6]
 
@@ -537,8 +550,8 @@ Enter the name of the policy i.e. **chopper1-es-demo-scram-policy** , add a brie
 
 ![alt text][cf8]
 
-10\. Now we will create the Configuration for the Policy selecting the Policy project type from the drop down box. 
-Enter the name of the policy i.e. **chopper1-mq-policy** , add a brief description if you want to, i.e. **Policy to connect to chopper1 QMgr** and finally click on hyper link **Drag and drop a single file here or click to import** to import the zip file we created in the previous section. 
+10\. Now we will create the Configuration for the Policy selecting the **Policy project** type from the drop down box. 
+Enter the name of the policy i.e. **&lt;username>-mq-policy** , add a brief description if you want to, i.e. **Policy to connect to QMgr** and finally click on hyper link **Drag and drop a single file here or click to import** to import the zip file we created in the previous section. 
 
 ![alt text][cf9]
 
@@ -593,7 +606,7 @@ Enter the name of the policy i.e. **chopper1-mq-policy** , add a brief descripti
 
 ![alt text][serv1d]
 
-6\. In the next page give your deployment a name, i.e kafka-api-producer-toolkit and click Advance settings.   
+6\. In the next page give your deployment a name, i.e &lt;username>-kafka-api-producer-toolkit and click Advance settings.   
 
 ![alt text][serv1e]
 
@@ -620,7 +633,7 @@ We will now create Server to deploy the Consumer BAR file.  Click **Deploy Integ
 
 ![alt text][serv2b]
 
-12\. In the next page give your deployment a name, i.e kafka-consumer-toolkit and click Advance settings.   
+12\. In the next page give your deployment a name, i.e &lt;username>-kafka-consumer-toolkit and click Advance settings.   
 
 ![alt text][serv2c]
 

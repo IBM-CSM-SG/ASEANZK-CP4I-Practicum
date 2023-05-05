@@ -16,7 +16,7 @@ In this section we'l find out how to use the IBM App Connect Enterprise Kafka no
 ![policy](img/37-policyproject.jpeg)
 
 | Property       | Description / Value          |
-| ------------- |:---------------:|
+| ------------- |:---------------|
 | Type  | Kafka  |
 | Bootstrap Server  | Link when you generating SCRAM credential  |
 | Security protocol  | SASL_SSL  |

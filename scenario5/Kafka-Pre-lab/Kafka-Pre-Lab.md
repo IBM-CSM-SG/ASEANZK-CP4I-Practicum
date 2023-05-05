@@ -29,19 +29,23 @@ You will need to save the details from this section to be used in varies labs.
 
 ![alt text][pic4]
 
-6\. For the **credentials name** use your userid.  In this example, it is **chopper1** but make sure you use the userid assigned to you.  Make sure the **Produce messages, consume messages and create topics and schemas** button is selected and then click **Next**.
+6\. You will need to enter the following details.
 
-![alt text][pic5]
+| Option        | Value           |
+| ------------- |:-------------:|
+| Credential name      | For the **credentials name** use your userid/username/unique identifier |
+| What do you want your application to do?   | Produce messages, consume messages and create topics and schemas      |
+| Which topics does the application need to access?  | All topics      |
+| Which consumer group does the application need to access?       | All consumer group |
+| Choose which transactional IDs the application can access      | All transactional IDs |
 
-7\. On the next screen select the **Topics with prefix** and use your userid as the prefix.  Click **Next**.
+6b\. For the **credentials name** use your userid/username/unique identifier. Make sure the **Produce messages, consume messages and create topics and schemas** button is selected and then click **Next**.
 
-![alt text][pic6]
+7\. On the next screen select the **All Topics**.  Click **Next**.
 
-8\. Do the Same on this page for the consumer groups.  Click **Next**.
+8\. On the next screen select the **All consumer group**.  Click **Next**.
 
-![alt text][pic7]
-
-9\. Select the **Transactional IDs with prefix** and use your userid as the prefix.  Click **Generate credentials**.
+9\. Select the **All transactional IDs**.  Click **Generate credentials**.
 
 ![alt text][pic8]
 
@@ -58,9 +62,19 @@ You will need to save the details from this section to be used in varies labs.
 
 ![alt text][pic10]
 
-12\. We will also save the PKCS12 password and down load the certificate, this will be used to connect to the Event Stream Cluster when using the toolkit flows. 
+12\. We will also download the PKCS12 certificate and save the **PKCS12 password**. This will be used to connect to the Event Stream Cluster when using the toolkit flows. 
 
 ![alt text][pic11]
+
+13\. Due to the version of Java in ACE we will need to convert the PKCS12 to a JKS.  We will do this by running the following command.  
+
+<code>
+keytool -importkeystore -srckeystore es-cert.p12 -srcstoretype PKCS12 -destkeystore es-cert.jks -deststoretype JKS -srcstorepass XXXXXXX -deststorepass XXXXXX -noprompt
+</code>
+
+We will first open a terminal window.  Next cd to the Downloads directory.  If you do a ls es-cert* command you should see the es-demo.p12 cert you just download. 
+The only thing you need to change in this example is replace the XXXXXX with the password you saved for the PKCS12 cert. 
+Once done do a list again and you will now see the es-cert.jks file. 
 
 # Summary
 We should now have the following saved for use in the Kafka labs. 
@@ -70,8 +84,9 @@ We should now have the following saved for use in the Kafka labs.
 * d\. The PEM certificate (used in the Designer flows).
 * e\. The PKCS12 password (used in the Toolkit flows).
 * f\. The PKCS12 certificate (used in the Toolkit flows).
+* g\. The JKS Certificate (used in the Toolkit flows).
 
-You should have a text file saved on the VDI with this info and the cert files will be in your Downloads directory.  
+You should have a text file saved on the device with this info and the cert files will be in your Downloads directory. 
 
 ![alt text][pic12]
 

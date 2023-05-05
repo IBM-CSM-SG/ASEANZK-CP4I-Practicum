@@ -20,9 +20,7 @@ This Practicum Lab Book explains and focuses on the solution preparation and imp
 
 ###############################################################################################
 
-# IBM CP4I Scenaro 1 Introduction
-
-# Scenario 1 Description 
+# IBM CP4I Scenario Introduction
 
 - ABC are a Medium sized bank that offers Investments to its high value customers. The bank receive FX (Foreign Exchange) data from a 3rd party via a feed.
 - The data from this 3rd party feed is removed once it reaches an age of two weeks.

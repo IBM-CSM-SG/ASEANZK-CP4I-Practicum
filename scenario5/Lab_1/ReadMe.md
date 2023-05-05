@@ -1,12 +1,6 @@
-# IBM App Connect Enterprise
+# IBM App Connect Enterprise - App Connect Kafka Designer Event flow
 
-## App Connect Kafka Designer Event flow
-
-[Return to main lab page](../index.md)
-
----
-
-# Table of Contents 
+**Table of Contents**
 - [1. Introduction](#introduction)
 - [2. Setup connection to Smart connectors for this lab](#Setup_connections) <BR>
     &nbsp;&nbsp; [2.1. Create the Kafka topic.](#Setup_kafka) <BR>
@@ -17,6 +11,8 @@
 - [4. Testing the Kafka flows](#test_designer_flow)
 - [5. Deploying Your Designer Flow to App Connect Dashboard  ](#deploy_a_designer_flow)
     
+[Return to main lab page](../index.md)
+
 ---
 
 <span id="introduction" />
@@ -25,7 +21,7 @@
 
 React to events in real time to deliver responsive and personalized experiences for applications and customer experience.  Built on open source Apache Kafka, IBM Event Streams is an event-streaming platform that helps you build smart applications that can react to events as they happen.
 
-* The purpose of this LAB is to show how to publish messages on to the Kafka broker to be consumed by other applications that are listening to a topic.  We will create a simple API that will create messages and then publish them to our topic.  We will also then create an event driven flow that will be listening to the topic and will put the message on to a MQ queue.
+* The purpose of this LAB is to show how to publish messages on to the Kafka broker to be consumed by other applications that are listening to a topic.  We will create a simple API that will create messages and then publish them to our topic.  We will also then create an **event driven flow**f that will be listening to the topic and will put the message on to a MQ queue.
 
 1\. From your home page in the upper left it will show your login name and you can always click on **IBM Automation** to get to this home page.   
 * For this lab we will be using **App Connect Designer**, under Integration Messaging we will use **MQ**, and under Event Streaming we will use **event-steam** for our Kafka broker.  
@@ -73,6 +69,8 @@ You wil then have a tab open for each of them to help save time.
 7\. Now you will be back on the Topics screen.  You may see other users topics in the list but make sure you see your topic you just created.  
 
 <span id="Setup_MQ" />
+
+8\. Save the cluster SCRAM credentials and certificates as per **[Create Connection to shared Kafka cluster](../Kafka-Pre-lab/Kafka-Pre-Lab.md)**.
 
 ## 2.2 Create MQ Queue for the consumer
 
@@ -126,7 +124,7 @@ We will be creating a new local Queue for this lab.   Click on **Create**
 
 # 3. Create API to publish message to topic and event flow to consume topics
 
-In this section, we will create a simple API that will create messages and then publish them to our topic.  We will also then create an event driven flow that will be listening to the topic and will put the message on to a MQ queue.
+In this section, we will create a simple API that will create messages and then publish them to our topic.  We will also then create an **event driven flow** that will be listening to the topic and will put the message on to a MQ queue.
 
 **Note:** We are just building the one flow to put the events to a queue but you could also build additional flows for other business units to react to the same message and send email, Slack, etc. 
 
@@ -138,11 +136,11 @@ In this section, we will create a simple API that will create messages and then 
 
 ![alt text][pic3]
 
-Or you can click on the link from the home page and this will take you to the IBM ACE Designer page.   
+Or you can click on the **Menu -> Design -> Integration** from the home page and this will take you to the IBM ACE Designer page. 
 
 ![alt text][des1]
 
-2\. You should be on the App Connect Designer home page.   On the left menu select the Dashboard icon.  Once on the Dashboard page on the right side select *New** and click on **Flows for an API**.  
+2\. You should be on the App Connect Designer home page.   On the left menu select the Dashboard icon.  Once on the Dashboard page on the right side select **New** and click on **Flows for an API**.  
 
 ![alt text][des2]
 
@@ -189,15 +187,14 @@ If not, click on **Connect**.
 
 ![alt text][des10]
 
-11\. Now fill in the fields.  We will use the SCRAM credentials we saved earlier in the **Kafka Pre-Req**. 
-<br>[Return to main lab page and goto the **Create Connection to shared Kafka cluster**](../../../index.md#lab-sections)
+11\. Now fill in the fields.  We will use the SCRAM credentials we saved earlier. Refer to **[Create Connection to shared Kafka cluster](../Kafka-Pre-lab/Kafka-Pre-Lab.md)** for details.
   
 * a\. Kafka broker list: bootstrap URL of the cluster
 * b\. username: SCRAM username 
 * c\. password: SCRAM password 
 
 * For the Security mechaniam: make sure to select the **512**
-* Open the es-cert.pem file we downloaded.  Copy the whole thing and paste in the CA certiticate.  Scroll to the bottom and Click **Connect**.
+* Open the **es-cert.pem** file we downloaded.  Copy the whole thing and paste in the CA certiticate.  Scroll to the bottom and Click **Connect**.
 
 ![alt text][des11]
 
@@ -395,9 +392,9 @@ You can go back and produce more messages using the API flow and stop and start 
 
 <span id="deploy_a_designer_flow" />
 
-# 5. Deploying Your Designer Flow to App Connect Dashboard
+# 5. Deploying Your Designer Flow to App Connect Dashboard (Optional)
 
-We can export our Designer flow as a bar file and deploy to App Connect Dashboard on Cloud Pak for Integration.
+Additionally, We can export our Designer flow as a bar file and deploy to App Connect Dashboard on Cloud Pak for Integration. For now, its not covered in this Lab.
 
 
 [Return to main lab page](../index.md)

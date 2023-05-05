@@ -59,7 +59,7 @@ the bootstrap server(External) and then click “Generate SCRAM credentials “ 
 | Which consumer group does the application need to access?       | All consumer group |
 | Choose which transactional IDs the application can access      | All transactional IDs |
 
-4. Note down SCRAM username and SCRAM password. They will be used later.
+4. Note down hte Exernal Bootstrap Server Address, SCRAM username and SCRAM password. They will be used later.
 ![url and credential](img/10-SCRAM%20Generated.jpg)
 
 ### 2. Download certificate

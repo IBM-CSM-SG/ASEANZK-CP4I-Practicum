@@ -86,11 +86,11 @@ Once installed, open the installed ACE toolkit. A view similar to the screenshot
 
 Download Openshift Command line tools (OC Client)
 
-<img src="./media/image5.png" style="width:10in" />
+<img src="./media/image5.png" style="width:8in" />
 
 Download OC Client for your platform
 
-<img src="./media/image6.png" style="width:10in" />
+<img src="./media/image6.png" style="width:8in" />
 
 Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. 
 
@@ -112,11 +112,11 @@ Signup for a SMTP account on mailtrap.io. Once logged in, note down your SMTP co
 
 &nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Password: 11xxxxxx06b8da </i> </u>
 
-<img src="./media/image7.png" style="width:10in"  />
+<img src="./media/image7.png" style="width:8in"  />
 
 You will also need to check all your emails under MyInbox in mailtrap web site.
 
-<img src="./media/image8.png" style="width:10in"  />
+<img src="./media/image8.png" style="width:8in"  />
 
 <span id="_Toc105518924" class="anchor"></span>**Messaging Queue (MQ)**
 
@@ -124,92 +124,92 @@ You will also need to check all your emails under MyInbox in mailtrap web site.
 
 Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift Route cp4d or as per given by the instructor.
 
-<img src="./media/image9.png" style="width:10inin"  />
+<img src="./media/image9.png" style="width:8in"  />
 
 Login to IBM Cloud Pak using the IBM provided credentials (admin only).
 
-<img src="./media/image10.png" style="width:10inin" />
+<img src="./media/image10.png" style="width:8in" />
 
 Use IBM provided Authentication (admin only) and log in with admin and its password.
 
-<img src="./media/image11.png" style="width:10inin"  />
+<img src="./media/image11.png" style="width:8in"  />
 
 Go to IBM Cloud Pak Home. You can verify the currently added/configure instances from Menu -> Integration Instances.
 
-<img src="./media/image12.png" style="width:10inin"/>
+<img src="./media/image12.png" style="width:8in"/>
 
 The below instances should already be pre-created for you.
 
-<img src="./media/image12.1.png" style="width:10inin" />
+<img src="./media/image12.1.png" style="width:8in" />
 
 Click on **Messaging** as highlighted in the screen below:
 
-<img src="./media/image12.png" style="width:10in" />
+<img src="./media/image12.png" style="width:8in" />
 
 This will redirect to a Messaging screen as below. Click on Create an instance to create a queue manager.
 
-<img src="./media/image13.png" style="width:10in" />
+<img src="./media/image13.png" style="width:8in" />
 
 Select **Quick start** option from this screen, and click on Next.
 
-<img src="./media/image14.png" style="10in" />
+<img src="./media/image14.png" style="width:8in" />
 
 Modify the details for your queue manager as below:
 
 -   **License acceptance** – Toggle the button from OFF to ON state 
 
-<img src="./media/image15.png" style="10in" />
+<img src="./media/image15.png" style="width:8in" />
 
 -   Select **Type of availability** from dropdown as SingleInstance
 
-<img src="./media/image16.png" style="10in" />
+<img src="./media/image16.png" style="width:8in" />
 
 -   Select **Type of Volume** from the drop down as persistent-claim 
 
-<img src="./media/image17.png" style="10in"  />
+<img src="./media/image17.png" style="width:8in"  />
 
 Lastly click on **Create** from the top right corner and queue manager
 will be created. You will be redirected to a new page, showing the
 details of your newly created Queue manager.
 
-<img src="./media/image18.png" style="width:6.26806in;height:3.34444in" />
+<img src="./media/image18.png" style="width:8in" />
 
 Click on queue name --\> It should open up MQ Console
 
-<img src="./media/image19.png" style="width:6.26806in;height:3.34444in" />
+<img src="./media/image19.png" style="width:8in" />
 
 Click on manage --\> quickstart to open queue manager
 
-<img src="./media/image20.png" style="width:6.26806in;height:3.34444in" />
+<img src="./media/image20.png" style="width:8in" />
 
 <span id="_Toc105518926" class="anchor"></span>**Create Queue**
 
 Click on Create icon to create the queue.
 
-<img src="./media/image21.png" style="width:6.26806in;height:3.52569in"  />
+<img src="./media/image21.png" style="width:8in"  />
 
 Select a Local Queue.
 
-<img src="./media/image22.png" style="width:6.26806in;height:3.52569in" />
+<img src="./media/image22.png" style="width:8in" />
 
 Provide the details of the queue and click **create**.
 
-<img src="./media/image23.png" style="width:6.26806in;height:3.52569in" />
+<img src="./media/image23.png" style="width:8in" />
 
 Queue will be created shortly.
 
-<img src="./media/image24.png" style="width:6.26806in;height:3.52569in"  />
+<img src="./media/image24.png" style="width:8in"  />
 
 <span id="_Toc105518927" class="anchor"></span>**Configure Default
 Channel Security**
 
 Copy Login Commands to login to oc client.
 
-<img src="./media/image25.png" style="width:6.26806in;height:1.12847in"  />
+<img src="./media/image25.png" style="width:8in"  />
 
 Login to Openshift cluster using oc client.
 
-<img src="./media/image26.png" style="width:6.26806in;height:2.48264in" />
+<img src="./media/image26.png" style="width:8in" />
 
 <u> <i> oc login --token=sha256\~xxxxxx-xxxxxx-g --server=https://servername:30273 </i> </u>
 
@@ -253,15 +253,15 @@ All valid MQSC commands were processed.
 
 Note the default channels details. Go to the Applications Tab for the Queue Manager that you created.
 
-<img src="./media/image24.1.jpeg" style="width:6.26806in"  />
+<img src="./media/image24.1.jpeg" style="width:8in"  />
 
 Click on App Channels link in the left pane. Click on the Filter and Select Show System Channels.
 
-<img src="./media/image25.1.jpeg" style="width:6.26806in"  />
+<img src="./media/image25.1.jpeg" style="width:8in"  />
 
 You should be able to see the System Channels. We will use the default Channel SYSTEM.DEF.SVRCONN for the MQ Communication from Rest APIS.
 
-<img src="./media/image26.1.jpeg" style="width:6.26806in"  />
+<img src="./media/image26.1.jpeg" style="width:8in"  />
 
 <span id="_Toc105518929" class="anchor"></span>**Integration - ACE to MQ**
 
@@ -289,29 +289,29 @@ Open the REST API Description. In the right Pane, Under Resources, Click on + ic
 
 Enter the resource path and select the operation as post. Click Apply.
 
-<img src="./media/image37.png" style="width:6.26806in;height:3.28125in" />
+<img src="./media/image37.png" style="width:6.26806in" />
 
 A New resource will be created.
 
-<img src="./media/image38.png" style="width:6.26806in;height:2.93264in" />
+<img src="./media/image38.png" style="width:6.26806in" />
 
 Click on the subflow icon or this new resource.
 
-<img src="./media/image39.png" style="width:6.26806in;height:2.97986in"  />
+<img src="./media/image39.png" style="width:6.26806in"  />
 
 New subflow editor will open. Drag the IBM MQ -> MQ Output Connector from the
 transformation section in the left toolbox.
 
-<img src="./media/image40.png" style="width:6.26806in;height:2.94306in" />
+<img src="./media/image40.png" style="width:6.26806in" />
 
 Connect the Boxes together.
 
-<img src="./media/image41.png" style="width:6.26806in;height:2.21597in"  />
+<img src="./media/image41.png" style="width:6.26806in"  />
 
 Find the MQ Queue Manager Service IP address from the “openshift
 console” or oc client (oc get svc \| grep -i mq).
 
-<img src="./media/image42.png" style="width:6.19444in;height:0.80556in" />
+<img src="./media/image42.png" style="width:6.26806in" />
 
 <img src="./media/image43.png" style="width:6.26806in;height:3.50833in" />
 
@@ -389,7 +389,7 @@ Click on the Server once its ready.
 
 Click on the API.
 
-<img src="./media/image62.png" style="width:3.05952in;height:2.55006in" />
+<img src="./media/image62.png" style="width:6.26806in" />
 
 Click on the <u>post/AccountEnquiry.</u>
 
@@ -521,11 +521,11 @@ Management)**
 Click on the API Management Link to open API Management Console. If you
 see below picture then your Organization is not set correctly.
 
-<img src="./media/image87.png" style="width:6.26806in;height:3.89306in" />
+<img src="./media/image87.png" style="width:width:6.26806in" />
 
 After setting the organization correctly, the API Manager should look like this.
 
-<img src="./media/image88.jpeg" style="width:6.26806in;height:3.95278in" />
+<img src="./media/image88.jpeg" style="width:width:6.26806in" />
 
 ### Develop API
 
@@ -540,7 +540,7 @@ Chose the default option "From Target Service". Click Next.
 
 Provide the details for Target service.
 
-<img src="./media/image91.png" style="width:6.26806in;height:4.67431in" />
+<img src="./media/image91.png" style="width:6.26806in" />
 
 Note the Target Service URL from Integration Dashboard that we created
 earlier.
@@ -553,7 +553,7 @@ Enter the title of the API. This will also create an endpoint / base
 path using which the API can be called and it will just redirect the
 request to Target Service URL.
 
-<img src="./media/image93.png" style="width:6.26806in;height:4.67431in" />
+<img src="./media/image93.png" style="width:6.26806in" />
 
 Click Next.
 
@@ -576,11 +576,11 @@ other operations from here.
 
 Click Save.
 
-<img src="./media/image98.png" style="width:5.53435in;height:4.12715in"  />
+<img src="./media/image98.png" style="width:6.26806in"  />
 
 Under Security Schema Click Add to add another security schema.
 
-<img src="./media/image99.png" style="width:6.26806in;height:4.67431in"  />
+<img src="./media/image99.png" style="width:6.26806in"  />
 
 Select apiKey as the security definition key.
 
@@ -617,7 +617,7 @@ sandbox.
 
 Go to API Manager Home again and click on "Develop API and Products".
 
-<img src="./media/image108.png" style="width:6.26806in;height:3.35208in"  />
+<img src="./media/image108.png" style="width:6.26806in"  />
 
 Now we need to package this API into a product. One product can have
 multiple APIs.
@@ -740,9 +740,9 @@ Select the new catalog.Click Next.
 
 You can set the catalog visibility to Authenticated users. Click Publish. 
 
-<img src="./media/image132.jpeg" style="width:6.26806in;height:3.93889in" />
+<img src="./media/image132.jpeg" style="width:6.26806in" />
 
-<img src="./media/image133.jpeg" style="width:6.26806in;height:3.93889in" />
+<img src="./media/image133.jpeg" style="width:6.26806in" />
 
 It will be published shortly.
 
@@ -782,7 +782,7 @@ this application. You can not see the Key and Secret for this
 application after this page. Each application will interact with API
 Manager/ACE using this client secret. Click OK.
 
-<img src="./media/image139.png" style="width:6.26806in;height:2.83333in" />
+<img src="./media/image139.png" style="width:6.26806in" />
 
 -   Key: 81b789b18XXXXXXXXXX069ec1757beb9
 
@@ -794,24 +794,24 @@ this application’s key.
 Click on **Why not browse the available APIs** to subscribe to API
 Product for this App.
 
-<img src="./media/image140.png" style="width:4.74234in;height:3.52908in" />
+<img src="./media/image140.png" style="6.26806in" />
 
 Click on the published API product.
 
-<img src="./media/image141.png" style="width:5.65466in;height:2.86499in" />
+<img src="./media/image141.png" style="6.26806in" />
 
 Just click on the **Select** button for one of the plan exposed by the
 product.
 
-<img src="./media/image142.png" style="width:6.26806in;height:4.06875in" />
+<img src="./media/image142.png" style="6.26806in" />
 
 Select the **application** to be subscribed.
 
-<img src="./media/image143.png" style="width:6.26806in;height:2.04861in" />
+<img src="./media/image143.png" style="6.26806in" />
 
 To confirm subscription, click Next.
 
-<img src="./media/image144.png" style="width:6.26806in;height:1.08056in" />
+<img src="./media/image144.png" style="6.26806in" />
 
 Click Done.
 
@@ -852,7 +852,7 @@ Successfully.
 
  Go to Integration Instances -\> Messaging instance Name -\> Manage -\> Queue name
 
-<img src="./media/image152.png" style="width:6.26806in;height:2.65764in" />
+<img src="./media/image152.png" style="width:6.26806in" />
 
 [Go to Configuration Index](#ibm-cloud-pak-for-integration---configuration)
 

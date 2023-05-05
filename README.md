@@ -14,3 +14,5 @@
 |||||
 | [Scenario4](scenario4/ReadMe.md)      |  Your customer has been an OpenAPI definition for an exiting REST service. They have recently decided to investigate the value of modernizing their integration. They are eager to explore IBM API connect to deploy their rest services. <BR><BR>They would like you to create an API by importing the  OpenAPI definition for an existing REST service. Also configure Security endpoints, and proxy to invoke endpoint. After testing the REST API in the online developer toolkit, publish it API for their developers. <BR><BR>Demonstrate how to analyze, componentize, and containerize existing integration artefacts, and illustrate how to scale and monitor the new deployments.  | API Connect <BR><BR>Application Integration (IBM App Connect Enterprise)  | <strong>Sandeep </strong> Ved <BR><BR> Pham Manh <strong>Hung </strong>
 |||||
+| [Scenario5](scenario5/index.md)      |  Kafka Experience  | Event Streams <BR><BR> API Connect <BR><BR>Application Integration (IBM App Connect Enterprise)  | <strong>Sandeep </strong> Ved <BR><BR> Pham Manh <strong>Hung </strong>
+|||||

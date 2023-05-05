@@ -47,8 +47,6 @@ You will need to save the details from this section to be used in varies labs.
 
 9\. Select the **All transactional IDs**.  Click **Generate credentials**.
 
-![alt text][pic8]
-
 10\. Now that we have the credentials generated use the icon to copy them and save them for use later in other labs. 
 * a\. Save the bootstrap URL of the cluster
 * b\. Save the SCRAM username 

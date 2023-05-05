@@ -11,6 +11,9 @@ For this scenario we will need to create some topics that will store data for ea
 - GBPEUR
 - PHPEUR
 
+## Preparing Client Connection
+You can refer to below instructions to **[Create Connection to shared Kafka cluster.](../Kafka-Pre-lab/Kafka-Pre-Lab.md)** Steps to create Kafka connection and save credentials and certs for all Kafka labs. 
+
 ## Create Topic
 1. From IBM Integration Navigator page, find "Event streaming" and click on the created Event Streaming instance.
 ![main](img/01-event%20streams%20menu.png)
@@ -27,91 +30,8 @@ For this scenario we will need to create some topics that will store data for ea
 7. Check on the topic list and make sure that your topic already created.
 ![topic created](img/07-topic%20created.png)
 
-### Consideration for production environment
+**Consideration for production environment**
 1. Partition should be created depends on how many consumer / consumer group you have
 2. For production environments, select **Replication factor: 3** as a minimum.
-
-## Preparing Client Connection
-### 1. Connect to Kafka Cluster
-
-#### Authentication
-
-Kafka uses SASL to perform authentication  and it currently supports many mechanisms including
-PLAIN, SCRAM , OAUTH etc. and it allows administrator to plug custom implementation. Check  [this page](https://ibm-cloud-architecture.github.io/refarch-eda/technology/security/) to know more about kafka security overview.
-
-
-1. From IBM Event Stream main page, choose Connect to ES cluster
-
-![Connect to ES](img/08-ES%20cluster%20connection.jpg)
-
-2. To connect the cluster, you need the address of kafka listener,credential,and a certificate. ,Firstly, copy 
-the bootstrap server(External) and then click “Generate SCRAM credentials “ to get permission to access topic.
-
-![Generate SCRAM](img/09-Generate%20SCRAM.jpg)
-
-3. Next steps, we'll need to fill some values below
-
-| Option        | Value           |
-| ------------- |:-------------:|
-| Credential name      | your credential name |
-| What do you want your application to do?   | Produce messages, consume messages and create topics and schemas      |
-| Which topics does the application need to access?  | All topics      |
-| Which consumer group does the application need to access?       | All consumer group |
-| Choose which transactional IDs the application can access      | All transactional IDs |
-
-4. Note down hte Exernal Bootstrap Server Address, SCRAM username and SCRAM password. They will be used later.
-![url and credential](img/10-SCRAM%20Generated.jpg)
-
-### 2. Download certificate
-1. After that, on cluster connection page, scroll down to Certificate section and download PKCS12 certificate,
-   and click Download certificate.
-
-![Download certificate](img/11-download%20certificate.jpg)
-
-2. You will see the PKCS12 certificate password, Copy it .
-
-![password](img/12-note%20the%20password.jpg)
-
-### 3. Building and configuring message flow in App Connect to integrate with Event Stream
-
-Check out [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=messages-using-kafka-app-connect-enterprise) to understand how to use Kafka with IBM App Connect Enterprise before you begin
-
-You already have created a topic in Event Stream , and now you need to build message flow to pull FX data from FX Provider and transform the data format to produce message and send it to the Event Stream topic based on currency symbol  EURUSD etc. You will have to build the message flow and generate a BAR file to deploy in the Integration Dashboard. 
-
-1) Start App Connect Enterprise and create App Connect Enterprise workspace directory, for example , workspace directory as ace-fxcurrency folder (~/IBM/ACET11/workspace/ace-fxcurrency). Click OK.
-
-
-![appconnect](img/13-start%20appconnect.jpeg)
-
-2) Assume that you already have good foundation on App Connect and know how to create REST API or you can learn from [this link ](https://www.youtube.com/watch?v=1WimJ1HPTIk) you can create a project for building the message flow 
-
-![project](img/14-create%20project.jpeg)
-
-3) Before working on the message flow, you need to create a policy project. Check [this link](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario1/tree/main/Solution%20build/IBM%20App%20Connect/) for App Connect Section and learn how to 
-create a policy project and some configurations that you need to know 
-
-
-### 4. After deploying App Connect and testing successfully in previous step, check the message in topic in EventStream 
-
-1. Back on the main menu IBM Automation Dashboard, under Design section you select kafka clusters 
-
-  ![mainmenu](img/15-main%20menu.jpeg)
-
-2.  You can see the kafka cluster under namespace that you define with the status , Click the cluster 
-
-  ![kafka](img/20-kafkacluster.jpeg)
-
-3. Now you can see IBM Event Stream page, on the menu you can select Topic
-
-  ![topic](img/17-topic.jpeg)
-  
-4. You see the list of currency topics that you build, and select EURUSD topic to see the message 
-
-  ![topics](img/18-topics.jpeg)
-
-5. Now you can see in EURUSD topic, and list of messages with offset and can see the message data
-   in the payload section
-
-  ![messages](img/19-messages.jpeg)
 
 ### [Go Back](/scenario1/README.md)

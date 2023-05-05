@@ -1,9 +1,12 @@
 # IBM APP Connect
+
 ## How to use IBM App Connect with IBM Event Stream
 In this section we'l find out how to use the IBM App Connect Enterprise Kafka nodes to produce and consume messages on Kafka topics. You can read the documentation [here](https://www.ibm.com/docs/en/app-connect/12.0?topic=messages-using-kafka-app-connect-enterprise) or watch [the example video](https://youtu.be/XyNy7TcfJOc).
-### Create Kafka Policy and configuring App Connect
+
+## Create Kafka Policy and configuring App Connect
 1. First, we need to create Kafka Policy to connect with Kafka topic on IBM Event Stream. To do it, just right click on the Application Development palette, choose new > Policy
-![create policy](img/01-Create%20Policy.jpg)
+
+<img src="img/01-Create%20Policy.jpg" width=1000 height=600/>
 
 2. In the Policy creation wizard, fill the option with the value describe in below table, then click Finish
 
@@ -13,7 +16,8 @@ In this section we'l find out how to use the IBM App Connect Enterprise Kafka no
 | Policy name | the name of your policy |
 
 3. Next, we will fill the mandatory policy attributes as shown below. some values can be found in setting up [IBM Event Stream](../IBM%20Event%20Streams/README.md#Preparing%20Client%20Connection) section.
-![policy](img/37-policyproject.jpeg)
+
+<img src="img/37-policyproject.jpeg" width=1000 height=600/>
 
 | Property       | Description / Value          |
 | ------------- |:---------------|
@@ -28,6 +32,25 @@ In this section we'l find out how to use the IBM App Connect Enterprise Kafka no
 | SSL trustore type  | JKS or PKCS12 (depends on what truststore you will use)  |
 | SSL trustore security identity  | ACE param contain trustore password  |
 | Enable SSL certificate hostname checking  | true  |
+
+
+## Building and configuring message flow in App Connect to integrate with Event Stream
+
+Check out [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=messages-using-kafka-app-connect-enterprise) to understand how to use Kafka with IBM App Connect Enterprise before you begin
+
+You already have created a topic in Event Stream , and now you need to build message flow to pull FX data from FX Provider and transform the data format to produce message and send it to the Event Stream topic based on currency symbol  EURUSD etc. You will have to build the message flow and generate a BAR file to deploy in the Integration Dashboard. 
+
+1) Start App Connect Enterprise and create App Connect Enterprise workspace directory, for example , workspace directory as ace-fxcurrency folder (~/IBM/ACET11/workspace/ace-fxcurrency). Click OK.
+
+
+![appconnect](img/13-start%20appconnect.jpeg)
+
+2) Assume that you already have good foundation on App Connect and know how to create REST API or you can learn from [this link ](https://www.youtube.com/watch?v=1WimJ1HPTIk) you can create a project for building the message flow 
+
+![project](img/14-create%20project.jpeg)
+
+3) Before working on the message flow, you need to create a policy project. Refer to the Next Section.
+
 
 ### Producing message on Kafka topics
 1. To produce message to kafka topic, we can use Kafka Producer node.
@@ -151,7 +174,28 @@ managing App Connect in container environment.
 sent to the specific topic in EventStrem that you define in app connect.
 Carry on the EventStream part from [this page](https://github.ibm.com/ASEANZK-CP4I-Practicum/scenario1/tree/main/Solution%20build/IBM%20Event%20Streams)  under the topic Check the message in the Topic in EventStrem Cluster
 
-      
+## After deploying App Connect and testing successfully in previous step, check the message in topic in EventStream 
+
+1. Back on the main menu IBM Automation Dashboard, under Design section you select kafka clusters 
+
+  ![mainmenu](img/15-main%20menu.jpeg)
+
+2.  You can see the kafka cluster under namespace that you define with the status , Click the cluster 
+
+  ![kafka](img/20-kafkacluster.jpeg)
+
+3. Now you can see IBM Event Stream page, on the menu you can select Topic
+
+  ![topic](img/17-topic.jpeg)
+  
+4. You see the list of currency topics that you build, and select EURUSD topic to see the message 
+
+  ![topics](img/18-topics.jpeg)
+
+5. Now you can see in EURUSD topic, and list of messages with offset and can see the message data
+   in the payload section
+
+  ![messages](img/19-messages.jpeg)
       
 ### Consuming message from Kafka topics
 

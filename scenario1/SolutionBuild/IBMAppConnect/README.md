@@ -1,7 +1,5 @@
-# IBM APP Connect
-
-## How to use IBM App Connect with IBM Event Stream
-In this section we'l find out how to use the IBM App Connect Enterprise Kafka nodes to produce and consume messages on Kafka topics. You can read the documentation [here](https://www.ibm.com/docs/en/app-connect/12.0?topic=messages-using-kafka-app-connect-enterprise) or watch [the example video](https://youtu.be/XyNy7TcfJOc).
+# Using IBM App Connect with IBM Event Stream
+In this section we'll find out how to use the IBM App Connect Enterprise Kafka nodes to produce and consume messages on Kafka topics. You can read the documentation [here](https://www.ibm.com/docs/en/app-connect/12.0?topic=messages-using-kafka-app-connect-enterprise) or watch [the example video](https://youtu.be/XyNy7TcfJOc).
 
 ## Create Kafka Policy and configuring App Connect
 1. First, we need to create Kafka Policy to connect with Kafka topic on IBM Event Stream. To do it, just right click on the Application Development palette, choose new > Policy
@@ -36,7 +34,7 @@ In this section we'l find out how to use the IBM App Connect Enterprise Kafka no
 
 ## Building and configuring message flow in App Connect to integrate with Event Stream
 
-Check out [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=messages-using-kafka-app-connect-enterprise) to understand how to use Kafka with IBM App Connect Enterprise before you begin
+(Optional) Check out [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=messages-using-kafka-app-connect-enterprise) to understand how to use Kafka with IBM App Connect Enterprise.
 
 You already have created a topic in Event Stream , and now you need to build message flow to pull FX data from FX Provider and transform the data format to produce message and send it to the Event Stream topic based on currency symbol  EURUSD etc. You will have to build the message flow and generate a BAR file to deploy in the Integration Dashboard. 
 
@@ -48,43 +46,43 @@ You already have created a topic in Event Stream , and now you need to build mes
 
 <img src="img/14-create%20project.jpeg" width=1000 height=350/>
 
-1. To produce message to kafka topic, we can use Kafka Producer node.
+3) You can use REST Request Node to Invoke the REST API for the External Currency interface. Then you need to transform the data and produce message to kafka topic for the respactive currecy. For producing message to Kafka, we can use Kafka Producer node.
 
 ![Kafka Producer](img/03-kafka%20producer%20node.jpg)
 
-2. In basic properties, we only need to set "Topic Name" with the destination topic and "Client Id" with SCRAM user.
+4) In basic properties, we only need to set "Topic Name" with the destination topic and "Client Id" with SCRAM user.
 
 ![basic prop](img/15-kafka%20producer%20basic%20properties.jpeg)
 
-3. In security properties , ensure that we set value  Security protocol as SASL_SSL and SSL protocol as TLSv1.2
+5) In security properties , ensure that we set value  Security protocol as SASL_SSL and SSL protocol as TLSv1.2
 
 ![security prop](img/16-security%20properties.jpeg) 
 
-4. In policy tab, set the value with the policy that already created
+6) In policy tab, set the value with the policy that already created
 
 ![policy link](img/05-kafka%20producer%20policy.png)
 
-5. Now, you need to deploy the fxcurrency application in App Connect Enterprise server. Select the fxcurrency application. 
+7) Now, you need to deploy the fxcurrency application in App Connect Enterprise server. Select the fxcurrency application. 
 Click File-> New-> BAR file, then enter fxcurrency as BAR file name and click Finish.
 
 ![create Bar](img/17-create%20bar.jpeg)
 
-6. Check fxcurrency application box on the REST API tree , If necessary scroll right to check Compile and in-line resource and click Build and Save.
+8) Check fxcurrency application box on the REST API tree , If necessary scroll right to check Compile and in-line resource and click Build and Save.
 
 ![application](img/18-build%20app.jpeg)
 
-7. Then, check policies and check fxcurrencyPolicy. Click Build and Save and OK on Override Configurable Properties.
+9) Then, check policies and check fxcurrencyPolicy. Click Build and Save and OK on Override Configurable Properties.
 
 ![policy](img/19-build%20policy.jpeg)
 
-8. Now ,you have a BAR file and policy created in App Connect Enterprise, Find ~/IBM/ACET11/workspace/ace-fxcurrency
+10) Now ,you have a BAR file and policy created in App Connect Enterprise, Find ~/IBM/ACET11/workspace/ace-fxcurrency
 locate fxcurrencyPolicy folder and compress it as Zip file
 
-9. Create setdbparams.txt,check the example below 
+11) Create setdbparams.txt,check the example below 
 
 ![setdbparams](img/20-set%20dbparams.jpeg)
 
-10. Optionally , in case you need to use keyStore in JKS , we can covert es-cert.p12 into es-cert.jks using keytool command
+12) Optionally , in case you need to use keyStore in JKS , we can covert es-cert.p12 into es-cert.jks using keytool command
 make sure you install Java JRE , then you will be able to use keytool
 
 Example command below, use exact password instead of xxxxxxxx
@@ -195,5 +193,6 @@ managing App Connect in container environment.
 To understand on consuming message from kafka , you can check out 
 [this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=enterprise-consuming-messages-from-kafka-topics) 
 
+Consuming the message from Kafka Topic is not scoped for this lab. You may refer to Scenatio 5 Lab (Using IBM App Connect Client) to explore the Producer and Consumer Part in more details.
 
 [Go Back](/scenario1/README.md)

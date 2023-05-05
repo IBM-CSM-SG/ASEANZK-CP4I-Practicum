@@ -82,10 +82,9 @@ You may need to **[install client tools](SolutionBuild/Kafka-Pre-lab/Install-Cli
 
 |  Subject                            | Description                                            |                                                               
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| [Define FX Data Interface](Scenario/Interfaces.md)       |## Sample for Users to design and construct their own user interface for the FX data Inbound interface.
-| [Using IBM Event Streams](SolutionBuild/IBMEventStreams/README.md)       | The purpose of this lab is to provide an introduction to Kafka Toolkit using | 
+| [Define FX Data Interface](Scenario/Interfaces.md)       |Sample for Users to design and construct their own user interface for the FX data Inbound interface.
+| [Using IBM Event Streams](SolutionBuild/IBMEventStreams/README.md)       | The purpose of this lab is to provide an introduction to IBM Event Stream Feature on CP4I  | 
 [Creating Kafka Policy and Message Flow ](SolutionBuild/IBMAppConnect/README.md)       | Before working on the message flow, you need to create a policy project using **App Connect Enterprise (ACE)**. Then you can build the message flow and deploy it on integration server.
-| [Using IBM REST API ](RestAPI/RestAPI.md)       | The purpose of this lab is to provide an introduction to Kafka Toolkit using **App Connect Enterprise (ACE)** to REST APIS.
 
 ## Conclusion
 The above completes details for setup, installation and configuration of Cloud Pak for Integration for Scenario 1. As we conclude our work on the Practicum, you will now be well acquainted with the basic fundamentals and usage of Cloud Pak for Integration. This will assist you in your journey to Modernising Applications and keep up to speed with the technology and trends.

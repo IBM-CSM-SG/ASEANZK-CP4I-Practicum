@@ -3,10 +3,9 @@
 [**4.1. High Level Architecture**](#_Toc105518919)
 
 [**4.2. Prepare Client Tools**](#_Toc105518920)
-
-- [**4.2.1 IBM App Connect Enterprise (ACE) Toolkit Setup**](#_Toc105518921)
-- [**4.2.2 Openshift Command Line Interface (CLI) Setup**](#_Toc105518922)
-- [**4.2.3 Mailtrap SMTP Setup**](#_Toc105518923)
+  - [4.2.1 IBM App Connect Enterprise (ACE) Toolkit](#_Toc105518921)
+  - [4.2.2 OC Client](#_Toc105518922)
+  - [4.2.3 Mailtrap SMTP Setup](#_Toc105518923)
 
 [**4.3. Messaging Queue (MQ)**](#_Toc105518924)
 
@@ -18,8 +17,7 @@
 - [**4.4.1 Prepare - Asset into IBM ACE Toolkit**](#_Toc105518930)
 - [**4.4.2 Build - BAR File**](#_Toc105518931)
 
-[**4.5. Integration Dashboard**](#_Toc105518928)
-- [**4.5.3 Deploy a local integration server**](#_Toc105518928)
+[**4.5. Integration Dashboard - Deploy a local integration server**](#_Toc105518928)
 
 [**4.6. API Connect (APIC)**](#_Toc105518933)
 
@@ -37,90 +35,43 @@
 
 ### ------------------------------------------------------------------ ###
 
-<span id="_Toc105518919" class="anchor"></span>**High Level Architecture**
+<span id="_Toc105518919" class="anchor"></span>
+
+# High Level Architecture
 
 Below is the high level architecture that we plan to implement as part
 of this scenario.
 
 <img src="./media/image1.png" style="width:3.375in;height:3.01389in" />
 
-<span id="_Toc105518920" class="anchor"></span>**Prepare Client Tools**
+<span id="_Toc105518920" class="anchor"></span>
 
-<span id="_Toc105518921" class="anchor"></span>**IBM App Connect Enterprise (ACE) Toolkit Setup**
+# Prepare Client Tools
 
-Install IBM App Connect Enterprise for developers (also called ACE).
-Make sure to select the correct download package for your OS (Windows,
-Linux, Mac).
+Make sure that you setup/prepare the below pre-req before proceeding.
 
-Click on **Download** button on the following
-link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started</u>](https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started)
+<span id="_Toc105518921" class="anchor"></span>
 
-<img src="./media/image2.png" style="width:6.26806in;height:2.87361in" />
+### IBM App Connect Enterprise (ACE) Toolkit Setup
+Refer to the instruction [here](../Configuration/Install-Client-Tools.md#ibm-app-connect-enterprise-ace-toolkit-setup)
 
-The version used in this practicum is 12.0.8
+<span id="_Toc105518922" class="anchor"></span>
 
-<img src="./media/image3.jpeg" style="width:6.26806in" />
+### Openshift Command Line Interface (CLI) Setup
+Refer to the instruction [here](../Configuration/Install-Client-Tools.md#openshift-command-line-interface-cli-setup)
 
-<img src="./media/image3.1.jpeg" style="width:6.26806in" />
+<span id="_Toc105518923" class="anchor"></span>
 
-<img src="./media/image4.jpeg" style="width:6.26806in" />
+### Mailtrap SMTP Setup
+Refer to the instruction [here](../Configuration/Install-Client-Tools.md#mailtrap-smtp-setup)
 
-Complete the installation through the installer package you just downloaded for your OS. 
-eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You can use the IBM ACE Installation page as a guide to complete the installation.
+<span id="_Toc105518924" class="anchor"></span>
 
-<img src="./media/image4.1.jpeg" style="width:6.26806in;height:4in" />
-<img src="./media/image4.2.jpeg" style="width:6.26806in;height:4in" />
-<img src="./media/image4.3.jpeg" style="width:6.26806in" />
-<img src="./media/image4.4.jpeg" style="width:6.26806in;height:4in" />
-<img src="./media/image4.5.jpeg" style="width:6.26806in;height:4in" />
-<img src="./media/image4.6.jpeg" style="width:6.26806in;height:4in" />
-<img src="./media/image4.7.jpeg" style="width:6.26806in;height:4in" />
+# Messaging Queue (MQ)
 
-Once installed, open the installed ACE toolkit. A view similar to the screenshot below will launch.
+<span id="_Toc105518925" class="anchor"></span>
 
-<img src="./media/image-xx-0.jpeg" style="width:6.26806in" />
-
-<img src="./media/image-xx-1.png" style="width:6.26806in" />
-
-<span id="_Toc105518922" class="anchor"></span>**Openshift Command Line Interface (CLI) Setup**
-
-Download Openshift Command line tools (OC Client)
-
-<img src="./media/image5.png" style="width:8in" />
-
-Download OC Client for your platform
-
-<img src="./media/image6.png" style="width:8in" />
-
-Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. 
-
-Alternate URL Reference: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.10/
-
-See the below URL for more details.
-
-https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html 
-
-<span id="_Toc105518923" class="anchor"></span>**Mailtrap SMTP Setup**
-
-Signup for a SMTP account on mailtrap.io. Once logged in, note down your SMTP connection settings. For Example,
-
-&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Host: smtp.mailtrap.io </i> </u>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Port: 2525 </i> </u>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> User: 2ef08bdc18285b </i> </u>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<u> <i> Password: 11xxxxxx06b8da </i> </u>
-
-<img src="./media/image7.png" style="width:8in"  />
-
-You will also need to check all your emails under MyInbox in mailtrap web site.
-
-<img src="./media/image8.png" style="width:8in"  />
-
-<span id="_Toc105518924" class="anchor"></span>**Messaging Queue (MQ)**
-
-<span id="_Toc105518925" class="anchor"></span>**Create Queue Manager**
+## Check & Create Queue Manager
 
 Go to IBM Cloud Pak home. Check the IBM Cloud PAK URL from Openshift Route cp4d or as per given by the instructor.
 
@@ -142,13 +93,15 @@ The below instances should already be pre-created for you.
 
 <img src="./media/image12.1.png" style="width:8in" />
 
-Click on **Messaging** as highlighted in the screen below:
+Click on **Messaging** as highlighted in the screen below. (Menu -> Run -> Messaging)
 
 <img src="./media/image12.png" style="width:8in" />
 
-This will redirect to a Messaging screen as below. Click on Create an instance to create a queue manager.
+This will redirect to a Messaging screen as below. If there MQ Console does not appear,Click on Create an instance to create a new queue manager instance. If MQ Queue Manager appear, then you can skip creating queue manager.
 
 <img src="./media/image13.png" style="width:8in" />
+
+Alternatively Queue Manager can be created from Menu -> Administration -> Integration Instances -> Create An Instance+. Select Messaging Option and proceed as below.
 
 Select **Quick start** option from this screen, and click on Next.
 
@@ -170,11 +123,13 @@ Modify the details for your queue manager as below:
 
 Lastly click on **Create** from the top right corner and queue manager
 will be created. You will be redirected to a new page, showing the
-details of your newly created Queue manager.
+details of your newly created Queue manager. 
+
+The Queue Manager Name is always QUICKSTART unless the name was changed from the advanced properties in the final Creation Screen. Need to toggle the Advanced option to see the advance details.
 
 <img src="./media/image18.png" style="width:8in" />
 
-Click on queue name --\> It should open up MQ Console
+Click on queue manager name --\> It should open up MQ Console
 
 <img src="./media/image19.png" style="width:8in" />
 
@@ -182,7 +137,9 @@ Click on manage --\> quickstart to open queue manager
 
 <img src="./media/image20.png" style="width:8in" />
 
-<span id="_Toc105518926" class="anchor"></span>**Create Queue**
+<span id="_Toc105518926" class="anchor"></span>
+
+## Create Queue
 
 Click on Create icon to create the queue.
 
@@ -200,8 +157,9 @@ Queue will be created shortly.
 
 <img src="./media/image24.png" style="width:8in"  />
 
-<span id="_Toc105518927" class="anchor"></span>**Configure Default
-Channel Security**
+<span id="_Toc105518927" class="anchor"></span>
+
+## Configure Default Channel Security**
 
 Copy Login Commands to login to oc client.
 
@@ -263,7 +221,9 @@ You should be able to see the System Channels. We will use the default Channel S
 
 <img src="./media/image26.1.jpeg" style="width:8in"  />
 
-<span id="_Toc105518929" class="anchor"></span>**Integration - ACE to MQ**
+<span id="_Toc105518929" class="anchor"></span>
+
+# Integration - ACE to MQ
 
 Integration has the following components:
 
@@ -273,7 +233,9 @@ Integration has the following components:
 
 -   [<u>Deploy</u>](#_Toc105518928)
 
-<span id="_Toc105518930" class="anchor"></span>**Prepare - Asset into IBM ACE Toolkit**
+<span id="_Toc105518930" class="anchor"></span>
+
+## Prepare - Asset into IBM ACE Toolkit
 
 Open IBM ACE Toolkit under a workspace and create a REST API project.
 
@@ -319,13 +281,18 @@ Click on the MQ Output and configure the MQ Details. Enter the Queue Name.
 
 <img src="./media/image45.png" style="width:6.26806in;height:2.93333in" />
 
-Enter the MQ Connection Details like Queue Manager Name, Queue Manager
-Host Name (Service IP), Listener Port no (1414 Default), Connection
-Channel Name (default – SYSTEM.DEF.SVRCONN).
+Enter the MQ Queue Name in the **Basic Tab**. Then in the **MQ Connection tab**, Enter the MQ Connection Details like Queue Manager Name, Queue Manager
+Host Name (Service IP), Listener Port no (1414 Default), Connection Channel Name (default – SYSTEM.DEF.SVRCONN).
 
 <img src="./media/image46.png" style="width:6.26806in;height:4.87153in"  />
 
-<span id="_Toc105518931" class="anchor"></span>**Build – BAR File**
+If you have a policy for MQ EndPoint,then you can configure the policy name in the **policy tab** here in the format {MQPolicyProjectName}:PolicyName, so that it can be used as a configuration for the integration server. In this case, above details on **MQ Connection tab** are not required. The Policy Project Creation Reference is **[here](Create-MQ-Policy.md)**.
+
+<img src="./media/mq-policy-8.jpeg" style="width:8in;height:4in"  />
+
+<span id="_Toc105518931" class="anchor"></span>
+
+## Build – BAR File
 
 Add a new BAR file in the project to package and export the
 configuration.
@@ -356,7 +323,9 @@ Copy the bar file path or open it in finder window.
 
 <img src="./media/image54.png" style="width:5.90278in;height:3.95833in"  />
 
-<span id="_Toc105518928" class="anchor"></span>**Integration Dashboard - Deploy an integration server**
+<span id="_Toc105518928" class="anchor"></span>
+
+# Integration Dashboard - Deploy an integration server
 
 Proceed to create a Integration Server in CP4I Console. Click on Deploy Integrations.
 
@@ -370,11 +339,13 @@ Drag and Drop the newly generated bar file here. Click Next.
 
 <img src="./media/image57.jpeg"  />
 
-Skip any Configuration to be applied this integration. Just Click Next.
+Skip any Configuration to be applied this integration if you have not created a Policy Project. Just Click **Next**. 
+
+If you have a MQ Policy Project, then you can create configuration for it, select it and Click **Next**. Click **[here](Create-MQ-Policy.md#integration-server---mq-policy-project-configuration)** for more details.
 
 <img src="./media/image58.jpeg"  />
 
-Enter the Integration Server Name, Select License. Click Create.
+Enter the Integration Server Name starting with your Name to make it unique, Select License. Click Create.
 
 <img src="./media/image59.jpeg" />
 
@@ -409,7 +380,9 @@ The response should come successfully.
 
 This completes the creation and testing of local integration server.
 
-<span id="_Toc105518933" class="anchor"></span>**API Connect (APIC)**
+<span id="_Toc105518933" class="anchor"></span>
+
+# API Connect (APIC)
 
 Navigate to Administration -\> Integration Instances.
 
@@ -417,7 +390,7 @@ Navigate to Administration -\> Integration Instances.
 
 If there is no existing instance of **API Management**, Create an instance of the API Connect (API Management) as per following procedure. 
 
-If there is already an instance, then you should be able to see instances for API Management, API Management Administration, API-managed enterprise gateway. In this case, just click on the instance name for API Management Administration and continue to create organiation as per next section of [Cloud Manager (API Management Administration)](#_Toc105518934).
+If there is already an instance, then you should be able to see instances for API Management, API Management Administration, API-managed enterprise gateway. In this case, just click on the instance name for API Management Administration and continue to create organiation as per next section of **[Cloud Manager (API Management Administration)](#_Toc105518934)**.
 
 <img src="./media/image68.png" style="width:6.26806in;height:4.07639in"  />
 
@@ -445,7 +418,9 @@ The following API Connect Instances will be created in about 45 minutes.
 
 <img src="./media/image72.1.jpg" style="width:6.26806in;height:3.42431in" />
 
-<span id="_Toc105518934" class="anchor"></span>**Cloud Manager (API Management Administration)**
+<span id="_Toc105518934" class="anchor"></span>
+
+## Cloud Manager (API Management Administration)
 
 ### Create Organization
 
@@ -515,8 +490,9 @@ later you will not be able to create a portal service under a catalog.
 
 <img src="./media/image86.png" style="width:6.26806in;height:2.83889in" />
 
-<span id="_Toc105518938" class="anchor"></span>**API Manager (API
-Management)**
+<span id="_Toc105518938" class="anchor"></span>
+
+## API Manager (API Management)
 
 Click on the API Management Link to open API Management Console. If you
 see below picture then your Organization is not set correctly.

@@ -3,9 +3,9 @@
 There are several labs that use Kafka and we will need to create a connection to access the Kafka cluster when using Smart connectors, Toolkit flows, and Event Endpoint apis. 
 You will need to save the details from this section to be used in varies labs. 
 
-**NOTE: You should do this from the VDI since you will need to run varies commands so best to have the cert files saved to the VDI**
+**NOTE: You should do this from the device since you will need to run varies commands so best to have the cert files saved to the VDI**
 
-[Return to Scenario main page](../index.md#lab-sections)
+[Return to Scenario main page](../../README.md)
 
 # 1. Create SCRAM credentials to connect to Event Streams
 
@@ -90,7 +90,7 @@ You should have a text file saved on the device with this info and the cert file
 
 ![alt text][pic12]
 
-[Return to Scenario main page](../index.md#lab-sections)
+[Return to Scenario main page](../../README.md)
 
 
 [pic0]: images/0.png

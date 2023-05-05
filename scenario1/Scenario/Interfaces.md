@@ -6,7 +6,7 @@ So you will need to make some assumptions about how this interaction may work. I
 1. A push model where the FX Stream is pushed to the customer and 
 2. A pull model where the customer system calls to the FX stream provider for data.
 
-![INTERACTION MODEL](../../scenario1/Scenario/img/02-interaction-models.png)
+<img src="img/02-interaction-models.png" width=900 height=150/>
 
 As you asses the and plan the interaction models you will need to consier and make decsions for the the following
 1. Communication interration mode synchronous/asynchronous
@@ -27,8 +27,9 @@ The service definition is defined here
 [FXData YAML](../../scenario1/Scenario/fx-assets/FXData-1.0.0.yaml)
 
 ### Example Input
-The service is defined to accept a single http query parameter called reques-dt
-![REQUEST](../../scenario1/Scenario/img/03-request.png)
+The service is defined to accept a single http query parameter called reques-dt.
+
+<img src="img/03-request.png" width=900 height=400/>
 
 
 ### Example Output
@@ -88,27 +89,28 @@ The service is defined to accept a single http query parameter called reques-dt
 ## Setting Up Predefined FX Data
 Also provided here is a project intercahnge file that can be customized. 
 [FXData.zip](../../scenario1/Scenario/fx-assets/FXData.zip)
-To utilize the FXData flow as a quick start to simulate the data provider
+To utilize the FXData flow as a quick start to simulate the data provider.
+
 1. Import the FXData.zip to ACE Toolkit
 2. Create a Bar File
 3. Build and save the bar file
-4. Create a Project cp4i-scenario1-fxdata in your OCP environment
-5. Add Entitlement key in the project
-6. Create a Integration server in FX Data project
-7. Test exposed integration.
+4. Create a Integration server in FX Data project
+5. Test exposed integration.
 
 
-The file creates a standard response that substitutes the request date. The practicum squad can use this as a started and expand on the capabaility to be more elaborate if they choose to.
+<BR> The file creates a standard response that substitutes the request date. The practicum squad can use this as a started and expand on the capabaility to be more elaborate if they choose to. <BR>
 
-![Message SubFlow](../../scenario1/Scenario/img/04-simple-flow.png)
+<img src="img/04-simple-flow.png" width=1000 height=200/>
 
-The jave Compute Node contains the logic for creating the default list and substituting the date
+<BR> The jave Compute Node contains the logic for creating the default list and substituting the date <BR>
 
-![Java Compute](../../scenario1/Scenario/img/05-java-compute-node.png)
+<img src="img/05-java-compute-node.png" width=1000 height=400/>
 
-The currency list is predefined in the Currencies.java class
+<BR> The currency list is predefined in the Currencies.java class <BR>
 
-![Java Compute](../../scenario1/Scenario/img/06-static-currency-list.png)
+<img src="img/06-static-currency-list.png" width=1000 height=150/>
+
+[Return to Scenario main page](../README.md)
 
 
 

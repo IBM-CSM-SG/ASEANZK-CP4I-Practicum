@@ -9,13 +9,6 @@ This Practicum Lab Book explains and focuses on the solution preparation and imp
 ### [Topic 2: Solution Architecture and List of Products Used](#solution-architecture)
 ### [Topic 3: Introduction to Cluster](#introduction-to-cluster)
 ### [Topic 4: Solution Build](#solution-build)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.1 Prepare Client Tools**](#_Toc105518920)
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1.1 IBM App Connect Enterprise (ACE) Toolkit Setup**](#_Toc105518921)
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1.2 Openshift Command Line Interface (CLI) Setup**](#_Toc105518922)
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Topic 4.1.3 Mailtrap SMTP Setup**](#_Toc105518923)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.2: Event Streams](../scenario1/SolutionBuild/IBMEventStreams#solution-build----ibm-event-stream)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.3: App Connect](../scenario1/SolutionBuild/IBMAppConnect#ibm-app-connect)
-#### &nbsp;&nbsp;&nbsp;[Topic 4.4: Creating Your Rest API](../scenario1/RestAPI/RestAPI.md)
 ### [Topic 5: Conclusion](#conclusion)
 
 ###############################################################################################
@@ -27,14 +20,11 @@ This Practicum Lab Book explains and focuses on the solution preparation and imp
 - As part of a new program at the bank they want to offer access to FX data up to 12 months old via a mobile app to their brokers. The raw data is not in the format required for the business users.
 - The Bank historically use IIB and MQ and have bought CP4I. They have also setup a test system to investigate the use of OpenShift and CloudPaks.
 
-![Scenario 1](../scenario1/img/01-scenario-diagram.png)
+<img src="../scenario1/img/01-scenario-diagram.png" width=600 height=480/>
 
 ### **Challanges**
 Your team have (3) days to document your approach to a Solution to the customers business problem using CP4I capabilities and any external capabilities that you think are necessary or useful.
 Day 3: Demonstrate your solution to whole class
-
-## Predefined Inboud FX Data
-Users can design and construct their own user interface for the FX data inbound. If you may need a helping hand with this please review a sample that was precreated for this exercise [here](../scenario1/Scenario/Interfaces.md).
 
 # Solution Architecture
 ## High Level Architecture
@@ -62,9 +52,9 @@ The Cloud Pak for Integration services that we will be use are:
 - IBM Event Streams
 - IBM API Connect
 
-### [Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
+[Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
 
-# Introduction to Cluster
+## Introduction to Cluster
 
 If you're completely new to the concept of clusters, do follow the quick and easy tutorial [here](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift_tutorial) to learn more
 > With Red Hat® OpenShift® on IBM Cloud®, you can create highly available clusters with virtual or bare metal worker nodes that come installed with the Red Hat OpenShift on IBM Cloud Container Platform orchestration software. You get all the advantages of a managed offering for your cluster infrastructure environment, while using the Red Hat OpenShift tooling and catalog that runs on Red Hat Enterprise Linux for your app deployments.
@@ -75,103 +65,30 @@ OpenShift is a platform that allows you to run containerized applications and wo
 
 One of the big advantages of OpenShift is being able to take advantage of public and private resources which includes bare metal or virtualized hardware whether it is on-premise or on a cloud provider. 
 
-<img src="img/openshift-overview.png" width=1000 height=480/>
+<img src="img/openshift-overview.png" width=900 height=300/>
 
 This is the high level OpenShift Container Platform overview.
 
 For developers, OpenShift has two different ways of enabling them to work with their platform. They can take advantage of either the CLI or a web console. 
 
-### [Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
+[Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
 
 
 # Solution Build
-<span id="_Toc105518920" class="anchor"></span>**Prepare Client Tools**
+You can refer to below instructions to **[Create Connection to shared Kafka cluster.](SolutionBuild/Kafka-Pre-lab/Kafka-Pre-Lab.md)** Steps to create Kafka connection and save credentials and certs for all Kafka labs. 
 
-<span id="_Toc105518921" class="anchor"></span>**IBM App Connect Enterprise (ACE) Toolkit Setup**
-
-Install IBM App Connect Enterprise for developers (also called ACE).
-Make sure to select the correct download package for your OS (Windows,
-Linux, Mac).
-
-Click on **Download** button on the following
-link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started</u>](https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started)
-
-<img src="./media/image2.png" style="width:6.26806in;height:2.87361in"
-alt="Graphical user interface, text, application, Teams Description automatically generated" />
-
-The version used in this practicum is 12.0.8
-
-<img src="./media/image3.jpeg"
-style="width:6.26806in;height:0.70139in" />
-
-<img src="./media/image3.1.jpeg"
-style="width:6.26806in;height:0.70139in" />
-
-<img src="./media/image4.jpeg" style="width:6.26806in;height:3.37014in"
-alt="Table Description automatically generated" />
-
-Complete the installation through the installer package you just
-downloaded for your OS. eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You
-can use the IBM ACE Installation page as a guide to complete the
-installation.
-
-<img src="./media/image4.1.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.2.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.3.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.4.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.5.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.6.jpeg" style="width:6in;height:4in" />
-<img src="./media/image4.7.jpeg" style="width:6in;height:4in" />
+You may need to **[install client tools](SolutionBuild/Kafka-Pre-lab/Install-Client-Tools.md)** to work on this lab. 
 
 
-Once installed, open the installed ACE toolkit. A view similar to the
-screenshot below will launch.
+|  Subject                            | Description                                            |                                                               
+|-------------------------|------------------------------------------------------------------------------------------------------------|
+| [Define FX Data Interface](Scenario/Interfaces.md)       |## Sample for Users to design and construct their own user interface for the FX data Inbound interface.
+|-------------------------|------------------------------------------------------------------------------------------------------------|
+| [Using IBM REST API ](RESTAPI/RestAPI.md)       | The purpose of this lab is to provide an introduction to Kafka Toolkit using **App Connect Enterprise (ACE)** to REST APIS.
+| [Using IBM App Connect Client ](SolutionBuild/IBMAppConnect/README.md)       | The purpose of this lab is to provide an introduction to Kafka Toolkit using **App Connect Enterprise (ACE)**.
+| [Using IBM Event Streams ](SolutionBuild/IBMEventStreams/README.md)       | The purpose of this lab is to provide an introduction to Kafka Toolkit using **App Connect Enterprise (ACE)** to create producers and consumers of Kafka messages using Event Steams.
 
-<img src="./media/image-xx-0.jpeg" style="width:8in;height:4in" />
-
-<img src="./media/image-xx-1.png" style="width:6.26806in;height:3.37014in" />
-
-<span id="_Toc105518922" class="anchor"></span>**Openshift Command Line Interface (CLI) Setup**
-
-Download Openshift Command line tools (OC Client)
-
-<img src="./media/image5.png" style="width:6.26806in;height:1.14375in" />
-
-Download OC Client for your platform
-
-<img src="./media/image6.png" style="width:6.26806in;height:2.10486in" />
-
-Place downloaded oc binary file (oc or oc.exe )to the path in variable for your platform. See the below URL for more details.
-
-https://docs.openshift.com/container-platform/4.10/cli_reference/openshift_cli/getting-started-cli.html 
-
-Alternate URL Reference: https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.10/
-
-<span id="_Toc105518923" class="anchor"></span>**Mailtrap SMTP Setup**
-
-Signup for a SMTP account on mailtrap.io. Once logged in, note down your
-SMTP connection settings. For Example,
-
-Host: smtp.mailtrap.io
-
-Port: 2525
-
-User: 2ef08bdc18285b
-
-Password: 11xxxxxx06b8da
-
-<img src="./media/image7.png" style="width:5.31523in;height:3.09751in" />
-
-You can also check all your emails under MyInbox in mailtrap web site.
-
-<img src="./media/image8.png" style="width:6.26806in;height:2.12222in" />
-
-## [Event Streams](../scenario1/SolutionBuild/IBMEventStreams/README.md)
-## [App Connect](../scenario1/SolutionBuild/IBMAppConnect/README.md)
-## [Creating Your Rest API](../scenario1/RestAPI/RestAPI.md)
-
-
-# Conclusion
+## Conclusion
 The above completes details for setup, installation and configuration of Cloud Pak for Integration for Scenario 1. As we conclude our work on the Practicum, you will now be well acquainted with the basic fundamentals and usage of Cloud Pak for Integration. This will assist you in your journey to Modernising Applications and keep up to speed with the technology and trends.
 
-### [Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)
+[Go to the TOP](#ibm-cp4i-practicum-lab-book-for-scenario-1)

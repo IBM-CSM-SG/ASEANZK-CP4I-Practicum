@@ -5,6 +5,8 @@ This scenario can be implemented/developed using one of the below two ways. You 
 
 You can refer to below instructions to **[Create Connection to shared Kafka cluster.](Kafka-Pre-lab/Kafka-Pre-Lab.md)** Steps to create Kafka connection and save credentials and certs for all Kafka labs. 
 
+You may need to **[install client tools](Kafka-Pre-lab/Install-Client-Tools.md)** to work on thsi lab. 
+
 ## Lab Abstracts
 
 |  Subject                            | Description                                            |                                                               

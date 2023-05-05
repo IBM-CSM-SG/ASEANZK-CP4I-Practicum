@@ -5,7 +5,8 @@ You will need to save the details from this section to be used in varies labs.
 
 **NOTE: You should do this from the VDI since you will need to run varies commands so best to have the cert files saved to the VDI**
 
-[Return to main lab page](../index.md#lab-sections)
+[Return to Scenario 5 main page](../index.md#lab-sections)
+
 # 1. Create SCRAM credentials to connect to Event Streams<a name="Setup_connections"></a>
 
 1\. Use the URL to the CP4I cluster that was provided to you from the instructor.   Select the **Enterprise LDAP**.
@@ -74,7 +75,7 @@ You should have a text file saved on the VDI with this info and the cert files w
 
 ![alt text][pic12]
 
-[Return to main lab page](../index.md#lab-sections)
+[Return to Scenario 5 main page](../index.md#lab-sections)
 
 
 [pic0]: images/0.png

@@ -2,7 +2,8 @@
 
 ## Creating REST API in ACE (App Connect Enterprise) Toolkit
 
-In this section, we will be using the ACE Toolkit to create a REST API. To install the ACE Toolkit, head [here](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=sh-how-can-i-try-out-app-connect-enterprise)
+In this section, we will be using the ACE Toolkit to create a REST API. You may need to **[install client tools](SolutionBuild/Kafka-Pre-lab/Install-Client-Tools.md)** to work on this lab.  
+For more info, see [here](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=sh-how-can-i-try-out-app-connect-enterprise)
 
 Once you have downloaded the ACE Toolkit, get acquainted and comfortable with the interface. Now, let's create a new REST API. Simply click on **File**, followed by **New**, and select **Rest API**.  
 

@@ -6,7 +6,7 @@ So you will need to make some assumptions about how this interaction may work. I
 1. A push model where the FX Stream is pushed to the customer and 
 2. A pull model where the customer system calls to the FX stream provider for data.
 
-<img src="img/02-interaction-models.png" width=900 height=150/>
+<img src="img/02-interaction-models.png" width=900 height=150 border=2/>
 
 As you asses the and plan the interaction models you will need to consider and make decsions for the the following
 1. Communication interration mode synchronous/asynchronous
@@ -16,98 +16,51 @@ As you asses the and plan the interaction models you will need to consider and m
 
 For those that want to focus their integration energies in other parts of the practicum we will now outline a predefined integration model with a predefined interface
 
+## Building the Interface
+
+Rfer to the procedure in [Using IBM REST API to Create FXData Interaface](../RestAPI/RestAPI.md) to create the external FXData Interface as per your needs. 
+
+Alternatively you can use the sample project interchange file [FXData.zip](../../scenario1/Scenario/fx-assets/FXData.zip) provided here which can be customized as required. Details of this sample project interchange file is given below.
+
+
 ## Predefined Interface
 
-For this predefined integration model we assumed the following
+For this predefined integration model we assumed the following:
 
-The service will be initated from the customer to the FX provider using a REST call to the FX Provider this will be executed daily.
+- The service will be initated from the customer to the FX provider using a REST call to the FX Provider this will be executed daily.
 
-The FX Provider will respond with the list of currencies. The data structure of the response will consist of the a list of Currency each list item including the currency symbol, the request date, the opening rate, closing rate, daily high and daily low.
+- The FX Provider will respond with the list of currencies. The data structure of the response will consist of the a list of Currency each list item including the currency symbol, the request date, the opening rate, closing rate, daily high and daily low.
 
-The service definition is defined here
+- The service definition is defined here
 [FXData YAML](../../scenario1/Scenario/fx-assets/FXData-1.0.0.yaml)
 
-<BR> This sample file creates a standard response that substitutes the request date. The practicum squad can use this as a started and expand on the capabaility to be more elaborate if they choose to. <BR>
+<BR> This sample file creates a standard response that substitutes the request date. The practicum squad can use this to get started and expand on the capabaility to be more elaborate if they choose to. <BR> <BR>
+ 
+<img src="img/04-simple-flow.png" width=1000 height=200 border=2 />
 
-<img src="img/04-simple-flow.png" width=1000 height=200/>
+<BR> In this sample project file, the jave Compute Node contains the logic for creating the default list and substituting the date <BR> <BR>
 
-<BR> In this sample project file, the jave Compute Node contains the logic for creating the default list and substituting the date <BR>
+<img src="img/05-java-compute-node.png" width=1000 height=400 border=2/>
 
-<img src="img/05-java-compute-node.png" width=1000 height=400/>
+<BR> In this sample project file, the currency list is predefined in the Currencies.java class <BR> <BR>
 
-<BR> In this sample project file, the currency list is predefined in the Currencies.java class <BR>
-
-<img src="img/06-static-currency-list.png" width=1000 height=150/>
+<img src="img/06-static-currency-list.png" width=1000 height=150 border=2/>
 
 ### Example Input
 The service is defined to accept a single http query parameter called reques-dt.
 
-<img src="img/03-request.png" width=900 height=400/>
+<img src="img/03-request.png" width=900 height=400 border=2/>
 
 
 ### Example Output
-```
-[
-    {
-        "symbol": "EURUSD",
-        "request-dt": "2019-10-09",
-        "open": 1.09807,
-        "close": 1.09802,
-        "low": 1.09798,
-        "high": 1.09816
-    },
-    {
-        "symbol": "USDJPY",
-        "request-dt": "2019-10-09",
-        "open": 107.354,
-        "close": 107.34929,
-        "low": 107.34328,
-        "high": 107.35429
-    },
-    {
-        "symbol": "AUDUSD",
-        "request-dt": "2019-10-09",
-        "open": 0.67446,
-        "close": 0.67446,
-        "low": 0.67443,
-        "high": 0.6745
-    },
-    {
-        "symbol": "SGDUSD",
-        "request-dt": "2019-10-09",
-        "open": 0.72437,
-        "close": 0.7244,
-        "low": 0.72445,
-        "high": 0.72437
-    },
-    {
-        "symbol": "GBPEUR",
-        "request-dt": "2019-10-09",
-        "open": 1.11324,
-        "close": 1.11314,
-        "low": 1.11326,
-        "high": 1.11305
-    },
-    {
-        "symbol": "PHPEUR",
-        "request-dt": "2019-10-09",
-        "open": 0.01758,
-        "close": 0.01758,
-        "low": 0.01758,
-        "high": 0.01758
-    }
-]
-```
+
+<img src="img/interface-example-output.png" width=700 height=700 border=2/>
 
 ## Setting Up Predefined FX Data
 
-Rfer to the procedure in [Using IBM REST API to Create FXData Interaface](../RestAPI/RestAPI.md) to create the external FXData Interface as per your needs. 
-
-Alternatively you can use the sample project interchange file [FXData.zip](../../scenario1/Scenario/fx-assets/FXData.zip) provided here which can be customized as required. 
-
 To utilize the FXData flow as a quick start to simulate the data provider.
 
-1. Import the FXData.zip to ACE Toolkit. Right click on Projects list and select Import. <BR>
+1. Import the [FXData.zip](../../scenario1/Scenario/fx-assets/FXData.zip) to ACE Toolkit. Right click on Projects list and select Import. <BR>
 1a. Select Project Interchange file and click Next. <BR>
 1b. Browse the above sample zip file and click Finish. <BR>
 1c. Review and modify it if needed. <BR>

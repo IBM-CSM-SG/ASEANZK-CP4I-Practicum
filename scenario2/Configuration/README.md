@@ -42,7 +42,7 @@
 Below is the high level architecture that we plan to implement as part
 of this scenario.
 
-<img src="./media/image1.png" style="width:3.375in;height:3.01389in" />
+<img src="./media/image1.png" />
 
 <span id="_Toc105518920" class="anchor"></span>
 
@@ -787,28 +787,28 @@ Select the **application** to be subscribed.
 
 To confirm subscription, click Next.
 
-<img src="./media/image144.png" style="6.26806in" />
+<img src="./media/image144.png" />
 
 Click Done.
 
-<img src="./media/image145.png" style="width:6.26806in;height:1.08056in" />
+<img src="./media/image145.png" />
 
 Click on **POST /** option under overview, in the left pane.
 
-<img src="./media/image146.png" style="width:6.26806in;height:2.08264in" />
+<img src="./media/image146.png" s />
 
 Click on **Try It** tab to test this API product.
 
-<img src="./media/image147.png" style="width:6.26806in;height:2.75556in" />
+<img src="./media/image147.png" />
 
 Enter the API Secret for authentication and click Send.
 
-<img src="./media/image148.png" style="width:6.26806in;height:2.00556in" />
+<img src="./media/image148.png" />
 
 If you receive an error like below, then it could be because you are
 using any other browser than Firefox. Or the Certificate is not trusted.
 
-<img src="./media/image149.png" style="width:6.26806in;height:2.60694in" />
+<img src="./media/image149.png"  />
 
 Open this URL in the error below in the browser. eg.
 
@@ -816,19 +816,19 @@ https://hostname/api-organization/practicum-catalog/my-account-api/
 
 Accept the certificate. Ignore the error. 
 
-<img src="./media/image150.png" style="width:6.26806in;height:0.29722in" />
+<img src="./media/image150.png" border=1 />
 
 Now You can try to send the API call one more time, you should be able
 to see the response successfully.
 
-<img src="./media/image151.png" style="width:6.26806in;height:2.07639in" />
+<img src="./media/image151.png"  />
 
 Check in the IBM MQ if this message has been stored in Queue
 Successfully.
 
  Go to Integration Instances -\> Messaging instance Name -\> Manage -\> Queue name
 
-<img src="./media/image152.png" style="width:6.26806in" />
+<img src="./media/image152.png" />
 
 [Go to Configuration Index](#ibm-cloud-pak-for-integration---configuration)
 

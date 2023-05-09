@@ -190,8 +190,10 @@ managing App Connect in container environment.
       
 ## Consuming message from Kafka topics
 
-To understand on consuming message from kafka , you can check out 
-[this page](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=enterprise-consuming-messages-from-kafka-topics) 
+To understand on consuming message from kafka , you can check out :
+
+- [Consuming Messages from Kafka Topic](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=enterprise-consuming-messages-from-kafka-topics) 
+- [Reading an Individual Message from Kafka Topic ](https://www.ibm.com/docs/en/app-connect/11.0.0?topic=enterprise-reading-individual-message-from-kafka-topic)
 
 Consuming the message from Kafka Topic is not scoped for this lab. You may refer to Scenatio 5 Lab (Using IBM App Connect Client) to explore the Producer and Consumer Part in more details.
 

@@ -12,11 +12,17 @@ Table of contents
    * [Topic 4: Running Transformation Advisor](#topic-4-running-transformation-advisor)
    * [Topic 5: Environment Configuration](#topic-5-environment-configuration)
       * [Creating MQ Queue Manager](#creating-mq-queue-manager)
+      * [Creating MQ Queues](#creating-mq-queues)
+      * [Creating and Configure MQ Channel](#creating-and-configure-mq-channel)
+      * [Running mq_ace_lab.mqsc](#running-mq_ace_labmqsc)
    * [Topic 6: Refactor, Build and Deployment](#topic-6--refactor-build-and-deployment)
       * [Importing Asset into IBM ACE Toolkit and creating local integration server](#importing-asset-into-ibm-ace-toolkit-and-creating-local-integration-server)
       * [Refactor ACE REST to REST Message flow](#refactor-ace-rest-to-rest-message-flow)
       * [Refactor ACE MQ Message flow using MQ Client Connection](#refactor-ace-mq-message-flow-using-mq-client-connection)
-   * [Topic 7: Conclusion](#topic-7-conclusion)
+   * [Topic 7: Test Your Deployed Assets](#test-the-deployed-request-and-response-services)
+      * [Test the deployed Request and Response Services](#test-the-deployed-request-and-response-services)
+      * [Test the deployed MQ Message Hopping Service](#test-the-deployed-mq-message-hopping-service)
+   * [Topic 8: Conclusion](#topic-7-conclusion)
 <!--te-->
 
 &nbsp;
@@ -118,7 +124,7 @@ If you dont have the ACE client installed, **[install client tools](Install-Clie
 
 <img src="images/AppConnect5.png" >
 
-3. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 IIB Asset [IIBV10_Broker_backup.zip](../scenario3/IIBV10_Broker_backup.zip) file through command line, as shown below: 
+3. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 IIB Asset [IIBV10_Broker_backup.zip](../scenario3/Assets/IIBV10_Broker_backup.zip) file through command line, as shown below: 
 
 ```
 TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.zip
@@ -190,7 +196,7 @@ Prepare the environment first as below for the new integration code deployment.
 
 <img src="images/Messging.png" >
  
-2. This will redirect to a Messaging screen as below. Click on Create an instance to create a queue manager.
+2. If you see a Messaging screen as below, then Click on Create an instance to create a queue manager. If you can see the MQ Console, means an Queue Manager already exists and you can proceed to create the queue and channel as per the next section.
 
 <img src="images/MessgnScreen.png">
  
@@ -222,44 +228,115 @@ Prepare the environment first as below for the new integration code deployment.
 6. Click on queue manager name --> It should open up MQ Console
 
 <img src="images/MQConsole.png" >
+
+## Creating MQ Queues
  
-7. Click on  manage --> quickstart to open queue manager. Create two local queues by clicking on button New. Call it **IN** and **OUT**.
+1. Click on  manage --> quickstart to open queue manager. Create two local queues for input (IN) and output(OUT) messages by clicking on button **Create+**. .
 
 <img src="images/ChannlQuickStrt.png" >
- 
-8. Navigate to Applications --> App Channel --> Click Create 
+
+Chose the Queue Type as **Local Quueue**.
+
+<img src="images/MQ_Queue_Create_2.jpeg" >
+
+Enter the name of the Queue as **IN**. Click **Create**.
+
+<img src="images/MQ_Queue_Create_3.jpeg" >
+
+
+Similary Create another Queue with name of the Queue as **OUT**.
+
+<img src="images/MQ_Queue_Create_4.jpeg" >
+
+Two Queues **IN** and **OUT** will be created successfully.
+
+<img src="images/MQ_Queue_Create_5.jpeg" >
+
+ ## Creating and Configure MQ Channel
+
+1. Navigate to Applications --> App Channel --> Click Create 
 
 <img src="images/CreateAppChnl.jpg" >
  
- 
-9. Click "Next" on the following page 
+2. Click "Next" on the following page 
 
 <img src="images/AppChnlStep2.png" >
  
-10. Select "Quick Create" and provide a Channel Name (eg. DEV_SEVRCONN), Channel Type (Server-connection) and Description. Once complete, click "Create"
+3. Select "Quick Create" and provide a Channel Name (eg. DEV_SEVRCONN), Channel Type (Server-connection) and Description. Once complete, click "Create"
 
 <img src="images/ChnnelStep3.png" >
  
-11. On successful creation, channel will appear under "App Channels". 
+4. On successful creation, channel will appear under "App Channels". 
 
-12. To edit the configuration of the Channel click "Configuration" as highlighted below - 
+5. To edit the configuration of the Channel click "Configuration" as highlighted below - 
 
 <img src="images/ChannelCreated.jpg" >
 <!-- img src="images/EditConfigChnl.png" -->
  
-13. It will redirect to open the configurations section of the Channel. Under "Properties" select "SSL". Click Edit Button.
+6. It will redirect to open the configurations section of the Channel. Under "Properties" select "SSL". Click Edit Button.
 
 
 <img src="images/EditSSLChnl.png" >
  
  
-14. Select "SSL Authentication" to "Optional" and hit "Save"
+7. Select "SSL Authentication" to "Optional" and hit "Save"
 
 
 <img src="images/SSLEditCntd.png" >
  
  
- Your environment is **ready!!!**
+ ## Running mq_ace_lab.mqsc
+
+There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../scenario3/Assets/mq_ace_lab.mqsc) . Below steps will assist to disable. 
+
+1. Login to Openshift Cluster Environment. Click on the top right corner --> You Login ID will appear here --> Click copy login command
+
+<img src="images/MQAC2.png" >
+
+2. Browser will display "Display Token" --> Click to get your API Token
+   
+<img src="images/MQAC3.png" >
+
+
+<img src="images/MQAC4.png" >
+   
+3. Copy the command captured in the previous step and use it to connect to CLI
+
+
+<img src="images/MQAC6.png" >
+
+
+4. Navigate to your working project example - cp4i in this example
+
+---
+oc project cp4i(your project name)
+
+---
+
+<img src="images/MQAC7.png" >
+
+5. Run command as below to get the pod name of pod running MQ. Copy the pod name to be used later.
+
+---
+oc get pods|grep mq 
+
+---
+
+<img src="images/MQAC8.png" >
+
+6. Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod. QUICKSTART is queue manager name.
+
+---
+oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc QUICKSTART < mq_ace_lab.mqsc
+
+---
+
+<img src="images/MQAC9.png" >
+
+<img src="images/MQAC10.png" >
+
+
+MQ environment is **ready** for the lab!!!
  
  [Back to Top](#topic-1-introduction-and-scenario-details)
  
@@ -282,7 +359,7 @@ Now the refactor code can be deployed in a microservices architecture on Redhat 
 
 <img src="images/HTTP1.png" >
 
-2. Browse on your local machine to add the [MessageFlow_PI.zip](../scenario3/MessageFlow_PI.zip) file from the Scenario 3 assets as shown below
+2. Browse on your local machine to add the [MessageFlow_PI.zip](../scenario3/Assets/MessageFlow_PI.zip) file from the Scenario 3 assets as shown below
 
 <img src="images/HTTP2.png" >
 
@@ -295,6 +372,7 @@ Now the refactor code can be deployed in a microservices architecture on Redhat 
 <img src="images/HTTP4.png" >
 
 This will open child window to enter details of the server. Once completed, hit finish.
+
 <img src="images/HTTP5.png" >
 
 
@@ -361,6 +439,63 @@ The applications which needs to be tested on this local integration server can b
 
 7. Deploy bar file for [HTTPRequestApp flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPRequestApp** only for now.
 
+[Back to Top](#topic-1-introduction-and-scenario-details)
+
+&nbsp; 
+
+## Refactor ACE MQ Message flow using MQ Client Connection
+
+Introduce new RestToMQApp message flow to expose putting MQ messages
+
+<img src="images/scenario3-application-architecture-ace-mq.jpg" border=1>
+
+1. To obtain MQ Endpoint, login to your cluster and navigate to Networking --> Services.
+Search "ibm-mq" and Copy Hostname and Port as highlighted for the MQ Queue Manager that you created.
+
+<img src="images/HostName.png" >
+ 
+ 
+2. Navigate to ACE and open MQ Flow "RemoteMQInOt.msgflow" under MQ_Client_App.
+ 
+<img src="images/ACE-MQFlow.png" >
+ 
+
+3. On diagram at the right --> Select MQInput --> It will display properties section below. 
+
+3a) Navigate to Basic Tab and Review the name of the Input Queue. You would have created this queue earlier as part of MQ Setup.
+
+3b) Navigate to MQ Connection --> It should display the properties of MQ Connection
+
+    
+<img src="images/ACEMQ2.png" >
+
+3c) If you have a policy for MQ EndPoint,then you can configure the policy name in the **policy tab** here in the format {MQPolicyProjectName}:PolicyName, so that it can be used as a configuration for the integration server. In this case, above details on **MQ Connection tab** are not required. The Policy Project Creation and Export Reference is **[here](Create-MQ-Policy.md)**.
+
+<img src="images/mq-policy-8.jpeg" style="width:8in;height:4in" border=1 />
+
+ 
+ 
+4. Select the Connection Type as "MQ Client Connection Properties" --> Specify "Destination Queue Manager Name" , "Queue Manager Host Name" 
+   (Retrieved in step - 15), "Listener Port" (Retrieved in step - 15) and "Channel Name". Hit save.
+
+
+<img src="images/ACEMQ3.png" >
+ 
+
+5. Repeat the same configuration for MQOutput. Verify that the Queue Name, Queue Manager Name, Host Name and Port etc are correct. Similar to MQInput Queue, you may need to create another policy for output queue if the Queue Manager is different. If both Queues IN & OUT are under the same Queue Manager, then only one Policy Project is required.
+
+<img src="images/ACEMQoutput.png" >
+
+6. Build ace MQ message flow into BAR file for [MQ_Client_App](int-deployment.md#build-ace-message-flow-into-bar-file) . Do for **MQ_Client_App** only for now.
+
+7. Deploy MQ bar file for [MQ_Client_App flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **MQ_Client_App** only for now.
+
+
+[Back to Top](#topic-1-introduction-and-scenario-details)
+
+
+# Topic 7: Test Your Deployed Assets
+
 ## Test the deployed Request and Response Services
 
    a. Open Terminal on your local machine
@@ -374,125 +509,41 @@ curl -v http://http-response-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ib
 curl -v http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com/requestService
 ```
 
-Please replace 
-**http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com** part with the URL of your environment
-
+Please replace **http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com** part with the URL of your environment
 
     c. Receiving 200 OK on the terminal validates successful deployment
 
-       <img src="images/refactor-http-5.png" >
+   <img src="images/refactor-http-5.png" >
 
-[Back to Top](#topic-1-introduction-and-scenario-details)
+## Test the deployed MQ Message Hopping Service
 
-&nbsp; 
-## Refactor ACE MQ Message flow using MQ Client Connection
+Open the Queue Manager Console and click on Manage screen. Note down the count of IN & OUT Queues. Clck on IN Queue to drop a message manually.
 
-Introduce new RestToMQApp message flow to expose putting MQ messages
+<img src="images/MQ_IN_OUT_1.jpeg" >
 
-<img src="images/scenario3-application-architecture-ace-mq.jpg" >
 
-1. To obtain MQ Endpoint, login to your cluster and navigate to Networking --> Services.
-Search "ibm-mq" and Copy Hostname and Port as highlighted for the MQ Queue Manager that you created.
+Click on **Create+** to create a message manually.
 
-<img src="images/HostName.png" >
- 
- 
-2. Navigate to ACE and open MQ Flow "RemoteMQInOt.msgflow" under MQ_Client_App.
- 
-<img src="images/ACE-MQFlow.png" >
- 
+<img src="images/MQ_IN_OUT_2.jpeg" >
 
-3. On diagram at the right --> Select MQInput --> It will display properties section below.
-    Navigate to MQ Connection --> It should display the properties of MQ Connection
+Write any Message in Application Data and Click on **Create** Button.
+
+<img src="images/MQ_IN_OUT_3.jpeg" >
+
+You will notice that the IN queue is still empty. This is because the message has been consumed by the Integration Flow and droped into the Out Queue. LEts go back to Manage Queue Screen.
+
+<img src="images/MQ_IN_OUT_2.jpeg" >
+
+Note the count of IN and OUT queues again. The Out queue count would have been increased. Click on Out Queue to check the messages.
+
+<img src="images/MQ_IN_OUT_5.jpeg" >
+
+Check the Latest Message timestamp and Count.
+
+<img src="images/MQ_IN_OUT_6.jpeg" >
+
     
-    
-<img src="images/ACEMQ2.png" >
- 
- 
-4. Select the Connection Type as "MQ Client Connection Properties" --> Specify "Destination Queue Manager Name" , "Queue Manager Host Name" 
-   (Retrieved in step - 15), "Listener Port" (Retrieved in step - 15) and "Channel Name". Hit save.
-
-
-<img src="images/ACEMQ3.png" >
- 
-
-5. Repeat the same configuration for MQOutput
-
-<img src="images/ACEMQoutput.png" >
-
-6. Build ace MQ message flow into BAR file for [MQ_Client_App](int-deployment.md#build-ace-message-flow-into-bar-file) . Do for **MQ_Client_App** only for now.
-
-7. Deploy MQ bar file for [MQ_Client_App flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **MQ_Client_App** only for now.
-
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
-
-## Running mq_ace_lab.mqsc
-
-There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../scenario3/mq_ace_lab.mqsc) . Below steps will assist to disable. 
-
-**Pre-requisite**
-
-Enable oc client for your system by following the below steps. 
-
-1. Login to Openshift Cluster Environment. Click on the top right corner --> You Login ID will appear here --> Click copy login command
-
-<img src="images/MQAC2.png" >
-
-2. Browser will display "Display Token" --> Click to get your API Token
-   
-<img src="images/MQAC3.png" >
-
-
-<img src="images/MQAC4.png" >
-   
-3. Copy the command captured in the previous step and use it to connect to CLI
-
-
-<img src="images/MQAC6.png" >
-
-
-4. Navigate to your working project example - cp4i in this example
-
----
-oc project cp4i(your project name)
-
----
-
-<img src="images/MQAC7.png" >
-
-5. Run command as below to get the pod name of pod running MQ. Copy the pod name to be used later.
-
----
-oc get pods|grep mq 
-
----
-
-<img src="images/MQAC8.png" >
-
-6. Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod
-
----
-oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc QUICKSTART < mq_ace_lab.mqsc
-
----
-
-<img src="images/MQAC9.png" >
-
-<img src="images/MQAC10.png" >
-
-
-MQ is ready and running on your environment!!!
-
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
-
-&nbsp; 
-    
-    
-# Topic 7: Conclusion  
+# Topic 8: Conclusion  
  
  The above completes details for setup, installation and configuration of Cloud Pak for Integration for the described use case.
  As we conclude our work on the practicum, we expect you are versed with the basic fundamentals and usage of Cloud Pak for Integration.

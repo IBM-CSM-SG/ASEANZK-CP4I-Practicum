@@ -34,9 +34,11 @@
 
 <img src="images/CreateIntServer.jpg" >
  
- 4a. Pass the configuration screen by clicking "Next".
+ 4a. For HttpResponseApp or HttpRequestApp, just click **Next**. For MQ_CLIENT_APP, Skip any Configuration to be applied this integration if you have not created a MQ Policy Project and click **Next**.  
+
+If you have one or more MQ Policy Project corresponding to each MQ environment, then you can create and select configuration for each MQ Policy Project, select it and Click **Next**. Click **[here](Create-MQ-Policy.md#integration-server---mq-policy-project-configuration)** for more details.
  
-<img src="images/CreateIntServer2.jpg" >
+<img src="images/CreateIntServer2-2.jpg" >
  
  4b. On the "Common Settings". Validate the settings as shown in the snapshot below. Click Create.
   **Create Give name as per the bar file name, eg HttpResponseApp or HttpRequestApp  or MQ_CLIENT_APP**

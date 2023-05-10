@@ -10,16 +10,12 @@ Table of contents
    * [Topic 2: Introduction to Clusters and Openshift](#topic-2-introduction-to-clusters-and-openshift)
    * [Topic 3: Solution Architecture](#topic-3-solution-architecture)
    * [Topic 4: Running Transformation Advisor](#topic-4-running-transformation-advisor)
-      * [Installing IBM App Connect Enterprise (ACE)](#installing-ibm-app-connect-enterprise-ace)
-       * [Running Transformation Advisor (TADataCollector)](#running-transformation-advisor-tadatacollector)
    * [Topic 5: Environment Configuration](#topic-5-environment-configuration)
       * [Creating MQ Queue Manager](#creating-mq-queue-manager)
    * [Topic 6: Refactor, Build and Deployment](#topic-6--refactor-build-and-deployment)
       * [Importing Asset into IBM ACE Toolkit and creating local integration server](#importing-asset-into-ibm-ace-toolkit-and-creating-local-integration-server)
       * [Refactor ACE REST to REST Message flow](#refactor-ace-rest-to-rest-message-flow)
       * [Refactor ACE MQ Message flow using MQ Client Connection](#refactor-ace-mq-message-flow-using-mq-client-connection)
-      * [Build ACE message flow into BAR file](#build-ace-message-flow-into-bar-file)
-      * [Deploy BAR file to CP4I Integration Servers](#deploy-bar-file-to-cp4i-integration-servers)
    * [Topic 7: Conclusion](#topic-7-conclusion)
 <!--te-->
 
@@ -30,7 +26,7 @@ Table of contents
 &nbsp;
 &nbsp;
 # Topic 1: Introduction and Scenario Details
-Your customer has been a long-time user of **App Connect (IIB/WMB)** and **MQ**. They have recently decided to investigate the value of modernizing their integration. They are eager to explore IBM Agile Integration practices. They would like you to use one of their existing flows and queue definitions to explore how to move to containerized integration.
+Your customer has been a long-time user of **App Connect (IIB/WMB)** and **MQ**. They have recently decided to investigate the value of modernizing their integration. They would like you to use one of their existing flows and queue definitions to explore how to move to containerized integration.
 
 <img src="images/scenario3-image1.png" style="width:10in;height:4in"/>
 
@@ -90,7 +86,7 @@ For developers, OpenShift has two different ways of enabling them to work with t
 
 # Topic 3: Solution Architecture
 Below describe the high-level solution architecture for a simple scenario 3 solution.
-By using IBM IIB/ACE transformation advisor's TADataCollector, we can analyse the current monolith IIB/ACE application. A report will be generated to recommend what are needed to refactor, in order to achieve a microservice architecture build.
+By using IBM IIB/ACE transformation advisor's TADataCollector, we can analyse the current monolithic IIB/ACE application. A report will be generated to recommend what are needed to refactor, in order to achieve a microservice architecture build.
 
 The refactor code can later be deployed in a microservices architecture on Redhat Openshift with CP4I (ACE + MQ) environment 
 
@@ -99,79 +95,45 @@ The refactor code can later be deployed in a microservices architecture on Redha
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
 
-
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-
-
 
 # Topic 4: Running Transformation Advisor
 
-## Installing IBM App Connect Enterprise (ACE)
-
-Install IBM App Connect Enterprise for developers (also called ACE).
-Make sure to select the correct download package for your OS (Windows,
-Linux, Mac).
-
-Click on **Download** button on the following
-link: [<u>https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started</u>](https://www.ibm.com/docs/en/app-connect/12.0?topic=enterprise-download-ace-developer-edition-get-started)
-
-<img src="images/image2.png" />
-
-The version used in this practicum is 12.0.8
-
-<img src="images/image3.1.jpeg" />
-
-<img src="./images/image4.jpeg"  />
-
-Complete the installation through the installer package you just
-downloaded for your OS. eg: 12.0.8.0-ACE-MAC64-DEVELOPER-UNSIGNED. You
-can use the IBM ACE Installation page as a guide to complete the
-installation.
-
-<img src="./images/image4.1.jpeg" style="width:6in;height:4in" />
-<img src="./images/image4.2.jpeg" style="width:6in;height:4in" />
-<img src="./images/image4.3.jpeg" style="width:6in;height:4in" />
-<img src="./images/image4.4.jpeg" style="width:6in;height:4in" />
-<img src="./images/image4.5.jpeg" style="width:6in;height:4in" />
-<img src="./images/image4.6.jpeg" style="width:6in;height:4in" />
-<img src="./images/image4.7.jpeg" style="width:6in;height:4in" />
-
-
-Once installed, open the installed ACE toolkit. A view similar to the
-screenshot below will launch.
-
-<img src="./images/image-xx-0.jpeg" />
-
-<img src="./images/image-xx-1.png" />
+If you are planning to move your traditional integration workload (IIB/ACE) to a containerized environment, the Transformation Advisor tool helps you to analyze your on-premises workloads for modernization. You can collect and assess data for a specific integration server in an integration node backup in App Connect Enterprise by using the TADataCollector command. See [here](https://www.ibm.com/docs/en/app-connect/12.0?topic=tasks-running-transformation-advisor-tool) for more details.
 
 ## Running Transformation Advisor (TADataCollector)
 
-3. Open the Integration Console (IBM App connect Enterprise Toolkit -> Open Integration console)
+If you dont have the ACE client installed, **[install client tools](Install-Client-Tools.md)** to work on this lab. 
+
+1. Open the Integration Console (IBM App connect Enterprise Toolkit -> Open Integration console)
 
 <img src="images/AppConnect4.png" >
 
-4. IBM ACE console will launch on your screen as below:
+2. IBM ACE console will launch on your screen as below:
 
 <img src="images/AppConnect5.png" >
 
-5. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 IIB Asset [IIBV10_Broker_backup.zip](../scenario3/IIBV10_Broker_backup.zip) file through command line, as shown below: 
+3. Run the Transformation Advisor by running `TADataCollector` on this console and passing Scenario3 IIB Asset [IIBV10_Broker_backup.zip](../scenario3/IIBV10_Broker_backup.zip) file through command line, as shown below: 
 
 ```
 TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.zip
 ```
 
-6. Once the `TADataCollector` command runs successfully, it will generate recommendation files under `/tmp/TADataCollector/output/IIB1` folder. Open the following directory to access the generated files
+4. Once the `TADataCollector` command runs successfully, it will generate recommendation files under `/tmp/TADataCollector/output/IIB1` folder. Open the following directory to access the generated files
 
-<img src="images/AppConnect6.jpg" >
+<img src="images/AppConnect6.jpg" border=1>
 
-7.	Open the recommendations.html file located in `/tmp/TADataCollector/output/IIB1` folder & Read the recommendations made by IBM Transformation Advisor
+5.	Open the recommendations.html file located in `/tmp/TADataCollector/output/IIB1` folder & Read the recommendations made by IBM Transformation Advisor
 
 <img src="images/AppConnect8.png" >
+
+&nbsp;
+&nbsp;
 
 <img src="images/AppConnect9.png" >
 
@@ -183,7 +145,10 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 &nbsp;
 &nbsp;
 &nbsp;
+
 # Topic 5: Environment Configuration
+
+Prepare the environment first as below for the new integration code deployment.
 
 &nbsp;
 <!-- ## Creating Integration Dashboard
@@ -237,10 +202,7 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
    
    a. License acceptance – Toggle the button from OFF to ON state
 
-
    <img src="images/Licence.png" >
- 
- 
  
    b. Select “Type of availability” from dropdown as SingleInstance  
  
@@ -261,12 +223,10 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 
 <img src="images/MQConsole.png" >
  
- 
 7. Click on  manage --> quickstart to open queue manager
 
 <img src="images/ChannlQuickStrt.png" >
  
-
 8. Navigate to Applications --> App Channel --> Click Create 
 
 <img src="images/CreateAppChnl.jpg" >
@@ -286,7 +246,6 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 
 <img src="images/ChannelCreated.jpg" >
 <!-- img src="images/EditConfigChnl.png" -->
- 
  
 13. It will redirect to open the configurations section of the Channel. Under "Properties" select "SSL". Click Edit Button.
 
@@ -312,9 +271,14 @@ TADataCollector ace run /<path_to_assets_on_local_machine>/IIBV10_Broker_backup.
 &nbsp; 
 # Topic 6 : Refactor, Build and Deployment
 
+By using IBM IIB/ACE transformation advisor's TADataCollector, we have analysed the current monolith IIB/ACE application. By following the generated report, we have made the required changes to refactor the current code, in order to achieve a microservice architecture build. Sample applications will be given below.
+
+Now the refactor code can be deployed in a microservices architecture on Redhat Openshift with CP4I (ACE + MQ) environment as per below details. 
+
 &nbsp; 
 ## Importing Asset into IBM ACE Toolkit and creating local integration server
-1. Import a project in ACE using navigation --> File -> Import -> IBM Project Interchange
+
+1. Import the refactored project in ACE using navigation --> File -> Import -> IBM Project Interchange
 
 <img src="images/HTTP1.png" >
 
@@ -334,15 +298,20 @@ This will open child window to enter details of the server. Once completed, hit 
 <img src="images/HTTP5.png" >
 
 
-5. Proceed further by creating a Local Integration Server in ACE. You may do so by using the navigation - 
+5. A local integration server can be created in ACE to test the application locally. You may do so by using the navigation - 
    Right click on the Integration Servers --> Select **Create a local Integration Server**
    
 <img src="images/HTTP6.png" >
 
    Click Finish.
+
 <img src="images/HTTP7.png" >
 
-   This completes the creation of local integration server.
+The new local Integration server will be created and automatically started. Alternatively, you can start it manually by right click on it and select Start.
+
+The applications which needs to be tested on this local integration server can be deployed by right click on the integration server and select Deploy.
+
+<img src="images/local-integration-server.jpeg" style="width:6in;height:4in" border=1/>
 
 [Back to Top](#topic-1-introduction-and-scenario-details)   
 
@@ -352,9 +321,9 @@ This will open child window to enter details of the server. Once completed, hit 
 <img src="images/scenario3-application-architecture-ace-rest-rest.png" style="width:6in;height:4in">
 
 
-1. Build ace message flow into BAR file for [HTTPResponseApp](#build-ace-message-flow-into-bar-file) . Do for **HTTPResponseApp** only for now.
+1. Build ace message flow into BAR file for [HTTPResponseApp](int-deployment.md#build-ace-message-flow-into-bar-file) . Do for **HTTPResponseApp** only for now.
 
-2. Deploy bar file for [HttpResponseApp flow](#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPResponseApp** only for now.
+2. Deploy bar file for [HttpResponseApp flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPResponseApp** only for now.
 
 3. Open ACE and navigate to HttpRequestApp —> Expand to open folder Flows —> double-click RequestService.msgflow
 
@@ -388,9 +357,9 @@ This will open child window to enter details of the server. Once completed, hit 
   
 5. Create a BAR file for this flow and deploy it to a new Integration Server as below.
 
-6. Build ace message flow into BAR file for [HTTPRequestApp](#build-ace-message-flow-into-bar-file) . Do for **HTTPRequestApp** only for now.
+6. Build ace message flow into BAR file for [HTTPRequestApp](int-deployment.md#build-ace-message-flow-into-bar-file) . Do for **HTTPRequestApp** only for now.
 
-7. Deploy bar file for [HTTPRequestApp flow](#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPRequestApp** only for now.
+7. Deploy bar file for [HTTPRequestApp flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPRequestApp** only for now.
 
 8. Test the deployed BARs
 
@@ -452,9 +421,9 @@ Search "ibm-mq" and Copy Hostname and Port as highlighted for the MQ Queue Manag
 
 <img src="images/ACEMQoutput.png" >
 
-6. Build ace MQ message flow into BAR file for [MQ_Client_App](#build-ace-message-flow-into-bar-file) . Do for **MQ_Client_App** only for now.
+6. Build ace MQ message flow into BAR file for [MQ_Client_App](int-deployment.md#build-ace-message-flow-into-bar-file) . Do for **MQ_Client_App** only for now.
 
-7. Deploy MQ bar file for [MQ_Client_App flow](#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **MQ_Client_App** only for now.
+7. Deploy MQ bar file for [MQ_Client_App flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **MQ_Client_App** only for now.
 
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
@@ -521,62 +490,7 @@ MQ is ready and running on your environment!!!
 [Back to Top](#topic-1-introduction-and-scenario-details)
 
 
-&nbsp;
-## Build ACE message flow into BAR file
-
-1. To generate BAR file for the assets. Select BAR --> New --> BAR File 
-   Add a name (**HttpResponseApp** or **HttpRequestApp** or **MQ_CLIENT_APP**) for the BAR file and click    Finish.
-
-<img src="images/HTTP8.png" >
-
-2. Select resources to include in the BAR file (**HttpResponseApp** or **HttpRequestApp** or **MQ_CLIENT_APP**), then click on “Build and Save” to generate BAR file. 
-
-<img src="images/HTTP9.png" >
-
-
-3. Once Build, the BAR file will appear under BARs on the left side of Application Development panel. 
-
-4. Repeat above **step 1** to **step 3** to create BAR file for **HttpRequestApp** and **MQ_CLIENT_APP**
-
-
-[Back to Top](#topic-1-introduction-and-scenario-details)
-
-&nbsp;
-## Deploy BAR file to CP4I Integration Servers
- 
- 1. Navigate to IBM Cloud Pak for Integrations home page. Select Run --> Integrations --> It will redirect you to IBM APP Connect
-
-<img src="images/IBMAppConnect.jpg" >
- 
- 2. Click on "Deploy Integrations" to create new Integration Server to deploy BAR file.
- For MQ --> Select QuickStart tool kit integration --> Hit Next
-
-<img src="images/DeployBAR.jpg" >
- 
- 3. Provide the BAR file to be deployed to the server and hit next. Bar file can be directly dragged and dropped onto CP4I browser console.
- **Create one integration server for each of the bar file: HttpResponseApp or HttpRequestApp or MQ_CLIENT_APP**
-
-<img src="images/CreateIntServer.jpg" >
- 
- 4a. Pass the configuration screen by clicking "Next".
- 
-<img src="images/CreateIntServer2.jpg" >
- 
- 4b. On the "Common Settings". Validate the settings as shown in the snapshot below. Click Create.
-  **Create Give name as per the bar file name, eg HttpResponseApp or HttpRequestApp  or MQ_CLIENT_APP**
-
-<img src="images/CreateIntServer3.jpg" >
- 
- 5. Wait until the status of the server has changed to "Ready"
-
-<img src="images/IntServerStatus.png" >
- 
- 6. The status will change to "Ready".
-
-<img src="images/IntServerReadyStatus.jpg" >
-
-    
-[Back to Top](#topic-1-introduction-and-scenario-details)     
+&nbsp; 
     
     
 # Topic 7: Conclusion  

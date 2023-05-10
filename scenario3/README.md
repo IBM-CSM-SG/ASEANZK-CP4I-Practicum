@@ -223,7 +223,7 @@ Prepare the environment first as below for the new integration code deployment.
 
 <img src="images/MQConsole.png" >
  
-7. Click on  manage --> quickstart to open queue manager
+7. Click on  manage --> quickstart to open queue manager. Create two local queues by clicking on button New. Call it **IN** and **OUT**.
 
 <img src="images/ChannlQuickStrt.png" >
  
@@ -271,7 +271,7 @@ Prepare the environment first as below for the new integration code deployment.
 &nbsp; 
 # Topic 6 : Refactor, Build and Deployment
 
-By using IBM IIB/ACE transformation advisor's TADataCollector, we have analysed the current monolith IIB/ACE application. By following the generated report, we have made the required changes to refactor the current code, in order to achieve a microservice architecture build. Sample applications will be given below.
+By using IBM IIB/ACE transformation advisor's TADataCollector, we have analysed the current monolith IIB/ACE application. By following the generated report, we have made the required changes to refactor the current code, in order to achieve a microservice architecture build. Sample applications will be given below. Refer to [this document](Integration_Practicum_Scenario3.docx) to understand more details how to refactor the code.
 
 Now the refactor code can be deployed in a microservices architecture on Redhat Openshift with CP4I (ACE + MQ) environment as per below details. 
 
@@ -309,7 +309,7 @@ This will open child window to enter details of the server. Once completed, hit 
 
 The new local Integration server will be created and automatically started. Alternatively, you can start it manually by right click on it and select Start.
 
-The applications which needs to be tested on this local integration server can be deployed by right click on the integration server and select Deploy.
+The applications which needs to be tested on this local integration server can be deployed by right click on the integration server and select Deploy. For now proceed with following instructions to build the deployable BAR file and deploy it on CP4I integration server.
 
 <img src="images/local-integration-server.jpeg" style="width:6in;height:4in" border=1/>
 
@@ -361,12 +361,11 @@ The applications which needs to be tested on this local integration server can b
 
 7. Deploy bar file for [HTTPRequestApp flow](int-deployment.md#deploy-bar-file-to-cp4i-integration-servers) into CP4I Integration Server.  Do for **HTTPRequestApp** only for now.
 
-8. Test the deployed BARs
+## Test the deployed Request and Response Services
 
    a. Open Terminal on your local machine
 
    b. Use curl command to test your deployment 
-
 
 ```   
 curl -v http://http-response-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com/responseService
@@ -379,9 +378,9 @@ Please replace
 **http://http-request-app-http-cp4i.apps.daffy-mukhc7i9.cloud.techzone.ibm.com** part with the URL of your environment
 
 
-9. Receiving 200 OK on the terminal validates successful deployment
+    c. Receiving 200 OK on the terminal validates successful deployment
 
-<img src="images/refactor-http-5.png" >
+       <img src="images/refactor-http-5.png" >
 
 [Back to Top](#topic-1-introduction-and-scenario-details)
 

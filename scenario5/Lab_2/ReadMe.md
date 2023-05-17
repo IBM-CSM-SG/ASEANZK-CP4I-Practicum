@@ -5,6 +5,7 @@
 -  [2. Event Streams Setup](#event-streams-setup)
     * [2.1 Create Topic](#create-topic)
     * [2.2 Create MQ Queue for the consumer](#create-mq)
+    * [2.3 Configure Default Channel Security](#create-mq-security)
 - [3. Create Kafka assets in toolkit](#app-connect-toolkit)
     * [3.1 Create Kafka API test Producer in toolkit](#kafka-api)
     * [3.2 Create Bar file to deploy our Producer flow](#producer-bars)
@@ -155,9 +156,78 @@ Or you can click on the link from the home page and this will take you to the IB
 
 ![alt text][mq5]
 
-6\. We now have your Queue defined.   Click on the **IBM Automation** on the upper left to go back to the homepage. 
+6\. We now have your Queue defined.    
 
 ![alt text][mq6]
+
+<span id="create-mq-security" />
+
+## 2.3 Configure Default Channel Security
+
+There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../Assets/mq_ace_lab.mqsc) . Below steps will assist to disable. 
+
+Copy Login Commands to login to oc client.
+
+<img src="./images/image25.png" style="width:8in"  />
+
+Login to Openshift cluster using oc client.
+
+<img src="./images/image26.png" style="width:8in" />
+
+<u> <i> oc login --token=sha256\~xxxxxx-xxxxxx-g --server=https://servername:30273 </i> </u>
+
+run below command to see all your projects.
+
+<u> <i> oc projects </i> </u>
+
+Run below command to switch to your project.
+
+<u> <i> oc project cp4i </i> </u>
+
+Run below command to see the pod name of the mq queue manager.
+
+<u> <i> oc get pods \| grep -i mq </i> </u>
+
+Note the MQ Queue Manager POD Name. eg. ** quickstart-cp4i-ibm-mq-0 **
+
+Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod. QUICKSTART is queue manager name.
+
+---
+oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc **QUICKSTART(QMGR-Name)** < mq_ace_lab.mqsc
+
+---
+
+This script performs:
+
+-   Disable Chlauth security
+
+-   Disable clientauth security
+
+-   Disable user security on MQ objects level
+
+The above command should succeed with below lines in the end.
+
+<u> <i>
+94 MQSC commands read.
+
+No commands have a syntax error.
+
+All valid MQSC commands were processed.
+</i> </u>
+
+Note the default channels details. Go to the Applications Tab for the Queue Manager that you created.
+
+<img src="./images/image24.1.jpeg" style="width:8in"  />
+
+Click on App Channels link in the left pane. Click on the Filter and Select Show System Channels.
+
+<img src="./images/image25.1.jpeg" style="width:8in"  />
+
+You should be able to see the System Channels. Note the default channel to be used for MQ Communication. eg. SYSTEM.DEF.SVRCONN
+
+<img src="./images/image26.1.jpeg" style="width:8in"  />
+
+Click on the **IBM Automation** on the upper left to go back to the homepage.
 
 [es1]: images/es1.png
 [es2]: images/es2.png
@@ -348,7 +418,7 @@ We have a Project Interchange File provided that you will configure to use your 
 
 ![alt text][8ctk]
 
-9\. Now we will update the MQ policy for the Consumer flow. Click on the dev.policyxml and you will see the Policy and the attributes.   We have the populated and you only need to change the **Queue manager Name and its Host name**. 
+9\. Now we will update the MQ policy for the Consumer flow. Click on the dev.policyxml and you will see the Policy and the attributes.   We have the populated and you only need to change the **Queue manager Name and its Host name**. Also review the default channel name here. eg. **SYSTEM.DEF.SVRCONN**
 
 9a\. For the host name, login to RedHat Openshift console, and under Networking -> Services, find the service name based on your MQ instance name. Click on it and you can see the MQ Service Host Name.
 

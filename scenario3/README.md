@@ -287,7 +287,7 @@ Two Queues **IN** and **OUT** will be created successfully.
  
  ## Running mq_ace_lab.mqsc
 
-There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../scenario3/Assets/mq_ace_lab.mqsc) . Below steps will assist to disable. 
+There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](Assets/mq_ace_lab.mqsc) . Below steps will assist to disable. 
 
 1. Login to Openshift Cluster Environment. Click on the top right corner --> You Login ID will appear here --> Click copy login command
 
@@ -327,13 +327,26 @@ oc get pods|grep mq
 6. Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod. QUICKSTART is queue manager name.
 
 ---
-oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc QUICKSTART < mq_ace_lab.mqsc
+oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc **QUICKSTART(QMGR-Name)** < mq_ace_lab.mqsc
 
 ---
 
 <img src="images/MQAC9.png" >
 
 <img src="images/MQAC10.png" >
+
+Note the default channels details. Go to the Applications Tab for the Queue Manager that you created.
+
+<img src="images/image24.1.jpeg" style="width:8in"  />
+
+Click on App Channels link in the left pane. Click on the Filter and Select Show System Channels.
+
+<img src="images/image25.1.jpeg" style="width:8in"  />
+
+You should be able to see the System Channels. Note the default channel to be used for MQ Communication. eg. DEV_SEVRCONN
+
+<img src="images/image26.1.jpeg" style="width:8in"  />
+
 
 
 MQ environment is **ready** for the lab!!!

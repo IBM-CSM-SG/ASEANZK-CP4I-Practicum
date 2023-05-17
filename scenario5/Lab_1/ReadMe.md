@@ -5,6 +5,7 @@
 - [2. Setup connection to Smart connectors for this lab](#Setup_connections) <BR>
     &nbsp;&nbsp; [2.1. Create the Kafka topic.](#Setup_kafka) <BR>
 	  &nbsp;&nbsp; [2.2. Create MQ Queue for the consumer.](#Setup_MQ) <BR>
+    &nbsp;&nbsp; [2.3 Configure Default Channel Security](#Setup_MQ_Security) <BR>
 - [3. Create API to publish message to topic and event flow to consume topics.](#Setup_API) <BR>
   &nbsp;&nbsp; [3.1. Create API to publish message to Kafka topic.](#Create_API) <BR>
 	&nbsp;&nbsp; [3.2. Create Event-driven flow to consume Kafka messages.](#Create_Consumer) <BR>
@@ -68,9 +69,9 @@ You wil then have a tab open for each of them to help save time.
 
 7\. Now you will be back on the Topics screen.  You may see other users topics in the list but make sure you see your topic you just created.  
 
-<span id="Setup_MQ" />
-
 8\. Save the cluster SCRAM credentials and certificates as per **[Create Connection to shared Kafka cluster](../Kafka-Pre-lab/Kafka-Pre-Lab.md)**.
+
+<span id="Setup_MQ" />
 
 ## 2.2 Create MQ Queue for the consumer
 
@@ -102,6 +103,73 @@ We will be creating a new local Queue for this lab.   Click on **Create**
 6\. We now have your Queue defined.   Click on the **IBM Automation** on the upper left to go back to the homepage. 
 
 ![alt text][mq6]
+
+<span id="Setup_MQ_Security" />
+
+## 2.3 Configure Default Channel Security
+
+There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../Assets/mq_ace_lab.mqsc) . Below steps will assist to disable. 
+
+Copy Login Commands to login to oc client.
+
+<img src="./images/image25.png" style="width:8in"  />
+
+Login to Openshift cluster using oc client.
+
+<img src="./images/image26.png" style="width:8in" />
+
+<u> <i> oc login --token=sha256\~xxxxxx-xxxxxx-g --server=https://servername:30273 </i> </u>
+
+run below command to see all your projects.
+
+<u> <i> oc projects </i> </u>
+
+Run below command to switch to your project.
+
+<u> <i> oc project cp4i </i> </u>
+
+Run below command to see the pod name of the mq queue manager.
+
+<u> <i> oc get pods \| grep -i mq </i> </u>
+
+Note the MQ Queue Manager POD Name. eg. ** quickstart-cp4i-ibm-mq-0 **
+
+Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod. QUICKSTART is queue manager name.
+
+---
+oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc **QUICKSTART(QMGR-Name)** < mq_ace_lab.mqsc
+
+---
+
+This script performs:
+
+-   Disable Chlauth security
+
+-   Disable clientauth security
+
+-   Disable user security on MQ objects level
+
+The above command should succeed with below lines in the end.
+
+<u> <i>
+94 MQSC commands read.
+
+No commands have a syntax error.
+
+All valid MQSC commands were processed.
+</i> </u>
+
+Note the default channels details. Go to the Applications Tab for the Queue Manager that you created.
+
+<img src="./images/image24.1.jpeg" style="width:8in"  />
+
+Click on App Channels link in the left pane. Click on the Filter and Select Show System Channels.
+
+<img src="./images/image25.1.jpeg" style="width:8in"  />
+
+You should be able to see the System Channels. Note the default channel to be used for MQ Communication. eg. SYSTEM.DEF.SVRCONN
+
+<img src="./images/image26.1.jpeg" style="width:8in"  />
 
 [pic0]: images/0.png
 [pic1]: images/1.png

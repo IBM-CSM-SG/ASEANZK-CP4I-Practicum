@@ -161,6 +161,8 @@ Queue will be created shortly.
 
 ## Configure Default Channel Security**
 
+There are different layers of authorization and authentication configured on the Channel access. To simplify the exercise, we will proceed to disable to Channel security authentication and authorization using the script [mq_ace_lab.mqsc](../mq_ace_lab.mqsc) . Below steps will assist to disable. 
+
 Copy Login Commands to login to oc client.
 
 <img src="./media/image25.png" style="width:8in"  />
@@ -185,11 +187,12 @@ Run below command to see the pod name of the mq queue manager.
 
 Note the MQ Queue Manager POD Name. eg. ** quickstart-cp4i-ibm-mq-0 **
 
-Run the sample given script to configure the mq security. Make sure that
-you have execution permission on the samples scripts loadmq.sh and
-mq_ace_lab.mqsc.
+Change Directory to the location of your mqsc file. Use the following command to upload mqsc file to the MQ pod. QUICKSTART is queue manager name.
 
-<u> <i> ./loadmq.sh mq-quickstart-cp4i-ibm-mq-0 </i> </u>
+---
+oc exec -it **quickstart-cp4i-queue-ibm-mq-0(this is your pod’s name)** runmqsc **QUICKSTART(QMGR-Name)** < mq_ace_lab.mqsc
+
+---
 
 This script performs:
 
@@ -217,7 +220,7 @@ Click on App Channels link in the left pane. Click on the Filter and Select Show
 
 <img src="./media/image25.1.jpeg" style="width:8in"  />
 
-You should be able to see the System Channels. We will use the default Channel SYSTEM.DEF.SVRCONN for the MQ Communication from Rest APIS.
+You should be able to see the System Channels. Note the default channel to be used for MQ Communication.
 
 <img src="./media/image26.1.jpeg" style="width:8in"  />
 
